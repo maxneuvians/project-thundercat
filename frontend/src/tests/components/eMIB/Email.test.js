@@ -90,3 +90,41 @@ describe("shows as many 'CollapsingItemContainer' as there are actions", () => {
     expect(wrapper.find(CollapsingItemContainer).length).toEqual(3);
   });
 });
+
+describe("check that the disabled prop works as expected", () => {
+  it("buttons are not disabled if flag is not present", () => {
+    const wrapper = shallow(
+      <Email email={emailStub} emailCount={0} taskCount={0} emailActionsArray={[[]]} />
+    );
+    expect(wrapper.find("#unit-test-email-reply-button").exists()).toEqual(true);
+    expect(wrapper.find("#unit-test-email-task-button").exists()).toEqual(true);
+  });
+
+  it("buttons are not disabled if flag is set to false", () => {
+    const wrapper = shallow(
+      <Email
+        email={emailStub}
+        emailCount={0}
+        taskCount={0}
+        emailActionsArray={[[]]}
+        disabled={false}
+      />
+    );
+    expect(wrapper.find("#unit-test-email-reply-button").exists()).toEqual(true);
+    expect(wrapper.find("#unit-test-email-task-button").exists()).toEqual(true);
+  });
+
+  it("buttons are disabled if flag is set to true", () => {
+    const wrapper = shallow(
+      <Email
+        email={emailStub}
+        emailCount={0}
+        taskCount={0}
+        emailActionsArray={[[]]}
+        disabled={true}
+      />
+    );
+    expect(wrapper.find("#unit-test-email-reply-button").exists()).toEqual(false);
+    expect(wrapper.find("#unit-test-email-task-button").exists()).toEqual(false);
+  });
+});

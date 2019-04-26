@@ -70,6 +70,60 @@ describe("Email header", () => {
   });
 });
 
+describe("check that the disabled prop works as expected", () => {
+  const actionStub = {
+    actionType: ACTION_TYPE.email,
+    reasonsForAction: "reasons",
+    emailType: EMAIL_TYPE.reply,
+    emailTo: [0],
+    emailCc: [],
+    emailBody: "reasons"
+  };
+  it("buttons are present if flag is not present", () => {
+    const wrapper = shallow(
+      <UnconnectedActionViewEmail
+        actionId={0}
+        action={actionStub}
+        email={emailStub}
+        deleteEmail={() => {}}
+        addressBook={addressBook}
+      />
+    );
+    expect(wrapper.find("#unit-test-view-email-edit-button").exists()).toEqual(true);
+    expect(wrapper.find("#unit-test-view-email-delete-button").exists()).toEqual(true);
+  });
+
+  it("buttons are present if flag is set to false", () => {
+    const wrapper = shallow(
+      <UnconnectedActionViewEmail
+        actionId={0}
+        action={actionStub}
+        email={emailStub}
+        deleteEmail={() => {}}
+        addressBook={addressBook}
+        disabled={false}
+      />
+    );
+    expect(wrapper.find("#unit-test-view-email-edit-button").exists()).toEqual(true);
+    expect(wrapper.find("#unit-test-view-email-delete-button").exists()).toEqual(true);
+  });
+
+  it("buttons are not present if flag is set to true", () => {
+    const wrapper = shallow(
+      <UnconnectedActionViewEmail
+        actionId={0}
+        action={actionStub}
+        email={emailStub}
+        deleteEmail={() => {}}
+        addressBook={addressBook}
+        disabled={true}
+      />
+    );
+    expect(wrapper.find("#unit-test-view-email-edit-button").exists()).toEqual(false);
+    expect(wrapper.find("#unit-test-view-email-delete-button").exists()).toEqual(false);
+  });
+});
+
 function genWrapper(responseType, cc) {
   return createWrapper(responseType, cc, () => {});
 }

@@ -94,7 +94,8 @@ export const addressBookJson = {
       name: "Jack Laurier",
       role: "Quality Assurance Analyst"
     },
-    { id: 7, name: "Nancy Ward", role: "Services and Communications Director" }
+    { id: 7, name: "Nancy Ward", role: "Services and Communications Director" },
+    { id: 8, name: "Geneviève Bédard", role: "Research and Innovations Director" }
   ],
   addressBookFR: [
     {
@@ -127,6 +128,7 @@ export const addressBookJson = {
       name: "Jack Laurier",
       role: "FR Quality Assurance Analyst"
     },
-    { id: 7, name: "Nancy Ward", role: "FR Services and Communications Director" }
+    { id: 7, name: "Nancy Ward", role: "FR Services and Communications Director" },
+    { id: 8, name: "Geneviève Bédard", role: "FR Recherche et innovations Director" }
   ]
 };

@@ -45,6 +45,8 @@ class Email extends Component {
     email: emailShape,
     emailCount: PropTypes.number,
     taskCount: PropTypes.number,
+    // optional prop to disable the entire component
+    disabled: PropTypes.bool,
     // Provided by Redux
     emailActionsArray: PropTypes.array
   };
@@ -94,29 +96,31 @@ class Email extends Component {
             </div>
           )}
         </div>
-        <div>
-          <button
-            id="unit-test-email-reply-button"
-            type="button"
-            className="btn btn-primary"
-            onClick={this.showAddEmailDialog}
-          >
-            <i className="fas fa-envelope" />
+        {!this.props.disabled && (
+          <div>
+            <button
+              id="unit-test-email-reply-button"
+              type="button"
+              className="btn btn-primary"
+              onClick={this.showAddEmailDialog}
+            >
+              <i className="fas fa-envelope" />
+              &emsp;
+              {LOCALIZE.emibTest.inboxPage.addReply}
+            </button>
             &emsp;
-            {LOCALIZE.emibTest.inboxPage.addReply}
-          </button>
-          &emsp;
-          <button
-            id="unit-test-email-task-button"
-            type="button"
-            className="btn btn-primary"
-            onClick={this.showAddTaskDialog}
-          >
-            <i className="fas fa-tasks" />
-            &emsp;
-            {LOCALIZE.emibTest.inboxPage.addTask}
-          </button>
-        </div>
+            <button
+              id="unit-test-email-task-button"
+              type="button"
+              className="btn btn-primary"
+              onClick={this.showAddTaskDialog}
+            >
+              <i className="fas fa-tasks" />
+              &emsp;
+              {LOCALIZE.emibTest.inboxPage.addTask}
+            </button>
+          </div>
+        )}
         <hr style={styles.titleEmailDivider} />
         <EmailContent email={email} />
         <div>

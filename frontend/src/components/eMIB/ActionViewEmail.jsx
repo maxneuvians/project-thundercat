@@ -61,6 +61,8 @@ class ActionViewEmail extends Component {
     action: actionShape,
     actionId: PropTypes.number.isRequired,
     email: emailShape,
+    // optional prop to disable the entire component
+    disabled: PropTypes.bool,
     // Props from Redux
     addressBook: PropTypes.arrayOf(contactShape),
     deleteEmail: PropTypes.func
@@ -160,61 +162,66 @@ class ActionViewEmail extends Component {
           <h6>{LOCALIZE.emibTest.inboxPage.emailResponse.reasonsForAction}</h6>
           <p>{action.reasonsForAction}</p>
         </div>
-        <hr style={styles.hr} />
-        <div aria-label={LOCALIZE.ariaLabel.emailOptions}>
-          <button
-            className="btn btn-primary"
-            style={styles.editButton}
-            onClick={this.showEmailDialog}
-          >
-            {LOCALIZE.emibTest.inboxPage.emailCommons.editButton}
-          </button>
-          <button
-            id="unit-test-view-email-delete-button"
-            className="btn btn-danger"
-            onClick={this.showDeleteConfirmationDialog}
-          >
-            {LOCALIZE.emibTest.inboxPage.emailCommons.deleteButton}
-          </button>
-          <PopupBox
-            show={this.state.showDeleteConfirmationDialog}
-            handleClose={this.closeDeleteConfirmationDialog}
-            title={LOCALIZE.emibTest.inboxPage.deleteResponseConfirmation.title}
-            description={
-              <div>
-                <div>
-                  <SystemMessage
-                    messageType={MESSAGE_TYPE.error}
-                    title={
-                      LOCALIZE.emibTest.inboxPage.deleteResponseConfirmation.systemMessageTitle
-                    }
-                    message={
-                      LOCALIZE.emibTest.inboxPage.deleteResponseConfirmation
-                        .systemMessageDescription
-                    }
-                  />
-                </div>
-                <div>{LOCALIZE.emibTest.inboxPage.deleteResponseConfirmation.description}</div>
-              </div>
-            }
-            leftButtonType={BUTTON_TYPE.danger}
-            leftButtonTitle={LOCALIZE.emibTest.inboxPage.emailCommons.deleteButton}
-            leftButtonAction={() =>
-              this.props.deleteEmail(this.props.email.id, this.props.actionId)
-            }
-            rightButtonType={BUTTON_TYPE.primary}
-            rightButtonTitle={LOCALIZE.commons.returnToTest}
-          />
-        </div>
-        <EditActionDialog
-          email={this.props.email}
-          showDialog={this.state.showEmailDialog}
-          handleClose={this.closeEmailDialog}
-          actionType={ACTION_TYPE.email}
-          editMode={EDIT_MODE.update}
-          action={action}
-          actionId={this.props.actionId}
-        />
+        {!this.props.disabled && (
+          <div>
+            <hr style={styles.hr} />
+            <div aria-label={LOCALIZE.ariaLabel.emailOptions}>
+              <button
+                id="unit-test-view-email-edit-button"
+                className="btn btn-primary"
+                style={styles.editButton}
+                onClick={this.showEmailDialog}
+              >
+                {LOCALIZE.emibTest.inboxPage.emailCommons.editButton}
+              </button>
+              <button
+                id="unit-test-view-email-delete-button"
+                className="btn btn-danger"
+                onClick={this.showDeleteConfirmationDialog}
+              >
+                {LOCALIZE.emibTest.inboxPage.emailCommons.deleteButton}
+              </button>
+              <PopupBox
+                show={this.state.showDeleteConfirmationDialog}
+                handleClose={this.closeDeleteConfirmationDialog}
+                title={LOCALIZE.emibTest.inboxPage.deleteResponseConfirmation.title}
+                description={
+                  <div>
+                    <div>
+                      <SystemMessage
+                        messageType={MESSAGE_TYPE.error}
+                        title={
+                          LOCALIZE.emibTest.inboxPage.deleteResponseConfirmation.systemMessageTitle
+                        }
+                        message={
+                          LOCALIZE.emibTest.inboxPage.deleteResponseConfirmation
+                            .systemMessageDescription
+                        }
+                      />
+                    </div>
+                    <div>{LOCALIZE.emibTest.inboxPage.deleteResponseConfirmation.description}</div>
+                  </div>
+                }
+                leftButtonType={BUTTON_TYPE.danger}
+                leftButtonTitle={LOCALIZE.emibTest.inboxPage.emailCommons.deleteButton}
+                leftButtonAction={() =>
+                  this.props.deleteEmail(this.props.email.id, this.props.actionId)
+                }
+                rightButtonType={BUTTON_TYPE.primary}
+                rightButtonTitle={LOCALIZE.commons.returnToTest}
+              />
+            </div>
+            <EditActionDialog
+              email={this.props.email}
+              showDialog={this.state.showEmailDialog}
+              handleClose={this.closeEmailDialog}
+              actionType={ACTION_TYPE.email}
+              editMode={EDIT_MODE.update}
+              action={action}
+              actionId={this.props.actionId}
+            />
+          </div>
+        )}
       </div>
     );
   }

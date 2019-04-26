@@ -1,32 +1,40 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import "../../css/lib/aurora.min.css";
 import LOCALIZE from "../../text_resources";
 import "../../css/cat-theme.css";
-import { LANGUAGES } from "../../components/commons/Translation";
-import original_email_emib_sample_test_example_en from "../../images/original_email_emib_sample_test_example_en.png";
-import original_email_emib_sample_test_example_fr from "../../images/original_email_emib_sample_test_example_fr.png";
-import option_1_emib_sample_test_example_en from "../../images/option_1_emib_sample_test_example_en.png";
-import option_1_emib_sample_test_example_fr from "../../images/option_1_emib_sample_test_example_fr.png";
-import option_2_emib_sample_test_example_en from "../../images/option_2_emib_sample_test_example_en.png";
-import option_2_emib_sample_test_example_fr from "../../images/option_2_emib_sample_test_example_fr.png";
 import { styleConstants } from "./styleConstants.js";
-
-const styles = {
-  testImage: {
-    maxWidth: 600
-  }
-};
+import Email from "./Email";
+import ActionViewEmail from "./ActionViewEmail";
+import ActionViewTask from "./ActionViewTask";
+import { ACTION_TYPE, EMAIL_TYPE } from "./constants";
 
 class TestExamples extends Component {
-  static propTypes = {
-    // Props from Redux
-    currentLanguage: PropTypes.string
-  };
-
   render() {
-    const { currentLanguage } = this.props;
+    const exampleEmail = {
+      id: 0,
+      to: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.to,
+      from: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.from,
+      subject: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.subject,
+      date: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.date,
+      body: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.body
+    };
+
+    const exampleEmailResponse = {
+      actionType: ACTION_TYPE.email,
+      emailType: EMAIL_TYPE.reply,
+      emailTo: [8], // Geneviève Bédard in the address book
+      emailCc: [],
+      emailBody: LOCALIZE.emibTest.howToPage.testExamples.exampleEmailResponse.emailBody,
+      reasonsForAction:
+        LOCALIZE.emibTest.howToPage.testExamples.exampleEmailResponse.reasonsForAction
+    };
+
+    const exampleTaskResponse = {
+      actionType: ACTION_TYPE.task,
+      task: LOCALIZE.emibTest.howToPage.testExamples.exampleTaskResponse.task,
+      reasonsForAction:
+        LOCALIZE.emibTest.howToPage.testExamples.exampleTaskResponse.reasonsForAction
+    };
     return (
       <div>
         <div>
@@ -38,77 +46,38 @@ class TestExamples extends Component {
             <h4 style={styleConstants.instuctions.h4}>
               {LOCALIZE.emibTest.howToPage.testExamples.part1Title}
             </h4>
-            <p style={styleConstants.instuctions.p}>
-              {currentLanguage === LANGUAGES.english && (
-                <img
-                  src={original_email_emib_sample_test_example_en}
-                  alt={LOCALIZE.emibTest.howToPage.testExamples.part1Title}
-                  style={styles.testImage}
-                />
-              )}
-              {currentLanguage === LANGUAGES.french && (
-                <img
-                  src={original_email_emib_sample_test_example_fr}
-                  alt={LOCALIZE.emibTest.howToPage.testExamples.part1Title}
-                  style={styles.testImage}
-                />
-              )}
-            </p>
+            <div style={styleConstants.instuctions.disabledExampleComponentNoPadding}>
+              <Email email={exampleEmail} disabled={true} />
+            </div>
             <p style={styleConstants.instuctions.p}>
               {LOCALIZE.emibTest.howToPage.testExamples.part1Description}
             </p>
             <h4 style={styleConstants.instuctions.h4}>
               {LOCALIZE.emibTest.howToPage.testExamples.part2Title}
             </h4>
-            <p style={styleConstants.instuctions.p}>
-              {currentLanguage === LANGUAGES.english && (
-                <img
-                  src={option_1_emib_sample_test_example_en}
-                  alt={LOCALIZE.emibTest.howToPage.testExamples.part2Title}
-                  style={styles.testImage}
-                />
-              )}
-              {currentLanguage === LANGUAGES.french && (
-                <img
-                  src={option_1_emib_sample_test_example_fr}
-                  alt={LOCALIZE.emibTest.howToPage.testExamples.part2Title}
-                  style={styles.testImage}
-                />
-              )}
-            </p>
+            <div style={styleConstants.instuctions.disabledExampleComponent}>
+              <ActionViewEmail
+                action={exampleEmailResponse}
+                actionId={1}
+                email={exampleEmail}
+                disabled={true}
+              />
+            </div>
             <h4 style={styleConstants.instuctions.h4}>
               {LOCALIZE.emibTest.howToPage.testExamples.part3Title}
             </h4>
-            <p style={styleConstants.instuctions.p}>
-              {currentLanguage === LANGUAGES.english && (
-                <img
-                  src={option_2_emib_sample_test_example_en}
-                  alt={LOCALIZE.emibTest.howToPage.testExamples.part3Title}
-                  style={styles.testImage}
-                />
-              )}
-              {currentLanguage === LANGUAGES.french && (
-                <img
-                  src={option_2_emib_sample_test_example_fr}
-                  alt={LOCALIZE.emibTest.howToPage.testExamples.part3Title}
-                  style={styles.testImage}
-                />
-              )}
-            </p>
+            <div style={styleConstants.instuctions.disabledExampleComponent}>
+              <ActionViewTask
+                action={exampleTaskResponse}
+                actionId={1}
+                email={exampleEmail}
+                disabled={true}
+              />
+            </div>
           </div>
         </div>
       </div>
     );
   }
 }
-
-const mapStateToProps = (state, ownProps) => {
-  return {
-    currentLanguage: state.localize.language
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  null
-)(TestExamples);
+export default TestExamples;

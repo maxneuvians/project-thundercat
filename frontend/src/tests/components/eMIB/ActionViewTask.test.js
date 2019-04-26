@@ -39,3 +39,51 @@ describe("renders component's content", () => {
     expect(wrapper.containsMatchingElement(reasonsForActionContent)).toEqual(true);
   });
 });
+
+describe("check that the disabled prop works as expected", () => {
+  const actionStub = {
+    actionType: ACTION_TYPE.task,
+    task: "Liste of my tasks here...",
+    reasonsForAction: "Reasons for action here..."
+  };
+  it("buttons are present if flag is not present", () => {
+    const wrapper = shallow(
+      <UnconnectedActionViewTask
+        action={actionStub}
+        actionId={0}
+        email={emailStub}
+        deleteTask={() => {}}
+      />
+    );
+    expect(wrapper.find("#unit-test-view-task-edit-button").exists()).toEqual(true);
+    expect(wrapper.find("#unit-test-view-task-delete-button").exists()).toEqual(true);
+  });
+
+  it("buttons are present if flag is set to false", () => {
+    const wrapper = shallow(
+      <UnconnectedActionViewTask
+        action={actionStub}
+        actionId={0}
+        email={emailStub}
+        deleteTask={() => {}}
+        disabled={false}
+      />
+    );
+    expect(wrapper.find("#unit-test-view-task-edit-button").exists()).toEqual(true);
+    expect(wrapper.find("#unit-test-view-task-delete-button").exists()).toEqual(true);
+  });
+
+  it("buttons are not present if flag is set to true", () => {
+    const wrapper = shallow(
+      <UnconnectedActionViewTask
+        action={actionStub}
+        actionId={0}
+        email={emailStub}
+        deleteTask={() => {}}
+        disabled={true}
+      />
+    );
+    expect(wrapper.find("#unit-test-view-task-edit-button").exists()).toEqual(false);
+    expect(wrapper.find("#unit-test-view-task-delete-button").exists()).toEqual(false);
+  });
+});
