@@ -6,11 +6,35 @@ import { styleConstants } from "./styleConstants.js";
 import Email from "./Email";
 import ActionViewEmail from "./ActionViewEmail";
 import ActionViewTask from "./ActionViewTask";
+import { ACTION_TYPE, EMAIL_TYPE } from "./constants";
 
 class TestExamples extends Component {
   render() {
-    //id 0 cannot be in LOCALIZE, so it needs to either be converted or added here
-    const exampleEmail = { ...{ id: 0 }, ...LOCALIZE.emibTest.howToPage.testExamples.exampleEmail };
+    const exampleEmail = {
+      id: 0,
+      to: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.to,
+      from: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.from,
+      subject: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.subject,
+      date: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.date,
+      body: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.body
+    };
+
+    const exampleEmailResponse = {
+      actionType: ACTION_TYPE.email,
+      emailType: EMAIL_TYPE.reply,
+      emailTo: [8], // Geneviève Bédard in the address book
+      emailCc: [],
+      emailBody: LOCALIZE.emibTest.howToPage.testExamples.exampleEmailResponse.emailBody,
+      reasonsForAction:
+        LOCALIZE.emibTest.howToPage.testExamples.exampleEmailResponse.reasonsForAction
+    };
+
+    const exampleTaskResponse = {
+      actionType: ACTION_TYPE.task,
+      task: LOCALIZE.emibTest.howToPage.testExamples.exampleTaskResponse.task,
+      reasonsForAction:
+        LOCALIZE.emibTest.howToPage.testExamples.exampleTaskResponse.reasonsForAction
+    };
     return (
       <div>
         <div>
@@ -33,7 +57,7 @@ class TestExamples extends Component {
             </h4>
             <div style={styleConstants.instuctions.disabledExampleComponent}>
               <ActionViewEmail
-                action={LOCALIZE.emibTest.howToPage.testExamples.exampleEmailResponse}
+                action={exampleEmailResponse}
                 actionId={1}
                 email={exampleEmail}
                 disabled={true}
@@ -44,7 +68,7 @@ class TestExamples extends Component {
             </h4>
             <div style={styleConstants.instuctions.disabledExampleComponent}>
               <ActionViewTask
-                action={LOCALIZE.emibTest.howToPage.testExamples.exampleTaskResponse}
+                action={exampleTaskResponse}
                 actionId={1}
                 email={exampleEmail}
                 disabled={true}
