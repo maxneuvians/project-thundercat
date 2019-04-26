@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import LOCALIZE from "../../text_resources";
 import PopupBox, { BUTTON_TYPE } from "../commons/PopupBox";
 
-// TODO (fnormamd): Display this popup box on the new Start Test action (future PR)
-class ConfirmStartTest extends Component {
+class ConfirmEnterEmib extends Component {
   static propTypes = {
     showDialog: PropTypes.bool.isRequired,
     handleClose: PropTypes.func.isRequired,
@@ -17,21 +16,21 @@ class ConfirmStartTest extends Component {
         <PopupBox
           show={this.props.showDialog}
           handleClose={this.props.handleClose}
-          title={LOCALIZE.commons.confirmStartTest.aboutToStart}
+          title={LOCALIZE.emibTest.howToPage.introductionPage.popupBox.title}
           description={
             <div>
-              <p>{LOCALIZE.commons.confirmStartTest.timerWarning}</p>
-              <p>{LOCALIZE.commons.confirmStartTest.instructionsAccess}</p>
+              <p>{LOCALIZE.emibTest.howToPage.introductionPage.popupBox.description1}</p>
+              <p>{LOCALIZE.emibTest.howToPage.introductionPage.popupBox.description2}</p>
             </div>
           }
           leftButtonType={BUTTON_TYPE.secondary}
           leftButtonTitle={LOCALIZE.commons.cancel}
           rightButtonType={BUTTON_TYPE.primary}
-          rightButtonTitle={LOCALIZE.commons.startTest}
+          rightButtonTitle={LOCALIZE.commons.enterEmib}
           rightButtonAction={this.props.startTest}
         />
       </div>
     );
   }
 }
-export default ConfirmStartTest;
+export default ConfirmEnterEmib;

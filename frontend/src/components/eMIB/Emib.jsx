@@ -12,11 +12,11 @@ import TipsOnTest from "./TipsOnTest";
 import TestInstructions from "./TestInstructions";
 import TestExamples from "./TestExamples";
 import Evaluation from "./Evaluation";
-import ProgressPane from "../commons/ProgressPane";
 import PopupBox, { BUTTON_TYPE, BUTTON_STATE } from "../commons/PopupBox";
 import SystemMessage, { MESSAGE_TYPE } from "../commons/SystemMessage";
 import { activateTest, deactivateTest } from "../../modules/TestStatusRedux";
-import ConfirmStartTest from "../commons/ConfirmStartTest";
+import ConfirmEnterEmib from "./ConfirmEnterEmib";
+import EmibIntroductionPage from "./EmibIntroductionPage";
 
 const PAGES = {
   preTest: "preTest",
@@ -32,6 +32,10 @@ const styles = {
   },
   checkboxZone: {
     paddingTop: 8
+  },
+  startTestBtn: {
+    textAlign: "center",
+    marginTop: 32
   }
 };
 
@@ -73,7 +77,7 @@ class Emib extends Component {
     curPage: PAGES.preTest,
     showSubmitPopup: false,
     showQuitPopup: false,
-    showConfirmStartTestPopup: false,
+    showEnterEmibPopup: false,
     quitConditions: quitConditions()
   };
 
@@ -96,12 +100,12 @@ class Emib extends Component {
     }
   };
 
-  showStartTestPopup = () => {
-    this.setState({ showConfirmStartTestPopup: true });
+  showEnterEmibPopup = () => {
+    this.setState({ showEnterEmibPopup: true });
   };
 
-  closeStartTestPopup = () => {
-    this.setState({ showConfirmStartTestPopup: false });
+  closeEnterEmibPopup = () => {
+    this.setState({ showEnterEmibPopup: false });
   };
 
   openSubmitPopup = () => {
@@ -135,7 +139,6 @@ class Emib extends Component {
   render() {
     const { quitConditions } = this.state;
     const allChecked = quitConditions.every(this.isChecked);
-    const INSTRUCTION_SPECS = getInstructionContent();
 
     const submitButtonState = allChecked ? BUTTON_STATE.enabled : BUTTON_STATE.disabled;
     return (
@@ -144,20 +147,7 @@ class Emib extends Component {
         {this.state.curPage !== PAGES.emibTabs && (
           <ContentContainer hideBanner={this.state.curPage === PAGES.emibTabs}>
             {this.state.curPage === PAGES.preTest && (
-              <ProgressPane
-                progressSpecs={INSTRUCTION_SPECS}
-                currentNode={0}
-                paneTitle={LOCALIZE.emibTest.homePage.testTitle}
-                exitButton={
-                  <button
-                    type="button"
-                    className="btn btn-primary btn-wide"
-                    onClick={this.showStartTestPopup}
-                  >
-                    {LOCALIZE.commons.startTest}
-                  </button>
-                }
-              />
+              <EmibIntroductionPage showEnterEmibPopup={this.showEnterEmibPopup} />
             )}
 
             {this.state.curPage === PAGES.confirm && <Confirmation />}
@@ -171,9 +161,9 @@ class Emib extends Component {
           />
         )}
 
-        <ConfirmStartTest
-          showDialog={this.state.showConfirmStartTestPopup}
-          handleClose={this.closeStartTestPopup}
+        <ConfirmEnterEmib
+          showDialog={this.state.showEnterEmibPopup}
+          handleClose={this.closeEnterEmibPopup}
           startTest={this.changePage}
         />
 
