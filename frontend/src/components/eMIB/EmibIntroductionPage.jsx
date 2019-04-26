@@ -14,8 +14,6 @@ class EmibIntroductionPage extends Component {
     showEnterEmibPopup: PropTypes.func.isRequired
   };
 
-  state = {};
-
   render() {
     return (
       <div>
