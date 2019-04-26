@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import LOCALIZE from "../../text_resources";
 import PopupBox, { BUTTON_TYPE } from "../commons/PopupBox";
-import SystemMessage, { MESSAGE_TYPE } from "../commons/SystemMessage";
 
 class ConfirmStartTest extends Component {
   static propTypes = {
@@ -20,13 +19,7 @@ class ConfirmStartTest extends Component {
           title={LOCALIZE.commons.confirmStartTest.aboutToStart}
           description={
             <div>
-              <div>
-                <SystemMessage
-                  messageType={MESSAGE_TYPE.warning}
-                  title={LOCALIZE.commons.confirmStartTest.timedTest}
-                  message={LOCALIZE.commons.confirmStartTest.timerWarning}
-                />
-              </div>
+              <p>{LOCALIZE.commons.confirmStartTest.timerWarning}</p>
               <p>{LOCALIZE.commons.confirmStartTest.instructionsAccess}</p>
             </div>
           }

@@ -464,7 +464,6 @@ let LOCALIZE = new LocalizedStrings({
       startTest: "Start test",
       confirmStartTest: {
         aboutToStart: "You are about to start the test.",
-        timedTest: "This is a timed test.",
         timerWarning:
           "Once you start the timer will begin, and you can only leave the test by submitting or quitting.",
         instructionsAccess:
@@ -963,7 +962,6 @@ let LOCALIZE = new LocalizedStrings({
       startTest: "Commencer le test",
       confirmStartTest: {
         aboutToStart: "FR You are about to start the test.",
-        timedTest: "FR This is a timed test.",
         timerWarning:
           "FR Once you start the timer will begin, and you can only leave the test by submitting or quitting.",
         instructionsAccess:

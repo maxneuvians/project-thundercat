@@ -183,14 +183,8 @@ class Emib extends Component {
           title={LOCALIZE.emibTest.testFooter.submitTestPopupBox.title}
           description={
             <div>
-              <div>
-                <SystemMessage
-                  messageType={MESSAGE_TYPE.warning}
-                  title={LOCALIZE.emibTest.testFooter.submitTestPopupBox.warning.title}
-                  message={LOCALIZE.emibTest.testFooter.submitTestPopupBox.warning.message}
-                />
-              </div>
-              <div>{LOCALIZE.emibTest.testFooter.submitTestPopupBox.description}</div>
+              <p>{LOCALIZE.emibTest.testFooter.submitTestPopupBox.warning.message}</p>
+              <p>{LOCALIZE.emibTest.testFooter.submitTestPopupBox.description}</p>
             </div>
           }
           leftButtonType={BUTTON_TYPE.secondary}
