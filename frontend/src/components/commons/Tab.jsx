@@ -13,6 +13,13 @@ const styles = {
     border: "1px solid transparent",
     borderRadius: "4px 4px 0 0"
   },
+  disabledButton: {
+    color: "white",
+    backgroundColor: "#8A8A8A",
+    border: "none",
+    lineHeight: "none",
+    marginBottom: 1
+  },
   active: {
     color: "black",
     backgroundColor: "white",
@@ -24,23 +31,46 @@ const styles = {
 class Tab extends Component {
   static propTypes = {
     tabName: PropTypes.string.isRequired,
-    selected: PropTypes.bool.isRequired
+    selected: PropTypes.bool.isRequired,
+    // use this prop to disable the tab
+    disabled: PropTypes.bool
   };
 
   render() {
     return (
       <span>
-        {this.props.selected === false && (
-          <li role="menuitem" style={styles.li}>
-            <button style={styles.button} className="side-navigation-button">
-              {this.props.tabName}
-            </button>
-          </li>
+        {!this.props.disabled && (
+          <span>
+            {!this.props.selected && (
+              <li role="menuitem" style={styles.li}>
+                <button
+                  id="unit-test-unselected-tab-button"
+                  style={styles.button}
+                  className="side-navigation-button"
+                >
+                  {this.props.tabName}
+                </button>
+              </li>
+            )}
+            {this.props.selected && (
+              <li role="menuitem" style={styles.li} aria-current="page">
+                <button
+                  id="unit-test-selected-tab-button"
+                  style={{ ...styles.button, ...styles.active }}
+                  className="side-navigation-button"
+                >
+                  {this.props.tabName}
+                </button>
+              </li>
+            )}
+          </span>
         )}
-        {this.props.selected === true && (
-          <li role="menuitem" style={styles.li} aria-current="page">
+        {this.props.disabled && (
+          <li role="menuitem" style={styles.li}>
             <button
-              style={{ ...styles.button, ...styles.active }}
+              id="unit-test-disabled-tab-button"
+              disabled={true}
+              style={{ ...styles.button, ...styles.disabledButton }}
               className="side-navigation-button"
             >
               {this.props.tabName}
