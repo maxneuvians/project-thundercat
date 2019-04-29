@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import "./css/lib/aurora.min.css";
 import "./css/cat-theme.css";
+import { Helmet } from "react-helmet";
 import Status from "./Status";
 import Home from "./Home";
 import Prototype from "./Prototype";
@@ -75,73 +76,78 @@ class App extends Component {
   render() {
     const hideNavBar = this.props.isTestActive;
     return (
-      <Router>
-        <div>
-          <header role="heading" aria-level="1">
-            <nav
-              aria-label={LOCALIZE.ariaLabel.mainMenu}
-              style={hideNavBar ? styles.navBarHidden : styles.navBarFull}
-              className="fixed-top bg-white navbar navbar-expand"
-              role="dialog"
-            >
-              <div style={styles.pscImage} id="psc-image">
-                <img style={{ width: 390 }} src={psc_header} alt={LOCALIZE.commons.psc} />
-              </div>
-              {!hideNavBar && (
-                <div style={styles.tabs} className="fixed-top nav nav-tabs">
-                  <ul
-                    id="navigation-tabs"
-                    className="mx-auto nav-site nav nav-tabs nav-item"
-                    role="menubar"
-                  >
-                    <li className="bg-white" role="menuitem">
-                      <NavLink
-                        aria-current="page"
-                        isActive={isHomeActive}
-                        className="nav-link"
-                        to={PATH.home}
-                      >
-                        {LOCALIZE.mainTabs.homeTabTitle}
-                      </NavLink>
-                    </li>
-                    <li className="bg-white" role="menuitem">
-                      <NavLink
-                        aria-current="page"
-                        isActive={isPrototypeActive}
-                        className="nav-link"
-                        to={PATH.prototype}
-                      >
-                        {LOCALIZE.mainTabs.prototypeTabTitle}
-                      </NavLink>
-                    </li>
-                    <li className="bg-white" role="menuitem">
-                      <NavLink
-                        aria-current="page"
-                        isActive={isStatusActive}
-                        className="nav-link"
-                        to={PATH.status}
-                      >
-                        {LOCALIZE.mainTabs.statusTabTitle}
-                      </NavLink>
-                    </li>
-                  </ul>
-                </div>
-              )}
-              <div
-                aria-label={LOCALIZE.ariaLabel.languageToggleBtn}
-                className="fixed-top"
-                style={styles.languageButton}
+      <div>
+        <Helmet>
+          <html lang={this.props.currentLanguage} />
+        </Helmet>
+        <Router>
+          <div>
+            <header role="heading" aria-level="1">
+              <nav
+                aria-label={LOCALIZE.ariaLabel.mainMenu}
+                style={hideNavBar ? styles.navBarHidden : styles.navBarFull}
+                className="fixed-top bg-white navbar navbar-expand"
+                role="dialog"
               >
-                <Translation />
-              </div>
-            </nav>
-          </header>
-          <Route exact path={PATH.home} component={Home} />
-          <Route path={PATH.prototype} component={Prototype} />
-          <Route path={PATH.status} component={Status} />
-          <Route path={PATH.emibSampleTest} component={Emib} />
-        </div>
-      </Router>
+                <div style={styles.pscImage} id="psc-image">
+                  <img style={{ width: 390 }} src={psc_header} alt={LOCALIZE.commons.psc} />
+                </div>
+                {!hideNavBar && (
+                  <div style={styles.tabs} className="fixed-top nav nav-tabs">
+                    <ul
+                      id="navigation-tabs"
+                      className="mx-auto nav-site nav nav-tabs nav-item"
+                      role="menubar"
+                    >
+                      <li className="bg-white" role="menuitem">
+                        <NavLink
+                          aria-current="page"
+                          isActive={isHomeActive}
+                          className="nav-link"
+                          to={PATH.home}
+                        >
+                          {LOCALIZE.mainTabs.homeTabTitle}
+                        </NavLink>
+                      </li>
+                      <li className="bg-white" role="menuitem">
+                        <NavLink
+                          aria-current="page"
+                          isActive={isPrototypeActive}
+                          className="nav-link"
+                          to={PATH.prototype}
+                        >
+                          {LOCALIZE.mainTabs.prototypeTabTitle}
+                        </NavLink>
+                      </li>
+                      <li className="bg-white" role="menuitem">
+                        <NavLink
+                          aria-current="page"
+                          isActive={isStatusActive}
+                          className="nav-link"
+                          to={PATH.status}
+                        >
+                          {LOCALIZE.mainTabs.statusTabTitle}
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+                <div
+                  aria-label={LOCALIZE.ariaLabel.languageToggleBtn}
+                  className="fixed-top"
+                  style={styles.languageButton}
+                >
+                  <Translation />
+                </div>
+              </nav>
+            </header>
+            <Route exact path={PATH.home} component={Home} />
+            <Route path={PATH.prototype} component={Prototype} />
+            <Route path={PATH.status} component={Status} />
+            <Route path={PATH.emibSampleTest} component={Emib} />
+          </div>
+        </Router>
+      </div>
     );
   }
 }
