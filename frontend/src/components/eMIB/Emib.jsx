@@ -75,6 +75,8 @@ class Emib extends Component {
 
   state = {
     curPage: PAGES.preTest,
+    disabledTabs: [1, 2],
+    testIsStarted: false,
     showSubmitPopup: false,
     showQuitPopup: false,
     showEnterEmibPopup: false,
@@ -106,6 +108,11 @@ class Emib extends Component {
 
   closeEnterEmibPopup = () => {
     this.setState({ showEnterEmibPopup: false });
+  };
+
+  handleStartTest = () => {
+    this.setState({ testIsStarted: true });
+    this.setState({ disabledTabs: [] });
   };
 
   openSubmitPopup = () => {
@@ -143,7 +150,11 @@ class Emib extends Component {
     const submitButtonState = allChecked ? BUTTON_STATE.enabled : BUTTON_STATE.disabled;
     return (
       <div className="app">
-        <div>{this.state.curPage === PAGES.emibTabs && <EmibTabs />}</div>
+        <div>
+          {this.state.curPage === PAGES.emibTabs && (
+            <EmibTabs disabledTabsArray={this.state.disabledTabs} />
+          )}
+        </div>
         {this.state.curPage !== PAGES.emibTabs && (
           <ContentContainer hideBanner={this.state.curPage === PAGES.emibTabs}>
             {this.state.curPage === PAGES.preTest && (
@@ -155,9 +166,10 @@ class Emib extends Component {
         )}
         {this.state.curPage === PAGES.emibTabs && (
           <TestFooter
+            startTest={this.handleStartTest}
             submitTest={this.openSubmitPopup}
             quitTest={this.openQuitPopup}
-            testIsStarted={false}
+            testIsStarted={this.state.testIsStarted}
           />
         )}
 
