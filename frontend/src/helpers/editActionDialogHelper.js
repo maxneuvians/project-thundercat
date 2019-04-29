@@ -77,12 +77,7 @@ function isEmailFormEdited(
   let emailCcArray = typeof emailCc === "undefined" ? "" : emailCc;
 
   // sorting the arrays before the comparison below only if all To and Cc fields (initial and current) are defined
-  if (
-    typeof initialEmailTo !== "undefined" &&
-    typeof emailTo !== "undefined" &&
-    typeof initialEmailCc !== "undefined" &&
-    typeof emailCc !== "undefined"
-  ) {
+  if (initialEmailTo && emailTo && initialEmailCc && emailCc) {
     initialEmailToArray.sort();
     emailToArray.sort();
     initialEmailCcArray.sort();
