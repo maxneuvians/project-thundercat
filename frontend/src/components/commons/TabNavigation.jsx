@@ -34,7 +34,12 @@ class TabNavigation extends Component {
     tabSpecs: PropTypes.array.isRequired,
     currentTab: PropTypes.number.isRequired,
     menuName: PropTypes.string.isRequired,
-    style: PropTypes.object
+    style: PropTypes.object,
+
+    /* used to disable specific tabs
+    disabledTabsArray={[1, 2]} will disable the second and third tabs
+    disabledTabsArray={[]} will keep all the tabs enabled */
+    disabledTabsArray: PropTypes.array.isRequired
   };
 
   state = {
@@ -46,6 +51,16 @@ class TabNavigation extends Component {
     this.setState({ currentTab: id, currentBody: this.props.tabSpecs[id].body });
   }
 
+  /* this function is used to disable specific tabs using an array of tab ids */
+  isTabIdDisabled = tabId => {
+    // check if the tabId exists in disabledTabsArray
+    if (this.props.disabledTabsArray.indexOf(tabId) > -1) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   render() {
     return (
       <div style={styles.tabContainer}>
@@ -53,7 +68,11 @@ class TabNavigation extends Component {
           <ul role="menubar" className="nav nav-tabs" style={styles.bootstrapNav}>
             {this.props.tabSpecs.map((tab, key) => (
               <span key={tab.id} onClick={() => this.selectTab(tab.id)}>
-                <Tab tabName={tab.tabName} selected={tab.id === this.state.currentTab} />
+                <Tab
+                  tabName={tab.tabName}
+                  selected={tab.id === this.state.currentTab}
+                  disabled={this.isTabIdDisabled(tab.id) ? true : false}
+                />
                 &nbsp;&nbsp;&nbsp;&nbsp;
               </span>
             ))}
