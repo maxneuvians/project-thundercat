@@ -132,7 +132,7 @@ class EditActionDialog extends Component {
     const { showDialog, handleClose, actionType, editMode } = this.props;
     return (
       <div>
-        <Modal show={showDialog} onHide={this.showCancelConfirmationDialog}>
+        <Modal show={showDialog} onHide={this.showCancelConfirmationDialog} backdrop={"static"}>
           <div>
             <Modal.Header style={styles.modalHeader}>
               {
