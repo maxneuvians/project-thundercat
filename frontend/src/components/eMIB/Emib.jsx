@@ -157,7 +157,7 @@ class Emib extends Component {
           <TestFooter
             submitTest={this.openSubmitPopup}
             quitTest={this.openQuitPopup}
-            testIsStarted={true}
+            testIsStarted={false}
           />
         )}
 
