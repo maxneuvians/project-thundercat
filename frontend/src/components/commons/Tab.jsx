@@ -15,13 +15,9 @@ const styles = {
   },
   disabledButton: {
     color: "white",
-    position: "relative",
-    display: "block",
-    padding: "10px 15px",
     backgroundColor: "#8A8A8A",
-    marginRight: "2px",
     border: "none",
-    borderRadius: "4px 4px 0 0",
+    lineHeight: "none",
     marginBottom: 1
   },
   active: {
@@ -74,7 +70,7 @@ class Tab extends Component {
             <button
               id="unit-test-disabled-tab-button"
               disabled={true}
-              style={styles.disabledButton}
+              style={{ ...styles.button, ...styles.disabledButton }}
               className="side-navigation-button"
             >
               {this.props.tabName}
