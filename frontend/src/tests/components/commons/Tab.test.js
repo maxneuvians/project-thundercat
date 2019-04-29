@@ -7,7 +7,7 @@ const myFunction = () => {};
 describe("renders selected and unselected tabs", () => {
   it("renders selected tab", () => {
     const wrapper = shallow(
-      <Tab tabName="Tab1" selected={true} disabled={false} onClick={myFunction()} />
+      <Tab tabName="Tab1" selected={true} disabled={false} onClick={() => myFunction()} />
     );
     const initialMessage = (
       <span>
@@ -21,7 +21,7 @@ describe("renders selected and unselected tabs", () => {
 
   it("renders unselected tab", () => {
     const wrapper = shallow(
-      <Tab tabName="Tab2" selected={false} disabled={false} onClick={myFunction()} />
+      <Tab tabName="Tab2" selected={false} disabled={false} onClick={() => myFunction()} />
     );
     const initialMessage = (
       <span>
@@ -37,7 +37,7 @@ describe("renders selected and unselected tabs", () => {
 describe("check that the disabled prop works as expected", () => {
   it("tab is not disabled if flag is set to false", () => {
     const wrapper = mount(
-      <Tab tabName="Tab1" selected={true} disabled={false} onClick={myFunction()} />
+      <Tab tabName="Tab1" selected={true} disabled={false} onClick={() => myFunction()} />
     );
     expect(wrapper.find("#unit-test-selected-tab-button").exists()).toEqual(true);
     expect(wrapper.find("#unit-test-unselected-tab-button").exists()).toEqual(false);
@@ -46,7 +46,7 @@ describe("check that the disabled prop works as expected", () => {
 
   it("tab is disabled if flag is set to true", () => {
     const wrapper = mount(
-      <Tab tabName="Tab1" selected={true} disabled={true} onClick={myFunction()} />
+      <Tab tabName="Tab1" selected={true} disabled={true} onClick={() => myFunction()} />
     );
     expect(wrapper.find("#unit-test-selected-tab-button").exists()).toEqual(false);
     expect(wrapper.find("#unit-test-unselected-tab-button").exists()).toEqual(false);
