@@ -53,6 +53,9 @@ const styles = {
   },
   editButton: {
     float: "right"
+  },
+  preWrap: {
+    whiteSpace: "pre-wrap"
   }
 };
 
@@ -155,12 +158,12 @@ class ActionViewEmail extends Component {
         <hr style={styles.hr} />
         <div tabIndex="0">
           <h6>{LOCALIZE.emibTest.inboxPage.emailResponse.response}</h6>
-          <p>{action.emailBody}</p>
+          <p style={styles.preWrap}>{action.emailBody}</p>
         </div>
         <hr style={styles.hr} />
         <div tabIndex="0">
           <h6>{LOCALIZE.emibTest.inboxPage.emailResponse.reasonsForAction}</h6>
-          <p>{action.reasonsForAction}</p>
+          <p style={styles.preWrap}>{action.reasonsForAction}</p>
         </div>
         {!this.props.disabled && (
           <div>
