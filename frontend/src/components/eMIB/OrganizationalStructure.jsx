@@ -54,25 +54,35 @@ class OrganizationalStructure extends Component {
             <div>
               <ul>
                 <li>
-                  Jenna Icard - President
+                  {LOCALIZE.emibTest.background.organizationalStructure.dialog.president}
                   <ul>
                     <li>
-                      Amari Kinsler - Corporate Affairs Director
+                      {LOCALIZE.emibTest.background.organizationalStructure.dialog.corpDirector}
                       <ul>
-                        <li>Marc Sheridan - Human Resources Manager</li>
-                        <li>Bob McNutt - Finance Manager</li>
-                        <li>Lana Hussad - Information Technology Manager</li>
+                        <li>{LOCALIZE.emibTest.background.organizationalStructure.dialog.hr}</li>
+                        <li>
+                          {LOCALIZE.emibTest.background.organizationalStructure.dialog.finance}
+                        </li>
+                        <li>{LOCALIZE.emibTest.background.organizationalStructure.dialog.it}</li>
                       </ul>
                     </li>
-                    <li>Geneviève Bédard - Research and Innovations Director</li>
-                    <li>Bartosz Greco - Program Development Director</li>
+                    <li>{LOCALIZE.emibTest.background.organizationalStructure.dialog.research}</li>
                     <li>
-                      Nancy Ward - Services and Communications Director
+                      {LOCALIZE.emibTest.background.organizationalStructure.dialog.programDev}
+                    </li>
+                    <li>
+                      {LOCALIZE.emibTest.background.organizationalStructure.dialog.communications}
                       <ul>
-                        <li>Claude Huard - Quality Assurance Manager (You)</li>
-                        <li>Haydar Kalil - Services and Support Manager</li>
-                        <li>Geoffrey Hamma - Audits Manager</li>
-                        <li>Lucy Trang - E-Training Manager</li>
+                        <li>{LOCALIZE.emibTest.background.organizationalStructure.dialog.qa}</li>
+                        <li>
+                          {LOCALIZE.emibTest.background.organizationalStructure.dialog.services}
+                        </li>
+                        <li>
+                          {LOCALIZE.emibTest.background.organizationalStructure.dialog.audits}
+                        </li>
+                        <li>
+                          {LOCALIZE.emibTest.background.organizationalStructure.dialog.training}
+                        </li>
                       </ul>
                     </li>
                   </ul>

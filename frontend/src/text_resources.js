@@ -309,7 +309,19 @@ let LOCALIZE = new LocalizedStrings({
             link: "Image Description"
           },
           dialog: {
-            title: "The Organizational Chart of the ODC"
+            title: "The Organizational Chart of the ODC",
+            president: "Jenna Icard - President",
+            corpDirector: "Amari Kinsler - Corporate Affairs Director",
+            hr: "Marc Sheridan - Human Resources Manager",
+            finance: "Bob McNutt - Finance Manager",
+            it: "Lana Hussad - Information Technology Manager",
+            research: "Research and Innovations Director",
+            programDev: "Bartosz Greco - Program Development Director",
+            communications: "Nancy Ward - Services and Communications Director",
+            qa: "Claude Huard - Quality Assurance Manager (You)",
+            services: "Haydar Kalil - Services and Support Manager",
+            audits: "Geoffrey Hamma - Audits Manager",
+            training: "Lucy Trang - E-Training Manager"
           }
         },
         teamInformation: {
@@ -834,7 +846,19 @@ let LOCALIZE = new LocalizedStrings({
             link: "Description de l'image"
           },
           dialog: {
-            title: "FR The Organizational Chart of the ODC"
+            title: "FR The Organizational Chart of the ODC",
+            president: "FR Jenna Icard - President",
+            corpDirector: "FR Amari Kinsler - Corporate Affairs Director",
+            hr: "FR Marc Sheridan - Human Resources Manager",
+            finance: "FR Bob McNutt - Finance Manager",
+            it: "FR Lana Hussad - Information Technology Manager",
+            research: "FR Research and Innovations Director",
+            programDev: "FR Bartosz Greco - Program Development Director",
+            communications: "FR Nancy Ward - Services and Communications Director",
+            qa: "FR Claude Huard - Quality Assurance Manager (You)",
+            services: "FR Haydar Kalil - Services and Support Manager",
+            audits: "FR Geoffrey Hamma - Audits Manager",
+            training: "FR Lucy Trang - E-Training Manager"
           }
         },
         teamInformation: {
