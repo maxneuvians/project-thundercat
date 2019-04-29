@@ -29,6 +29,17 @@ const styles = {
   }
 };
 
+/* this function is used to disable specific tabs using an array of tab ids 
+this function is located here in order to be able to test it */
+export const isTabIdDisabled = (array, tabId) => {
+  // check if the tabId exists in the array
+  if (array.indexOf(tabId) > -1) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 class TabNavigation extends Component {
   static propTypes = {
     tabSpecs: PropTypes.array.isRequired,
@@ -51,10 +62,9 @@ class TabNavigation extends Component {
     this.setState({ currentTab: id, currentBody: this.props.tabSpecs[id].body });
   }
 
-  /* this function is used to disable specific tabs using an array of tab ids */
-  isTabIdDisabled = tabId => {
-    // check if the tabId exists in disabledTabsArray
-    if (this.props.disabledTabsArray.indexOf(tabId) > -1) {
+  // this function is simply calling 'isTabIdDisabled' function with the needed parameters
+  handleDisabledTabCheck = tabId => {
+    if (isTabIdDisabled(this.props.disabledTabsArray, tabId)) {
       return true;
     } else {
       return false;
@@ -71,7 +81,7 @@ class TabNavigation extends Component {
                 <Tab
                   tabName={tab.tabName}
                   selected={tab.id === this.state.currentTab}
-                  disabled={this.isTabIdDisabled(tab.id) ? true : false}
+                  disabled={this.handleDisabledTabCheck(tab.id)}
                   onClick={() => this.selectTab(tab.id)}
                 />
                 &nbsp;&nbsp;&nbsp;&nbsp;
