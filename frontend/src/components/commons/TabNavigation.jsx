@@ -33,11 +33,7 @@ const styles = {
 this function is located here in order to be able to test it */
 export const isTabIdDisabled = (array, tabId) => {
   // check if the tabId exists in the array
-  if (array.indexOf(tabId) > -1) {
-    return true;
-  } else {
-    return false;
-  }
+  return array.indexOf(tabId) > -1;
 };
 
 class TabNavigation extends Component {
