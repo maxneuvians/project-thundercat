@@ -56,6 +56,7 @@ class EmibTabs extends Component {
           currentTab={0}
           menuName={LOCALIZE.ariaLabel.tabMenu}
           style={styles.tabNavigation}
+          disabledTabsArray={[1, 2]}
         />
         <Notepad />
       </div>
