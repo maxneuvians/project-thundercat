@@ -309,9 +309,7 @@ let LOCALIZE = new LocalizedStrings({
             link: "Image Description"
           },
           dialog: {
-            title: "The Organizational Chart of the ODC",
-            description:
-              "This is the organizational chart for the Organizational Development Council (ODC). At the top is the President: Jenna Icart. Under the president are 4 directors, one representing each unit of the council. These are presented left to right as: Amari Kinsler from Corporate Affairs, Geneviève Bédard from Research and Innovations, Bartosz Greco from Program Development, Nancy Ward from Services and Communications.  Corporate Affairs has 3 managers: Marc Sheridan from Human Resources, Bob McNutt from Finance, and Lana Hussad from Information Technology. Services and Communications has 4 managers: You are Claude Huard from Quality Assurance, Haydar Kalil from Services and Support, Geoffrey Hamma from Audits, and Lucy Trang from E-Training."
+            title: "The Organizational Chart of the ODC"
           }
         },
         teamInformation: {
@@ -836,9 +834,7 @@ let LOCALIZE = new LocalizedStrings({
             link: "Description de l'image"
           },
           dialog: {
-            title: "FR The Organizational Chart of the ODC",
-            description:
-              "FR This is the organizational chart for the Organizational Development Council (ODC). At the top is the President: Jenna Icart. Under the president are 4 directors, one representing each unit of the council. These are presented left to right as: Amari Kinsler from Corporate Affairs, Geneviève Bédard from Research and Innovations, Bartosz Greco from Program Development, Nancy Ward from Services and Communications.  Corporate Affairs has 3 managers: Marc Sheridan from Human Resources, Bob McNutt from Finance, and Lana Hussad from Information Technology. Services and Communications has 4 managers: You are Claude Huard from Quality Assurance, Haydar Kalil from Services and Support, Geoffrey Hamma from Audits, and Lucy Trang from E-Training."
+            title: "FR The Organizational Chart of the ODC"
           }
         },
         teamInformation: {

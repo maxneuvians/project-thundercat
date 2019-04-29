@@ -51,7 +51,34 @@ class OrganizationalStructure extends Component {
           handleClose={this.closePopup}
           title={LOCALIZE.emibTest.background.organizationalStructure.dialog.title}
           description={
-            <div>{LOCALIZE.emibTest.background.organizationalStructure.dialog.description}</div>
+            <div>
+              <ul>
+                <li>
+                  Jenna Icard - President
+                  <ul>
+                    <li>
+                      Amari Kinsler - Corporate Affairs Director
+                      <ul>
+                        <li>Marc Sheridan - Human Resources Manager</li>
+                        <li>Bob McNutt - Finance Manager</li>
+                        <li>Lana Hussad - Information Technology Manager</li>
+                      </ul>
+                    </li>
+                    <li>Geneviève Bédard - Research and Innovations Director</li>
+                    <li>Bartosz Greco - Program Development Director</li>
+                    <li>
+                      Nancy Ward - Services and Communications Director
+                      <ul>
+                        <li>Claude Huard - Quality Assurance Manager (You)</li>
+                        <li>Haydar Kalil - Services and Support Manager</li>
+                        <li>Geoffrey Hamma - Audits Manager</li>
+                        <li>Lucy Trang - E-Training Manager</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           }
           rightButtonType={BUTTON_TYPE.secondary}
           rightButtonTitle={LOCALIZE.commons.close}
