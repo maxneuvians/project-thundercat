@@ -33,7 +33,7 @@ class Tab extends Component {
     tabName: PropTypes.string.isRequired,
     selected: PropTypes.bool.isRequired,
     // use this prop to disable the tab
-    disabled: PropTypes.bool,
+    disabled: PropTypes.bool.isRequired,
     onClick: PropTypes.func.isRequired
   };
 
