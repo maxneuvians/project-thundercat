@@ -60,11 +60,7 @@ class TabNavigation extends Component {
 
   // this function is simply calling 'isTabIdDisabled' function with the needed parameters
   handleDisabledTabCheck = tabId => {
-    if (isTabIdDisabled(this.props.disabledTabsArray, tabId)) {
-      return true;
-    } else {
-      return false;
-    }
+    return isTabIdDisabled(this.props.disabledTabsArray, tabId);
   };
 
   render() {
