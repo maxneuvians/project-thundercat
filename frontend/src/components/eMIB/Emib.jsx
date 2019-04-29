@@ -113,8 +113,7 @@ class Emib extends Component {
   };
 
   handleStartTest = () => {
-    this.setState({ testIsStarted: true });
-    this.setState({ disabledTabs: [] });
+    this.setState({ testIsStarted: true, disabledTabs: [] });
   };
 
   openStartTestPopup = () => {
