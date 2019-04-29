@@ -67,11 +67,12 @@ class TabNavigation extends Component {
         <nav aria-label={this.props.menuName} role="dialog">
           <ul role="menubar" className="nav nav-tabs" style={styles.bootstrapNav}>
             {this.props.tabSpecs.map((tab, key) => (
-              <span key={tab.id} onClick={() => this.selectTab(tab.id)}>
+              <span key={tab.id}>
                 <Tab
                   tabName={tab.tabName}
                   selected={tab.id === this.state.currentTab}
                   disabled={this.isTabIdDisabled(tab.id) ? true : false}
+                  onClick={() => this.selectTab(tab.id)}
                 />
                 &nbsp;&nbsp;&nbsp;&nbsp;
               </span>

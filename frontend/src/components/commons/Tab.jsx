@@ -33,7 +33,8 @@ class Tab extends Component {
     tabName: PropTypes.string.isRequired,
     selected: PropTypes.bool.isRequired,
     // use this prop to disable the tab
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    onClick: PropTypes.func.isRequired
   };
 
   render() {
@@ -47,6 +48,7 @@ class Tab extends Component {
                   id="unit-test-unselected-tab-button"
                   style={styles.button}
                   className="side-navigation-button"
+                  onClick={this.props.onClick}
                 >
                   {this.props.tabName}
                 </button>
@@ -58,6 +60,7 @@ class Tab extends Component {
                   id="unit-test-selected-tab-button"
                   style={{ ...styles.button, ...styles.active }}
                   className="side-navigation-button"
+                  onClick={this.props.onClick}
                 >
                   {this.props.tabName}
                 </button>
@@ -72,6 +75,7 @@ class Tab extends Component {
               disabled={true}
               style={{ ...styles.button, ...styles.disabledButton }}
               className="side-navigation-button"
+              onClick={this.props.onClick}
             >
               {this.props.tabName}
             </button>
