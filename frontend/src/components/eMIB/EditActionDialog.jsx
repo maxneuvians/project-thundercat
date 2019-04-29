@@ -17,6 +17,11 @@ import {
   updateTask,
   readEmail
 } from "../../modules/EmibInboxRedux";
+import isEmailFormEmpty, {
+  isTaskFormEmpty,
+  isTaskFormEdited,
+  isEmailFormEdited
+} from "../../helpers/editActionDialogHelper";
 
 const styles = {
   container: {
@@ -86,7 +91,7 @@ class EditActionDialog extends Component {
   };
 
   state = {
-    action: {},
+    action: { ...this.props.action },
     showCancelConfirmationDialog: false
   };
 
@@ -120,19 +125,127 @@ class EditActionDialog extends Component {
     this.setState({ action: updatedAction });
   };
 
-  showCancelConfirmationDialog = () => {
-    this.setState({ showCancelConfirmationDialog: true });
+  /* 
+  this handles the display of the cancel confirmation message: Are you sure you want to cancel this response?
+  when creating a new email/task and trying to exit the form, if it's empty, don't display any warning message
+  when creating a new email/task and trying to exit the form, if there is any change to at lest one of the fields, display the cancel warning message
+  when editing an email/task and trying to exit the form, if there is no changes, don't display any warning messsage
+  when editing an email/task and trying to exit the form, if there is any change to at lest one of the fields, display the cancel warning message
+  */
+  handleCancelConfirmationDisplay = () => {
+    const { actionType, editMode, handleClose, action } = this.props;
+
+    // ======================================== VARIABLES ========================================
+    // setting initial email and task forms variables to empty strings
+    let {
+      initialEmailType,
+      initialEmailTo,
+      initialEmailCc,
+      initialEmailResponse,
+      initialTaskContent,
+      initialReasonsForActionContent
+    } = "";
+
+    // current email form variables
+    const emailType = this.state.action.emailType;
+    const emailTo = this.state.action.emailTo;
+    const emailCc = this.state.action.emailCc;
+    const emailResponse = this.state.action.emailBody;
+
+    // current task form variables
+    const taskContent = this.state.action.task;
+    const reasonsForActionContent = this.state.action.reasonsForAction;
+    // =============================================================================================
+
+    // no content has been added in the concerned form (Email Response Form or Task Form)
+    if (
+      // when creating a new task and the form is empty
+      (actionType === ACTION_TYPE.task &&
+        editMode === EDIT_MODE.create &&
+        // getting a 'true' if the form is empty
+        isTaskFormEmpty(taskContent, reasonsForActionContent)) ||
+      // when creating a new email and the form is empty
+      (actionType === ACTION_TYPE.email &&
+        editMode === EDIT_MODE.create &&
+        // getting a 'true' if the form is empty
+        isEmailFormEmpty(emailType, emailTo, emailCc, emailResponse, reasonsForActionContent))
+    ) {
+      // close the dialog without any confirmation message
+      handleClose();
+
+      // content may have changed
+    } else {
+      // get initial variables if we are in edit mode
+      if (editMode === EDIT_MODE.update) {
+        initialEmailType = action.emailType;
+        initialEmailTo = action.emailTo;
+        initialEmailCc = action.emailCc;
+        initialEmailResponse = action.emailBody;
+        initialReasonsForActionContent = action.reasonsForAction;
+        initialTaskContent = action.task;
+      }
+      // verify if the email form has been edited
+      if (actionType === ACTION_TYPE.email) {
+        // returns true if at least one of the fields has been edited
+        const emailEdited = isEmailFormEdited(
+          initialEmailType,
+          emailType,
+          initialEmailTo,
+          emailTo,
+          initialEmailCc,
+          emailCc,
+          initialEmailResponse,
+          emailResponse,
+          initialReasonsForActionContent,
+          reasonsForActionContent
+        );
+        // there are changes in at least one of the fields of the email form
+        if (emailEdited) {
+          // display the cancel confirmation message
+          this.setState({ showCancelConfirmationDialog: true });
+        } else {
+          // close the dialog without any confirmation message
+          handleClose();
+        }
+
+        // verify if the task form has been edited
+      } else if (actionType === ACTION_TYPE.task) {
+        // returns true if at least one of the fields has been edited
+        const taskEdited = isTaskFormEdited(
+          initialTaskContent,
+          taskContent,
+          initialReasonsForActionContent,
+          reasonsForActionContent
+        );
+        // there are changes in at least one of the fields of the task form
+        if (taskEdited) {
+          // display the cancel confirmation message
+          this.setState({ showCancelConfirmationDialog: true });
+        } else {
+          // close the dialog without any confirmation message
+          handleClose();
+        }
+      }
+    }
   };
 
   closeCancelConfirmationDialog = () => {
     this.setState({ showCancelConfirmationDialog: false });
   };
 
+  // this function is called when 'Cancel response' button is selected from the cancel confirmation message dialog
+  handleClose = () => {
+    // resetting all current form variables at their original values from the props
+    this.setState({ action: { ...this.props.action } });
+    // closing response action dialog
+    this.props.handleClose();
+  };
+
   render() {
-    const { showDialog, handleClose, actionType, editMode } = this.props;
+    const { showDialog, actionType, editMode } = this.props;
     return (
       <div>
-        <Modal show={showDialog} onHide={this.showCancelConfirmationDialog} backdrop={"static"}>
+        <Modal show={showDialog} onHide={this.handleCancelConfirmationDisplay} backdrop={"static"}>
           <div>
             <Modal.Header style={styles.modalHeader}>
               {
@@ -147,7 +260,7 @@ class EditActionDialog extends Component {
                           LOCALIZE.emibTest.inboxPage.editActionDialog.editEmail}
                       </h3>
                       <button
-                        onClick={this.showCancelConfirmationDialog}
+                        onClick={this.handleCancelConfirmationDisplay}
                         style={styles.closeButton}
                       >
                         <i className="fas fa-times" />
@@ -164,7 +277,7 @@ class EditActionDialog extends Component {
                           LOCALIZE.emibTest.inboxPage.editActionDialog.editTask}
                       </h3>
                       <button
-                        onClick={this.showCancelConfirmationDialog}
+                        onClick={this.handleCancelConfirmationDisplay}
                         style={styles.closeButton}
                       >
                         <i className="fas fa-times" />
@@ -238,7 +351,7 @@ class EditActionDialog extends Component {
             }
             leftButtonType={BUTTON_TYPE.danger}
             leftButtonTitle={LOCALIZE.commons.cancelResponse}
-            leftButtonAction={handleClose}
+            leftButtonAction={this.handleClose}
             rightButtonType={BUTTON_TYPE.primary}
             rightButtonTitle={LOCALIZE.commons.returnToResponse}
           />
