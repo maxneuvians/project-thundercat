@@ -7,7 +7,7 @@ class ConfirmEnterEmib extends Component {
   static propTypes = {
     showDialog: PropTypes.bool.isRequired,
     handleClose: PropTypes.func.isRequired,
-    startTest: PropTypes.func.isRequired
+    enterEmib: PropTypes.func.isRequired
   };
 
   render() {
@@ -27,7 +27,7 @@ class ConfirmEnterEmib extends Component {
           leftButtonTitle={LOCALIZE.commons.cancel}
           rightButtonType={BUTTON_TYPE.primary}
           rightButtonTitle={LOCALIZE.commons.enterEmib}
-          rightButtonAction={this.props.startTest}
+          rightButtonAction={this.props.enterEmib}
         />
       </div>
     );

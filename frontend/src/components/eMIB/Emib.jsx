@@ -16,6 +16,7 @@ import PopupBox, { BUTTON_TYPE, BUTTON_STATE } from "../commons/PopupBox";
 import SystemMessage, { MESSAGE_TYPE } from "../commons/SystemMessage";
 import { activateTest, deactivateTest } from "../../modules/TestStatusRedux";
 import ConfirmEnterEmib from "./ConfirmEnterEmib";
+import ConfirmStartTest from "../commons/ConfirmStartTest";
 import EmibIntroductionPage from "./EmibIntroductionPage";
 
 const PAGES = {
@@ -76,10 +77,11 @@ class Emib extends Component {
   state = {
     curPage: PAGES.preTest,
     disabledTabs: [1, 2],
+    showEnterEmibPopup: false,
     testIsStarted: false,
+    showStartTestPopup: false,
     showSubmitPopup: false,
     showQuitPopup: false,
-    showEnterEmibPopup: false,
     quitConditions: quitConditions()
   };
 
@@ -102,7 +104,7 @@ class Emib extends Component {
     }
   };
 
-  showEnterEmibPopup = () => {
+  openEnterEmibPopup = () => {
     this.setState({ showEnterEmibPopup: true });
   };
 
@@ -113,6 +115,14 @@ class Emib extends Component {
   handleStartTest = () => {
     this.setState({ testIsStarted: true });
     this.setState({ disabledTabs: [] });
+  };
+
+  openStartTestPopup = () => {
+    this.setState({ showStartTestPopup: true });
+  };
+
+  closeStartTestPopup = () => {
+    this.setState({ showStartTestPopup: false });
   };
 
   openSubmitPopup = () => {
@@ -158,7 +168,7 @@ class Emib extends Component {
         {this.state.curPage !== PAGES.emibTabs && (
           <ContentContainer hideBanner={this.state.curPage === PAGES.emibTabs}>
             {this.state.curPage === PAGES.preTest && (
-              <EmibIntroductionPage showEnterEmibPopup={this.showEnterEmibPopup} />
+              <EmibIntroductionPage showEnterEmibPopup={this.openEnterEmibPopup} />
             )}
 
             {this.state.curPage === PAGES.confirm && <Confirmation />}
@@ -166,7 +176,7 @@ class Emib extends Component {
         )}
         {this.state.curPage === PAGES.emibTabs && (
           <TestFooter
-            startTest={this.handleStartTest}
+            startTest={this.openStartTestPopup}
             submitTest={this.openSubmitPopup}
             quitTest={this.openQuitPopup}
             testIsStarted={this.state.testIsStarted}
@@ -176,7 +186,13 @@ class Emib extends Component {
         <ConfirmEnterEmib
           showDialog={this.state.showEnterEmibPopup}
           handleClose={this.closeEnterEmibPopup}
-          startTest={this.changePage}
+          enterEmib={this.changePage}
+        />
+
+        <ConfirmStartTest
+          showDialog={this.state.showStartTestPopup}
+          handleClose={this.closeStartTestPopup}
+          startTest={this.handleStartTest}
         />
 
         <PopupBox
