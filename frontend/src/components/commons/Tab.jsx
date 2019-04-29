@@ -15,13 +15,9 @@ const styles = {
   },
   disabledButton: {
     color: "white",
-    position: "relative",
-    display: "block",
-    padding: "10px 15px",
     backgroundColor: "#8A8A8A",
-    marginRight: "2px",
     border: "none",
-    borderRadius: "4px 4px 0 0",
+    lineHeight: "none",
     marginBottom: 1
   },
   active: {
@@ -45,7 +41,7 @@ class Tab extends Component {
       <span>
         {!this.props.disabled && (
           <span>
-            {this.props.selected === false && (
+            {!this.props.selected && (
               <li role="menuitem" style={styles.li}>
                 <button
                   id="unit-test-unselected-tab-button"
@@ -56,7 +52,7 @@ class Tab extends Component {
                 </button>
               </li>
             )}
-            {this.props.selected === true && (
+            {this.props.selected && (
               <li role="menuitem" style={styles.li} aria-current="page">
                 <button
                   id="unit-test-selected-tab-button"
@@ -74,7 +70,7 @@ class Tab extends Component {
             <button
               id="unit-test-disabled-tab-button"
               disabled={true}
-              style={styles.disabledButton}
+              style={{ ...styles.button, ...styles.disabledButton }}
               className="side-navigation-button"
             >
               {this.props.tabName}
