@@ -2,11 +2,11 @@
 export const SET_LOGIN_STATE = "localize/SET_LOGIN_STATE";
 
 // Action Creators
-const setLoginState = loginState => ({ type: SET_LANGUAGE, loginState });
+const setLoginState = loggedIn => ({ type: SET_LOGIN_STATE, loggedIn });
 
 // Initial State
 const initialState = {
-  loginState: "en"
+  loggedIn: false
 };
 
 // Reducer
@@ -15,7 +15,7 @@ const login = (state = initialState, action) => {
     case SET_LOGIN_STATE:
       return {
         ...state,
-        loginState: action.loginState
+        loggedIn: action.loggedIn
       };
 
     default:
