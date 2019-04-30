@@ -63,6 +63,18 @@ class TabNavigation extends Component {
     return isTabIdDisabled(this.props.disabledTabsArray, tabId);
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (
+      nextProps.currentTab !== this.state.currentTab &&
+      nextProps.currentBody !== this.state.currentBody
+    ) {
+      this.setState({
+        currentTab: nextProps.currentTab,
+        currentBody: nextProps.tabSpecs[nextProps.currentTab].body
+      });
+    }
+  }
+
   render() {
     return (
       <div style={styles.tabContainer}>
