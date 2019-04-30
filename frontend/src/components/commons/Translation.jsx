@@ -10,6 +10,12 @@ const LANGUAGES = {
   french: "fr"
 };
 
+const styles = {
+  button: {
+    width: 86
+  }
+};
+
 class Translation extends Component {
   state = {
     currentLanguage: LANGUAGES.english
@@ -36,12 +42,22 @@ class Translation extends Component {
     return (
       <div>
         {this.state.currentLanguage === LANGUAGES.english && (
-          <button type="button" className="btn btn-secondary" onClick={this.onSetLanguageToFrench}>
+          <button
+            type="button"
+            className="btn btn-secondary"
+            style={styles.button}
+            onClick={this.onSetLanguageToFrench}
+          >
             Français
           </button>
         )}
         {this.state.currentLanguage === LANGUAGES.french && (
-          <button type="button" className="btn btn-secondary" onClick={this.onSetLanguageToEnglish}>
+          <button
+            type="button"
+            className="btn btn-secondary"
+            style={styles.button}
+            onClick={this.onSetLanguageToEnglish}
+          >
             English
           </button>
         )}
