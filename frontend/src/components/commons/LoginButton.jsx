@@ -16,7 +16,7 @@ class LoginButton extends Component {
     this.setState({ loggedIn: true });
   };
 
-  handleLogoff = () => {
+  handleLogout = () => {
     this.setState({ loggedIn: false });
   };
 
@@ -38,7 +38,7 @@ class LoginButton extends Component {
             type="button"
             className="btn btn-primary"
             style={styles.button}
-            onClick={this.handleLogoff}
+            onClick={this.handleLogout}
           >
             {LOCALIZE.commons.logout}
           </button>
