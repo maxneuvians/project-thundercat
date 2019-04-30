@@ -39,7 +39,7 @@ export const isTabIdDisabled = (array, tabId) => {
 class TabNavigation extends Component {
   static propTypes = {
     tabSpecs: PropTypes.array.isRequired,
-    currentTab: PropTypes.number.isRequired,
+    initialTab: PropTypes.number.isRequired,
     menuName: PropTypes.string.isRequired,
     style: PropTypes.object,
 
@@ -54,8 +54,9 @@ class TabNavigation extends Component {
   };
 
   state = {
-    currentTab: this.props.currentTab,
-    currentBody: this.props.tabSpecs[this.props.currentTab].body
+    currentTab: this.props.initialTab,
+    currentBody: this.props.tabSpecs[this.props.initialTab].body,
+    firstRun: true
   };
 
   selectTab(id) {
@@ -66,6 +67,24 @@ class TabNavigation extends Component {
   handleDisabledTabCheck = tabId => {
     return isTabIdDisabled(this.props.disabledTabsArray, tabId);
   };
+
+  /* this function is called as soon as you start the test
+  it is used to update the states (currentTab and currentBody) with the given prop values */
+  componentWillReceiveProps(nextProps) {
+    if (
+      /* firstRun state is used to update the states only once 
+      as soon as the test is started, we don't need to update these states anymore */
+      this.state.firstRun &&
+      nextProps.initialTab !== this.state.currentTab
+    ) {
+      this.setState({
+        currentTab: nextProps.initialTab,
+        currentBody: nextProps.tabSpecs[nextProps.initialTab].body,
+        // setting firstRun state to false, so that the condition above is false
+        firstRun: false
+      });
+    }
+  }
 
   render() {
     return (

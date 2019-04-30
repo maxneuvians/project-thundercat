@@ -60,7 +60,7 @@ class AuthenticationTabs extends Component {
           <div style={styles.container}>
             <TabNavigation
               tabSpecs={TABS}
-              currentTab={0}
+              initialTab={0}
               menuName={LOCALIZE.ariaLabel.authenticationMenu}
               style={styles.tabNavigationStyle}
               disabledTabsArray={[]}

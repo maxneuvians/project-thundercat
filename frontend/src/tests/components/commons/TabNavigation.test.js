@@ -6,7 +6,7 @@ import Tab from "../../../components/commons/Tab";
 describe("renders specific number of tabs", () => {
   it("renders 2 tabs", () => {
     const TABS = [{ id: 0, tabName: "test1" }, { id: 1, tabName: "test2" }];
-    const wrapper = mount(<TabNavigation tabSpecs={TABS} currentTab={1} menuName="testing" />);
+    const wrapper = mount(<TabNavigation tabSpecs={TABS} initialTab={1} menuName="testing" />);
     expect(wrapper.find(Tab).length).toEqual(2);
   });
 
@@ -16,7 +16,7 @@ describe("renders specific number of tabs", () => {
       { id: 1, tabName: "test2" },
       { id: 2, tabName: "test3" }
     ];
-    const wrapper = mount(<TabNavigation tabSpecs={TABS} currentTab={1} menuName="testing" />);
+    const wrapper = mount(<TabNavigation tabSpecs={TABS} initialTab={1} menuName="testing" />);
     expect(wrapper.find(Tab).length).toEqual(3);
   });
 
@@ -27,7 +27,7 @@ describe("renders specific number of tabs", () => {
       { id: 2, tabName: "test3" },
       { id: 3, tabName: "test4" }
     ];
-    const wrapper = mount(<TabNavigation tabSpecs={TABS} currentTab={1} menuName="testing" />);
+    const wrapper = mount(<TabNavigation tabSpecs={TABS} initialTab={1} menuName="testing" />);
     expect(wrapper.find(Tab).length).toEqual(4);
   });
 });
@@ -39,7 +39,7 @@ describe("changing tabs to tab x", () => {
       { id: 1, tabName: "test2" },
       { id: 2, tabName: "test3" }
     ];
-    const wrapper = mount(<TabNavigation tabSpecs={TABS} currentTab={1} menuName="testing" />);
+    const wrapper = mount(<TabNavigation tabSpecs={TABS} initialTab={1} menuName="testing" />);
     wrapper
       .find(".side-navigation-button")
       .first()
@@ -70,7 +70,7 @@ describe("changing tabs to tab x", () => {
       { id: 1, tabName: "test2" },
       { id: 2, tabName: "test3" }
     ];
-    const wrapper = mount(<TabNavigation tabSpecs={TABS} currentTab={1} menuName="testing" />);
+    const wrapper = mount(<TabNavigation tabSpecs={TABS} initialTab={1} menuName="testing" />);
     wrapper
       .find(".side-navigation-button")
       .last()
@@ -109,7 +109,7 @@ describe("renders the right enabled / disabled tabs", () => {
     const wrapper = mount(
       <TabNavigation
         tabSpecs={TABS}
-        currentTab={0}
+        initialTab={0}
         menuName="testing"
         disabledTabsArray={disabledTabsArray}
       />
@@ -145,7 +145,7 @@ describe("renders the right enabled / disabled tabs", () => {
     const wrapper = mount(
       <TabNavigation
         tabSpecs={TABS}
-        currentTab={0}
+        initialTab={0}
         menuName="testing"
         disabledTabsArray={disabledTabsArray}
       />
@@ -181,7 +181,7 @@ describe("renders the right enabled / disabled tabs", () => {
     const wrapper = mount(
       <TabNavigation
         tabSpecs={TABS}
-        currentTab={0}
+        initialTab={0}
         menuName="testing"
         disabledTabsArray={disabledTabsArray}
       />
@@ -217,7 +217,7 @@ describe("renders the right enabled / disabled tabs", () => {
     const wrapper = mount(
       <TabNavigation
         tabSpecs={TABS}
-        currentTab={0}
+        initialTab={0}
         menuName="testing"
         disabledTabsArray={disabledTabsArray}
       />

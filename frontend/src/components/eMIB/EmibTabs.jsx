@@ -34,6 +34,7 @@ const styles = {
 
 class EmibTabs extends Component {
   static propTypes = {
+    initialTab: PropTypes.number.isRequired,
     /* used to disable specific tabs
     disabledTabsArray={[1, 2]} will disable the second and third tabs
     disabledTabsArray={[]} will keep all the tabs enabled */
@@ -65,7 +66,7 @@ class EmibTabs extends Component {
         </Helmet>
         <TabNavigation
           tabSpecs={TABS}
-          currentTab={0}
+          initialTab={this.props.initialTab}
           menuName={LOCALIZE.ariaLabel.tabMenu}
           style={styles.tabNavigation}
           disabledTabsArray={this.props.disabledTabsArray}
