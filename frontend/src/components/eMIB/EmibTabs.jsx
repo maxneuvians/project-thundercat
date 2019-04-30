@@ -7,6 +7,7 @@ import InTestInstructions from "./InTestInstructions";
 import Notepad from "../commons/Notepad";
 import "../../css/emib-tabs.css";
 import { HEADER_HEIGHT, FOOTER_HEIGHT } from "./constants";
+import { Helmet } from "react-helmet";
 
 const TAB_HEIGHT = `calc(100vh - ${HEADER_HEIGHT + FOOTER_HEIGHT}px)`;
 
@@ -51,6 +52,9 @@ class EmibTabs extends Component {
     ];
     return (
       <div style={styles.container}>
+        <Helmet>
+          <title>eMIB Assessment Simulation</title>
+        </Helmet>
         <TabNavigation
           tabSpecs={TABS}
           currentTab={0}

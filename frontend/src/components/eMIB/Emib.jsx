@@ -17,6 +17,7 @@ import SystemMessage, { MESSAGE_TYPE } from "../commons/SystemMessage";
 import { activateTest, deactivateTest } from "../../modules/TestStatusRedux";
 import ConfirmEnterEmib from "./ConfirmEnterEmib";
 import EmibIntroductionPage from "./EmibIntroductionPage";
+import { Helmet } from "react-helmet";
 
 const PAGES = {
   preTest: "preTest",
@@ -143,6 +144,9 @@ class Emib extends Component {
     const submitButtonState = allChecked ? BUTTON_STATE.enabled : BUTTON_STATE.disabled;
     return (
       <div className="app">
+        <Helmet>
+          <title>eMIB Assessment</title>
+        </Helmet>
         <div>{this.state.curPage === PAGES.emibTabs && <EmibTabs />}</div>
         {this.state.curPage !== PAGES.emibTabs && (
           <ContentContainer hideBanner={this.state.curPage === PAGES.emibTabs}>

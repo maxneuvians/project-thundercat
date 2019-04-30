@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LOCALIZE from "./text_resources";
 import ContentContainer from "./components/commons/ContentContainer";
 import LoginTabs from "./components/authentication/AuthenticationTabs";
+import { Helmet } from "react-helmet";
 
 class Home extends Component {
   //TODO(fnormand): Remove this part when implementing login functionality in the backend
@@ -18,6 +19,9 @@ class Home extends Component {
   render() {
     return (
       <div className="app">
+        <Helmet>
+          <title>CAT Home</title>
+        </Helmet>
         <ContentContainer>
           <h1>{LOCALIZE.homePage.title}</h1>
           <p>{LOCALIZE.homePage.description}</p>
