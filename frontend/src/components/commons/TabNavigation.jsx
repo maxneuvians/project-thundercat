@@ -51,7 +51,8 @@ class TabNavigation extends Component {
 
   state = {
     currentTab: this.props.currentTab,
-    currentBody: this.props.tabSpecs[this.props.currentTab].body
+    currentBody: this.props.tabSpecs[this.props.currentTab].body,
+    firstRun: true
   };
 
   selectTab(id) {
@@ -63,14 +64,21 @@ class TabNavigation extends Component {
     return isTabIdDisabled(this.props.disabledTabsArray, tabId);
   };
 
+  /* this function is called as soon as you start the test
+  it is used to update the states (currentTab and currentBody) with the given prop values */
   componentWillReceiveProps(nextProps) {
     if (
+      /* firstRun state is used to update the states only once 
+      as soon as the test is started, we don't need to update these states anymore */
+      this.state.firstRun &&
       nextProps.currentTab !== this.state.currentTab &&
       nextProps.currentBody !== this.state.currentBody
     ) {
       this.setState({
         currentTab: nextProps.currentTab,
-        currentBody: nextProps.tabSpecs[nextProps.currentTab].body
+        currentBody: nextProps.tabSpecs[nextProps.currentTab].body,
+        // setting firstRun state to false, so that the condition above is false
+        firstRun: false
       });
     }
   }
