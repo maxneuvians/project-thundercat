@@ -134,7 +134,7 @@ class App extends Component {
                           className="nav-link"
                           to={PATH.dashboard}
                         >
-                          Dashboard
+                          {LOCALIZE.mainTabs.dashboardTabTitle}
                         </NavLink>
                       </li>
                       <li className="bg-white" role="menuitem">
