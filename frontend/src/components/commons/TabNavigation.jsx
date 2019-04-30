@@ -46,7 +46,11 @@ class TabNavigation extends Component {
     /* used to disable specific tabs
     disabledTabsArray={[1, 2]} will disable the second and third tabs
     disabledTabsArray={[]} will keep all the tabs enabled */
-    disabledTabsArray: PropTypes.array.isRequired
+    disabledTabsArray: PropTypes.array
+  };
+
+  static defaultProps = {
+    disabledTabsArray: []
   };
 
   state = {

@@ -8,6 +8,7 @@ import InTestInstructions from "./InTestInstructions";
 import Notepad from "../commons/Notepad";
 import "../../css/emib-tabs.css";
 import { HEADER_HEIGHT, FOOTER_HEIGHT } from "./constants";
+import { Helmet } from "react-helmet";
 
 const TAB_HEIGHT = `calc(100vh - ${HEADER_HEIGHT + FOOTER_HEIGHT}px)`;
 
@@ -37,7 +38,7 @@ class EmibTabs extends Component {
     /* used to disable specific tabs
     disabledTabsArray={[1, 2]} will disable the second and third tabs
     disabledTabsArray={[]} will keep all the tabs enabled */
-    disabledTabsArray: PropTypes.array.isRequired
+    disabledTabsArray: PropTypes.array
   };
 
   render() {
@@ -60,6 +61,9 @@ class EmibTabs extends Component {
     ];
     return (
       <div style={styles.container}>
+        <Helmet>
+          <title>{LOCALIZE.titles.simulation}</title>
+        </Helmet>
         <TabNavigation
           tabSpecs={TABS}
           currentTab={this.props.currentTab}

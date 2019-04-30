@@ -96,8 +96,12 @@ class Email extends Component {
             </div>
           )}
         </div>
+        <hr style={styles.titleEmailDivider} />
+        <EmailContent email={email} />
+
         {!this.props.disabled && (
           <div>
+            <hr style={styles.titleEmailDivider} />
             <button
               id="unit-test-email-reply-button"
               type="button"
@@ -121,8 +125,6 @@ class Email extends Component {
             </button>
           </div>
         )}
-        <hr style={styles.titleEmailDivider} />
-        <EmailContent email={email} />
         <div>
           {emailActions.map((action, id) => {
             // populate email responses

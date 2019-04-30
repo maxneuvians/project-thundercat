@@ -9,6 +9,16 @@ let LOCALIZE = new LocalizedStrings({
       statusTabTitle: "Status"
     },
 
+    //HTML Page Titles
+    titles: {
+      CAT: "CAT - PSC",
+      eMIB: "eMIB Assessment",
+      simulation: "eMIB Assessment Simulation",
+      status: "CAT System Status",
+      prototypes: "CAT Prototypes",
+      home: "CAT Home"
+    },
+
     //authentication
     authentication: {
       login: {
@@ -310,8 +320,18 @@ let LOCALIZE = new LocalizedStrings({
           },
           dialog: {
             title: "The Organizational Chart of the ODC",
-            description:
-              "This is the organizational chart for the Organizational Development Council (ODC). At the top is the President: Jenna Icart. Under the president are 4 directors, one representing each unit of the council. These are presented left to right as: Amari Kinsler from Corporate Affairs, Geneviève Bédard from Research and Innovations, Bartosz Greco from Program Development, Nancy Ward from Services and Communications.  Corporate Affairs has 3 managers: Marc Sheridan from Human Resources, Bob McNutt from Finance, and Lana Hussad from Information Technology. Services and Communications has 4 managers: You are Claude Huard from Quality Assurance, Haydar Kalil from Services and Support, Geoffrey Hamma from Audits, and Lucy Trang from E-Training."
+            president: "Jenna Icard - President",
+            corpDirector: "Amari Kinsler - Corporate Affairs Director",
+            hr: "Marc Sheridan - Human Resources Manager",
+            finance: "Bob McNutt - Finance Manager",
+            it: "Lana Hussad - Information Technology Manager",
+            research: "Research and Innovations Director",
+            programDev: "Bartosz Greco - Program Development Director",
+            communications: "Nancy Ward - Services and Communications Director",
+            qa: "Claude Huard - Quality Assurance Manager (You)",
+            services: "Haydar Kalil - Services and Support Manager",
+            audits: "Geoffrey Hamma - Audits Manager",
+            training: "Lucy Trang - E-Training Manager"
           }
         },
         teamInformation: {
@@ -528,6 +548,16 @@ let LOCALIZE = new LocalizedStrings({
       homeTabTitle: "Accueil",
       prototypeTabTitle: "Prototype",
       statusTabTitle: "Statut"
+    },
+
+    //HTML Page Titles
+    titles: {
+      CAT: "FR CAT - PSC",
+      eMIB: "FR eMIB Assessment",
+      simulation: "FR eMIB Assessment Simulation",
+      status: "FR CAT System Status",
+      prototypes: "FR CAT Prototypes",
+      home: "FR CAT Home"
     },
 
     //authentication
@@ -837,8 +867,18 @@ let LOCALIZE = new LocalizedStrings({
           },
           dialog: {
             title: "FR The Organizational Chart of the ODC",
-            description:
-              "FR This is the organizational chart for the Organizational Development Council (ODC). At the top is the President: Jenna Icart. Under the president are 4 directors, one representing each unit of the council. These are presented left to right as: Amari Kinsler from Corporate Affairs, Geneviève Bédard from Research and Innovations, Bartosz Greco from Program Development, Nancy Ward from Services and Communications.  Corporate Affairs has 3 managers: Marc Sheridan from Human Resources, Bob McNutt from Finance, and Lana Hussad from Information Technology. Services and Communications has 4 managers: You are Claude Huard from Quality Assurance, Haydar Kalil from Services and Support, Geoffrey Hamma from Audits, and Lucy Trang from E-Training."
+            president: "FR Jenna Icard - President",
+            corpDirector: "FR Amari Kinsler - Corporate Affairs Director",
+            hr: "FR Marc Sheridan - Human Resources Manager",
+            finance: "FR Bob McNutt - Finance Manager",
+            it: "FR Lana Hussad - Information Technology Manager",
+            research: "FR Research and Innovations Director",
+            programDev: "FR Bartosz Greco - Program Development Director",
+            communications: "FR Nancy Ward - Services and Communications Director",
+            qa: "FR Claude Huard - Quality Assurance Manager (You)",
+            services: "FR Haydar Kalil - Services and Support Manager",
+            audits: "FR Geoffrey Hamma - Audits Manager",
+            training: "FR Lucy Trang - E-Training Manager"
           }
         },
         teamInformation: {
