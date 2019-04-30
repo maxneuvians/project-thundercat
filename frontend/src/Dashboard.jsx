@@ -33,6 +33,7 @@ class Dashboard extends Component {
   }
 }
 
+export { Dashboard as UnconnectedDashboard };
 const mapStateToProps = (state, ownProps) => {
   return {
     loggedIn: state.login.loggedIn
