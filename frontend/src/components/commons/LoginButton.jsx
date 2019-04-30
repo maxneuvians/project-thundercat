@@ -1,5 +1,9 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import LOCALIZE from "../../text_resources";
+import { setLoginState } from "../../modules/LoginRedux";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
 const styles = {
   button: {
@@ -8,16 +12,23 @@ const styles = {
 };
 
 class LoginButton extends Component {
+  static propTypes = {
+    // Props from Redux
+    setLoginState: PropTypes.func
+  };
+
   state = {
     loggedIn: false
   };
 
   handleLogin = () => {
     this.setState({ loggedIn: true });
+    this.props.setLoginState(true);
   };
 
   handleLogout = () => {
     this.setState({ loggedIn: false });
+    this.props.setLoginState(false);
   };
 
   render() {
@@ -48,4 +59,15 @@ class LoginButton extends Component {
   }
 }
 
-export default LoginButton;
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      setLoginState
+    },
+    dispatch
+  );
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(LoginButton);
