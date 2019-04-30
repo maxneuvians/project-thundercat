@@ -9,6 +9,16 @@ let LOCALIZE = new LocalizedStrings({
       statusTabTitle: "Status"
     },
 
+    //HTML Page Titles
+    titles: {
+      CAT: "CAT - PSC",
+      eMIB: "eMIB Assessment",
+      simulation: "eMIB Assessment Simulation",
+      status: "CAT System Status",
+      prototypes: "CAT Prototypes",
+      home: "CAT Home"
+    },
+
     //authentication
     authentication: {
       login: {
@@ -538,6 +548,16 @@ let LOCALIZE = new LocalizedStrings({
       homeTabTitle: "Accueil",
       prototypeTabTitle: "Prototype",
       statusTabTitle: "Statut"
+    },
+
+    //HTML Page Titles
+    titles: {
+      CAT: "FR CAT - PSC",
+      eMIB: "FR eMIB Assessment",
+      simulation: "FR eMIB Assessment Simulation",
+      status: "FR CAT System Status",
+      prototypes: "FR CAT Prototypes",
+      home: "FR CAT Home"
     },
 
     //authentication

@@ -7,6 +7,7 @@ import getScreenResolution from "./helpers/getScreenResolution";
 import logo from "./images/logo.png";
 import LOCALIZE from "./text_resources";
 import ContentContainer from "./components/commons/ContentContainer";
+import { Helmet } from "react-helmet";
 
 const styles = {
   logo: {
@@ -114,6 +115,9 @@ class Status extends Component {
     } = this.state;
     return (
       <ContentContainer>
+        <Helmet>
+          <title>{LOCALIZE.titles.status}</title>
+        </Helmet>
         <div className={"jumbotron"}>
           <h1>{LOCALIZE.statusPage.title}</h1>
           <p>{LOCALIZE.statusPage.welcomeMsg}</p>

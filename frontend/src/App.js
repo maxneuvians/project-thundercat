@@ -79,6 +79,7 @@ class App extends Component {
       <div>
         <Helmet>
           <html lang={this.props.currentLanguage} />
+          <title>{LOCALIZE.titles.CAT}</title>
         </Helmet>
         <Router>
           <div>
