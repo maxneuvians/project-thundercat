@@ -51,7 +51,44 @@ class OrganizationalStructure extends Component {
           handleClose={this.closePopup}
           title={LOCALIZE.emibTest.background.organizationalStructure.dialog.title}
           description={
-            <div>{LOCALIZE.emibTest.background.organizationalStructure.dialog.description}</div>
+            <div>
+              <ul>
+                <li>
+                  {LOCALIZE.emibTest.background.organizationalStructure.dialog.president}
+                  <ul>
+                    <li>
+                      {LOCALIZE.emibTest.background.organizationalStructure.dialog.corpDirector}
+                      <ul>
+                        <li>{LOCALIZE.emibTest.background.organizationalStructure.dialog.hr}</li>
+                        <li>
+                          {LOCALIZE.emibTest.background.organizationalStructure.dialog.finance}
+                        </li>
+                        <li>{LOCALIZE.emibTest.background.organizationalStructure.dialog.it}</li>
+                      </ul>
+                    </li>
+                    <li>{LOCALIZE.emibTest.background.organizationalStructure.dialog.research}</li>
+                    <li>
+                      {LOCALIZE.emibTest.background.organizationalStructure.dialog.programDev}
+                    </li>
+                    <li>
+                      {LOCALIZE.emibTest.background.organizationalStructure.dialog.communications}
+                      <ul>
+                        <li>{LOCALIZE.emibTest.background.organizationalStructure.dialog.qa}</li>
+                        <li>
+                          {LOCALIZE.emibTest.background.organizationalStructure.dialog.services}
+                        </li>
+                        <li>
+                          {LOCALIZE.emibTest.background.organizationalStructure.dialog.audits}
+                        </li>
+                        <li>
+                          {LOCALIZE.emibTest.background.organizationalStructure.dialog.training}
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           }
           rightButtonType={BUTTON_TYPE.secondary}
           rightButtonTitle={LOCALIZE.commons.close}

@@ -18,6 +18,7 @@ import { activateTest, deactivateTest } from "../../modules/TestStatusRedux";
 import ConfirmEnterEmib from "./ConfirmEnterEmib";
 import ConfirmStartTest from "../commons/ConfirmStartTest";
 import EmibIntroductionPage from "./EmibIntroductionPage";
+import { Helmet } from "react-helmet";
 
 const PAGES = {
   preTest: "preTest",
@@ -159,6 +160,9 @@ class Emib extends Component {
     const submitButtonState = allChecked ? BUTTON_STATE.enabled : BUTTON_STATE.disabled;
     return (
       <div className="app">
+        <Helmet>
+          <title>{LOCALIZE.titles.eMIB}</title>
+        </Helmet>
         <div>
           {this.state.curPage === PAGES.emibTabs && (
             <EmibTabs disabledTabsArray={this.state.disabledTabs} />

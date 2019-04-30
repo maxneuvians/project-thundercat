@@ -11,6 +11,9 @@ const styles = {
     width: "100%",
     borderTop: "1px solid #96a8b2",
     margin: "12px 0 12px 0"
+  },
+  preWrap: {
+    whiteSpace: "pre-wrap"
   }
 };
 
@@ -21,10 +24,6 @@ class EmailContent extends Component {
 
   render() {
     const { email } = this.props;
-    //Split the body on new line characters
-    //This will allow them to be wrapped in <p></p> tags
-    // .filter(Boolean) drops empty elements
-    const bodyArray = email.body.split("\n").filter(Boolean);
     return (
       <div>
         <h3>{email.subject}</h3>
@@ -38,11 +37,7 @@ class EmailContent extends Component {
           {LOCALIZE.emibTest.inboxPage.date}: {email.date}
         </div>
         <hr style={styles.dataBodyDivider} />
-        <div>
-          {bodyArray.map((paragraph, key) => (
-            <p key={key}>{paragraph}</p>
-          ))}
-        </div>
+        <div style={styles.preWrap}>{email.body}</div>
       </div>
     );
   }

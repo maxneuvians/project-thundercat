@@ -19,6 +19,9 @@ const styles = {
   },
   editButton: {
     float: "right"
+  },
+  preWrap: {
+    whiteSpace: "pre-wrap"
   }
 };
 
@@ -60,12 +63,12 @@ class ActionViewTask extends Component {
       <div aria-label={LOCALIZE.ariaLabel.taskDetails}>
         <div tabIndex="0">
           <h6 style={styles.taskStyle}>{LOCALIZE.emibTest.inboxPage.taskContent.task}</h6>
-          <p>{action.task}</p>
+          <p style={styles.preWrap}>{action.task}</p>
         </div>
         <hr style={styles.hr} />
         <div tabIndex="0">
           <h6>{LOCALIZE.emibTest.inboxPage.emailResponse.reasonsForAction}</h6>
-          <p>{action.reasonsForAction}</p>
+          <p style={styles.preWrap}>{action.reasonsForAction}</p>
         </div>
         {!this.props.disabled && (
           <div>
