@@ -20,7 +20,7 @@ class Home extends Component {
     return (
       <div className="app">
         <Helmet>
-          <title>CAT Home</title>
+          <title>{LOCALIZE.titles.home}</title>
         </Helmet>
         <ContentContainer>
           <h1>{LOCALIZE.homePage.title}</h1>

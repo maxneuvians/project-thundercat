@@ -7,7 +7,7 @@ const Prototype = () => {
   return (
     <ContentContainer>
       <Helmet>
-        <title>CAT Prototypes</title>
+        <title>{LOCALIZE.titles.prototypes}</title>
       </Helmet>
       <h2>{LOCALIZE.prototypePage.title}</h2>
       <p>{LOCALIZE.prototypePage.welcomeMsg}</p>

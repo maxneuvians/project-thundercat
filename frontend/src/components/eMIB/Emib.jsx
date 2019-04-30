@@ -145,7 +145,7 @@ class Emib extends Component {
     return (
       <div className="app">
         <Helmet>
-          <title>eMIB Assessment</title>
+          <title>{LOCALIZE.titles.eMIB}</title>
         </Helmet>
         <div>{this.state.curPage === PAGES.emibTabs && <EmibTabs />}</div>
         {this.state.curPage !== PAGES.emibTabs && (

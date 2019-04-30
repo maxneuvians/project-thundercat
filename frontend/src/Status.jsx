@@ -116,7 +116,7 @@ class Status extends Component {
     return (
       <ContentContainer>
         <Helmet>
-          <title>CAT System Status</title>
+          <title>{LOCALIZE.titles.status}</title>
         </Helmet>
         <div className={"jumbotron"}>
           <h1>{LOCALIZE.statusPage.title}</h1>

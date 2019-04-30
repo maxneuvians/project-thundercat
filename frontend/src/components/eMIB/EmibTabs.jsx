@@ -53,7 +53,7 @@ class EmibTabs extends Component {
     return (
       <div style={styles.container}>
         <Helmet>
-          <title>eMIB Assessment Simulation</title>
+          <title>{LOCALIZE.titles.simulation}</title>
         </Helmet>
         <TabNavigation
           tabSpecs={TABS}
