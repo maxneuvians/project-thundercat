@@ -63,6 +63,7 @@ class AuthenticationTabs extends Component {
               currentTab={0}
               menuName={LOCALIZE.ariaLabel.authenticationMenu}
               style={styles.tabNavigationStyle}
+              disabledTabsArray={[]}
             />
           </div>
         )}

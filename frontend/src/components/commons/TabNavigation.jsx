@@ -29,12 +29,28 @@ const styles = {
   }
 };
 
+/* this function is used to disable specific tabs using an array of tab ids 
+this function is located here in order to be able to test it */
+export const isTabIdDisabled = (array, tabId) => {
+  // check if the tabId exists in the array
+  return array.indexOf(tabId) > -1;
+};
+
 class TabNavigation extends Component {
   static propTypes = {
     tabSpecs: PropTypes.array.isRequired,
     currentTab: PropTypes.number.isRequired,
     menuName: PropTypes.string.isRequired,
-    style: PropTypes.object
+    style: PropTypes.object,
+
+    /* used to disable specific tabs
+    disabledTabsArray={[1, 2]} will disable the second and third tabs
+    disabledTabsArray={[]} will keep all the tabs enabled */
+    disabledTabsArray: PropTypes.array
+  };
+
+  static defaultProps = {
+    disabledTabsArray: []
   };
 
   state = {
@@ -46,14 +62,24 @@ class TabNavigation extends Component {
     this.setState({ currentTab: id, currentBody: this.props.tabSpecs[id].body });
   }
 
+  // this function is simply calling 'isTabIdDisabled' function with the needed parameters
+  handleDisabledTabCheck = tabId => {
+    return isTabIdDisabled(this.props.disabledTabsArray, tabId);
+  };
+
   render() {
     return (
       <div style={styles.tabContainer}>
         <nav aria-label={this.props.menuName} role="dialog">
           <ul role="menubar" className="nav nav-tabs" style={styles.bootstrapNav}>
             {this.props.tabSpecs.map((tab, key) => (
-              <span key={tab.id} onClick={() => this.selectTab(tab.id)}>
-                <Tab tabName={tab.tabName} selected={tab.id === this.state.currentTab} />
+              <span key={tab.id}>
+                <Tab
+                  tabName={tab.tabName}
+                  selected={tab.id === this.state.currentTab}
+                  disabled={this.handleDisabledTabCheck(tab.id)}
+                  onClick={() => this.selectTab(tab.id)}
+                />
                 &nbsp;&nbsp;&nbsp;&nbsp;
               </span>
             ))}
