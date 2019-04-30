@@ -77,7 +77,7 @@ class Emib extends Component {
 
   state = {
     curPage: PAGES.preTest,
-    currentTab: 0,
+    initialTab: 0,
     disabledTabs: [1, 2],
     showEnterEmibPopup: false,
     testIsStarted: false,
@@ -115,7 +115,7 @@ class Emib extends Component {
   };
 
   handleStartTest = () => {
-    this.setState({ testIsStarted: true, disabledTabs: [], currentTab: 1 });
+    this.setState({ testIsStarted: true, disabledTabs: [], initialTab: 1 });
   };
 
   openStartTestPopup = () => {
@@ -167,7 +167,7 @@ class Emib extends Component {
         <div>
           {this.state.curPage === PAGES.emibTabs && (
             <EmibTabs
-              currentTab={this.state.currentTab}
+              initialTab={this.state.initialTab}
               disabledTabsArray={this.state.disabledTabs}
             />
           )}
