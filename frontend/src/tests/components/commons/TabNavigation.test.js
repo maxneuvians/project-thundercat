@@ -3,18 +3,13 @@ import { mount } from "enzyme";
 import TabNavigation, { isTabIdDisabled } from "../../../components/commons/TabNavigation";
 import Tab from "../../../components/commons/Tab";
 
-const myFunction = () => {};
-
 describe("renders specific number of tabs", () => {
   it("renders 2 tabs", () => {
     const TABS = [{ id: 0, tabName: "test1" }, { id: 1, tabName: "test2" }];
     const wrapper = mount(
       <TabNavigation tabSpecs={TABS} currentTab={1} menuName="testing" disabledTabsArray={[]} />
     );
-    const tab1 = <Tab tabName={"test1"} selected={false} disabled={false} onClick={myFunction()} />;
-    const tab2 = <Tab tabName={"test2"} selected={true} disabled={false} onClick={myFunction()} />;
-    expect(wrapper.containsMatchingElement(tab1)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab2)).toEqual(true);
+    expect(wrapper.find(Tab).length).toEqual(2);
   });
 
   it("renders 3 tabs", () => {
@@ -26,12 +21,7 @@ describe("renders specific number of tabs", () => {
     const wrapper = mount(
       <TabNavigation tabSpecs={TABS} currentTab={1} menuName="testing" disabledTabsArray={[]} />
     );
-    const tab1 = <Tab tabName={"test1"} selected={false} disabled={false} onClick={myFunction()} />;
-    const tab2 = <Tab tabName={"test2"} selected={true} disabled={false} onClick={myFunction()} />;
-    const tab3 = <Tab tabName={"test3"} selected={false} disabled={false} onClick={myFunction()} />;
-    expect(wrapper.containsMatchingElement(tab1)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab2)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab3)).toEqual(true);
+    expect(wrapper.find(Tab).length).toEqual(3);
   });
 
   it("renders 4 tabs", () => {
@@ -44,14 +34,7 @@ describe("renders specific number of tabs", () => {
     const wrapper = mount(
       <TabNavigation tabSpecs={TABS} currentTab={1} menuName="testing" disabledTabsArray={[]} />
     );
-    const tab1 = <Tab tabName={"test1"} selected={false} disabled={false} onClick={myFunction()} />;
-    const tab2 = <Tab tabName={"test2"} selected={true} disabled={false} onClick={myFunction()} />;
-    const tab3 = <Tab tabName={"test3"} selected={false} disabled={false} onClick={myFunction()} />;
-    const tab4 = <Tab tabName={"test4"} selected={false} disabled={false} onClick={myFunction()} />;
-    expect(wrapper.containsMatchingElement(tab1)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab2)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab3)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab4)).toEqual(true);
+    expect(wrapper.find(Tab).length).toEqual(4);
   });
 });
 
@@ -69,12 +52,24 @@ describe("changing tabs to tab x", () => {
       .find(".side-navigation-button")
       .first()
       .simulate("click");
-    const tab1 = <Tab tabName={"test1"} selected={true} disabled={false} onClick={myFunction()} />;
-    const tab2 = <Tab tabName={"test2"} selected={false} disabled={false} onClick={myFunction()} />;
-    const tab3 = <Tab tabName={"test3"} selected={false} disabled={false} onClick={myFunction()} />;
-    expect(wrapper.containsMatchingElement(tab1)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab2)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab3)).toEqual(true);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(0)
+        .props().selected
+    ).toEqual(true);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(1)
+        .props().selected
+    ).toEqual(false);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(2)
+        .props().selected
+    ).toEqual(false);
   });
 
   it("changes tabs to tab 2", () => {
@@ -90,12 +85,24 @@ describe("changing tabs to tab x", () => {
       .find(".side-navigation-button")
       .last()
       .simulate("click");
-    const tab1 = <Tab tabName={"test1"} selected={false} disabled={false} onClick={myFunction()} />;
-    const tab2 = <Tab tabName={"test2"} selected={false} disabled={false} onClick={myFunction()} />;
-    const tab3 = <Tab tabName={"test3"} selected={true} disabled={false} onClick={myFunction()} />;
-    expect(wrapper.containsMatchingElement(tab1)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab2)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab3)).toEqual(true);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(0)
+        .props().selected
+    ).toEqual(false);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(1)
+        .props().selected
+    ).toEqual(false);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(2)
+        .props().selected
+    ).toEqual(true);
   });
 });
 
@@ -117,16 +124,29 @@ describe("renders the right enabled / disabled tabs", () => {
         disabledTabsArray={disabledTabsArray}
       />
     );
-    const tab1 = <Tab tabName={"test1"} selected={true} disabled={false} onClick={myFunction()} />;
-    const tab2 = <Tab tabName={"test2"} selected={false} disabled={false} onClick={myFunction()} />;
-    const tab3 = <Tab tabName={"test3"} selected={false} disabled={false} onClick={myFunction()} />;
 
     expect(isTabIdDisabled(disabledTabsArray, 0)).toEqual(false);
     expect(isTabIdDisabled(disabledTabsArray, 1)).toEqual(false);
     expect(isTabIdDisabled(disabledTabsArray, 2)).toEqual(false);
-    expect(wrapper.containsMatchingElement(tab1)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab2)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab3)).toEqual(true);
+
+    expect(
+      wrapper
+        .find(Tab)
+        .at(0)
+        .props().disabled
+    ).toEqual(false);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(1)
+        .props().disabled
+    ).toEqual(false);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(2)
+        .props().disabled
+    ).toEqual(false);
   });
 
   it("tab #1 and tab #3 are enabled and tab #2 is disabled", () => {
@@ -140,16 +160,29 @@ describe("renders the right enabled / disabled tabs", () => {
         disabledTabsArray={disabledTabsArray}
       />
     );
-    const tab1 = <Tab tabName={"test1"} selected={true} disabled={false} onClick={myFunction()} />;
-    const tab2 = <Tab tabName={"test2"} selected={false} disabled={true} onClick={myFunction()} />;
-    const tab3 = <Tab tabName={"test3"} selected={false} disabled={false} onClick={myFunction()} />;
 
     expect(isTabIdDisabled(disabledTabsArray, 0)).toEqual(false);
     expect(isTabIdDisabled(disabledTabsArray, 1)).toEqual(true);
     expect(isTabIdDisabled(disabledTabsArray, 2)).toEqual(false);
-    expect(wrapper.containsMatchingElement(tab1)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab2)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab3)).toEqual(true);
+
+    expect(
+      wrapper
+        .find(Tab)
+        .at(0)
+        .props().disabled
+    ).toEqual(false);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(1)
+        .props().disabled
+    ).toEqual(true);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(2)
+        .props().disabled
+    ).toEqual(false);
   });
 
   it("tab #1 is enabled and tab #2 and tab #3 are disabled", () => {
@@ -163,16 +196,29 @@ describe("renders the right enabled / disabled tabs", () => {
         disabledTabsArray={disabledTabsArray}
       />
     );
-    const tab1 = <Tab tabName={"test1"} selected={true} disabled={false} onClick={myFunction()} />;
-    const tab2 = <Tab tabName={"test2"} selected={false} disabled={true} onClick={myFunction()} />;
-    const tab3 = <Tab tabName={"test3"} selected={false} disabled={true} onClick={myFunction()} />;
 
     expect(isTabIdDisabled(disabledTabsArray, 0)).toEqual(false);
     expect(isTabIdDisabled(disabledTabsArray, 1)).toEqual(true);
     expect(isTabIdDisabled(disabledTabsArray, 2)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab1)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab2)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab3)).toEqual(true);
+
+    expect(
+      wrapper
+        .find(Tab)
+        .at(0)
+        .props().disabled
+    ).toEqual(false);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(1)
+        .props().disabled
+    ).toEqual(true);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(2)
+        .props().disabled
+    ).toEqual(true);
   });
 
   it("all tabs are disabled", () => {
@@ -186,15 +232,27 @@ describe("renders the right enabled / disabled tabs", () => {
         disabledTabsArray={disabledTabsArray}
       />
     );
-    const tab1 = <Tab tabName={"test1"} selected={true} disabled={true} onClick={myFunction()} />;
-    const tab2 = <Tab tabName={"test2"} selected={false} disabled={true} onClick={myFunction()} />;
-    const tab3 = <Tab tabName={"test3"} selected={false} disabled={true} onClick={myFunction()} />;
-
     expect(isTabIdDisabled(disabledTabsArray, 0)).toEqual(true);
     expect(isTabIdDisabled(disabledTabsArray, 1)).toEqual(true);
     expect(isTabIdDisabled(disabledTabsArray, 2)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab1)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab2)).toEqual(true);
-    expect(wrapper.containsMatchingElement(tab3)).toEqual(true);
+
+    expect(
+      wrapper
+        .find(Tab)
+        .at(0)
+        .props().disabled
+    ).toEqual(true);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(1)
+        .props().disabled
+    ).toEqual(true);
+    expect(
+      wrapper
+        .find(Tab)
+        .at(2)
+        .props().disabled
+    ).toEqual(true);
   });
 });
