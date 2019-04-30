@@ -19,7 +19,8 @@ body {
 /* Headers */
 
 /* h1: add green line underneath */
-h1.green-divider:after {
+h1.green-divider:after,
+h2.green-divider:after {
   content: " ";
   display: block;
   border-bottom: 2px solid #c7e68c;
