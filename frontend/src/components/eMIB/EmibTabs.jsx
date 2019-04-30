@@ -66,7 +66,7 @@ class EmibTabs extends Component {
         </Helmet>
         <TabNavigation
           tabSpecs={TABS}
-          currentTab={this.props.initialTab}
+          initialTab={this.props.initialTab}
           menuName={LOCALIZE.ariaLabel.tabMenu}
           style={styles.tabNavigation}
           disabledTabsArray={this.props.disabledTabsArray}
