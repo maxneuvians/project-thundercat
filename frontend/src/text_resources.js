@@ -132,7 +132,7 @@ let LOCALIZE = new LocalizedStrings({
           title: "Tips on taking the e-MIB",
           part1: {
             description:
-              'The e-MIB presents you with situations that will give you the opportunity to demonstrate the Key Leadership Competencies, outlined in "Evaluation". Here are some tips that will help you provide assessors with the information they need to evaluate your performance on those competencies:',
+              "The e-MIB presents you with situations that will give you the opportunity to demonstrate the Key Leadership Competencies. Here are some tips that will help you provide assessors with the information they need to evaluate your performance on those competencies:",
             bullet1:
               "Answer all the questions asked in the emails you receive. This will ensure that you have used all the opportunities designed to allow you to demonstrate the competencies.",
             bullet2:
@@ -664,7 +664,7 @@ let LOCALIZE = new LocalizedStrings({
           title: "Conseils pour répondre à la BRG-e",
           part1: {
             description:
-              "La BRG-e vous présente des situations qui vous donneront l’occasion de démontrer les compétences clés en matière de leadership, décrit dans «Évaluation». Voici quelques conseils qui vous aideront à fournir aux évaluateurs l’information dont ils ont besoin pour évaluer votre rendement par rapport à ces compétences :",
+              "La BRG-e vous présente des situations qui vous donneront l’occasion de démontrer les compétences clés en matière de leadership. Voici quelques conseils qui vous aideront à fournir aux évaluateurs l’information dont ils ont besoin pour évaluer votre rendement par rapport à ces compétences :",
             bullet1:
               "Répondez à toutes les questions posées dans les courriels que vous recevez. Vous profiterez ainsi de toutes les occasions de démontrer les compétences recherchées.",
             bullet2:
