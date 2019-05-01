@@ -168,10 +168,10 @@ let LOCALIZE = new LocalizedStrings({
             part1: {
               title: "Example of an email you have received:",
               para1:
-                "Two options are provided below to demonstrate different methods of responding to the email. As previously mentioned, you can choose one of the two options presented or a combination of the two. Note that the responses provided were not evaluated for how well they demonstrate the competency targeted in the email. They are presented here only to illustrate how to use each of the two ways of responding."
+                "Two options are provided below to demonstrate different methods of responding to the email. As previously mentioned, you can choose one of the two options presented or a combination of the two. Note that the responses provided were not evaluated for how well they demonstrate the competency targeted in the email. They are presented here only to illustrate how to use each of the two methods of responding."
             },
             part2: {
-              title: "1 Responding with an email response",
+              title: "1. Responding with an email response",
               para1:
                 "You can send an email in response to one you received in your inbox. The written responses should reflect how you would respond as a manager.",
               para2:
@@ -180,7 +180,7 @@ let LOCALIZE = new LocalizedStrings({
             part3: {
               title: "2. Adding a task to the task list",
               para1:
-                "In addition to, or instead of, responding to an email you can add a task to the task list. A task is an action that you intend to take to address a situation presented in the emails. Example tasks could include planning a meeting or asking a colleague for information. You should provide enough information in your task description to ensure it is clear which situation you are addressing. You should also specify what actions you plan to take, and with whom. You can add, delete, or edit tasks on the task list."
+                "In addition to, or instead of, responding to an email you can add a task to the task list. A task is an action that you intend to take to address a situation presented in the emails. Example tasks could include planning a meeting or asking a colleague for information. You should provide enough information in your task description to ensure it is clear which situation(s) you are addressing. You should also specify what action(s) you plan to take, and with whom. You can add, delete, or edit tasks on the task list."
             },
             part4: {
               title: "How to choose a method of responding",
