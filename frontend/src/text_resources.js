@@ -164,14 +164,14 @@ let LOCALIZE = new LocalizedStrings({
                 "Two options are provided below to demonstrate different methods of responding to the email. As previously mentioned, you can choose one of the two options presented or a combination of the two. Note that the responses provided were not evaluated for how well they demonstrate the competency targeted in the email. They are presented here only to illustrate how to use each of the two methods of responding."
             },
             part2: {
-              title: "1. Responding with an email response",
+              title: "Responding with an email response",
               para1:
                 "You can send an email in response to one you received in your inbox. The written responses should reflect how you would respond as a manager.",
               para2:
                 "You can send an email using the following options: reply, reply all, forward, or write a new email. If you choose to write a new email, you will have access to a directory with all of your contacts. You can write as many emails as you like in response to an email you received."
             },
             part3: {
-              title: "2. Adding a task to the task list",
+              title: "Adding a task to the task list",
               para1:
                 "In addition to, or instead of, responding to an email you can add a task to the task list. A task is an action that you intend to take to address a situation presented in the emails. Example tasks could include planning a meeting or asking a colleague for information. You should provide enough information in your task description to ensure it is clear which situation(s) you are addressing. You should also specify what action(s) you plan to take, and with whom. You can add, delete, or edit tasks on the task list."
             },
@@ -680,14 +680,14 @@ let LOCALIZE = new LocalizedStrings({
                 "Vous trouverez ci-dessous deux façons différentes de répondre au courriel. Comme il est mentionné précédemment, vous pouvez choisir l’une ou l’autre des deux options présentées ou combiner les deux. Veuillez noter que les réponses fournies n’ont pas été évaluées pour déterminer la mesure dans laquelle elles démontrent la compétence ciblée dans le courriel. Elles sont présentées ici uniquement pour illustrer comment utiliser chacune des deux façons de répondre."
             },
             part2: {
-              title: "1. Envoyer un courriel",
+              title: "Envoyer un courriel",
               para1:
                 "Vous pouvez envoyer un courriel pour répondre à celui que vous avez reçu dans votre boîte de réception. Vos réponses écrites devraient représenter ce que vous feriez en tant que gestionnaire.",
               para2:
                 "Vous pouvez envoyer un courriel en utilisant les fonctions suivantes : répondre, répondre à tous, transférer ou rédiger un nouveau courriel. Si vous choisissez de rédiger un nouveau courriel, vous aurez accès à un répertoire de noms et d’adresses de courriel. Vous pouvez écrire autant de courriels que vous le souhaitez pour répondre à un courriel que vous avez reçu."
             },
             part3: {
-              title: "2. Ajouter une tâche à la liste de tâches",
+              title: "Ajouter une tâche à la liste de tâches",
               para1:
                 "En plus de répondre à un courriel, ou au lieu d’y répondre, vous pouvez ajouter des tâches à la liste de tâches. Une tâche représente une mesure que vous comptez prendre pour gérer une situation présentée dans les courriels. Voici des exemples de tâches : planifier une rencontre ou communiquer avec un collègue afin d’obtenir de l’information. Assurez-vous de fournir suffisamment d’information dans votre description de la tâche pour que nous sachions à quelle situation vous répondez. Vous devez également préciser quelles mesures vous envisagez prendre et qui devra participer à cette tâche. Vous pouvez ajouter, supprimer ou modifier vos tâches dans la liste des tâches."
             },
