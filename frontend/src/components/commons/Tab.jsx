@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import LOCALIZE from "../../text_resources";
 
 const styles = {
   li: { position: "relative", display: "block", float: "left", marginBottom: "-1px" },
@@ -66,15 +68,25 @@ class Tab extends Component {
         )}
         {this.props.disabled && (
           <li role="menuitem" style={styles.li}>
-            <button
-              id="unit-test-disabled-tab-button"
-              disabled={true}
-              style={{ ...styles.button, ...styles.disabledButton }}
-              className="side-navigation-button"
-              onClick={this.props.onClick}
+            <OverlayTrigger
+              placement={"top"}
+              overlay={
+                <Tooltip id={`disabled-tooltip-${this.props.tabName}`}>
+                  {LOCALIZE.emibTest.tabs.disabled}
+                </Tooltip>
+              }
             >
-              {this.props.tabName}
-            </button>
+              <span className="d-inline-block">
+                <button
+                  id="unit-test-disabled-tab-button"
+                  disabled={true}
+                  style={{ ...styles.button, ...styles.disabledButton, pointerEvents: "none" }}
+                  className="side-navigation-button"
+                >
+                  {this.props.tabName}
+                </button>
+              </span>
+            </OverlayTrigger>
           </li>
         )}
       </span>
