@@ -130,16 +130,32 @@ let LOCALIZE = new LocalizedStrings({
         },
         tipsOnTest: {
           title: "Tips on taking the e-MIB",
-          description:
-            'The e-MIB presents you with situations that will give you the opportunity to demonstrate the Key Leadership Competencies, outlined in "Evaluation". Here are some tips that will help you provide assessors with the information they need to evaluate your performance on those competencies:',
-          bullet1:
-            "Answer all the questions asked in the emails you receive. This will ensure that you have used all the opportunities designed to allow you to demonstrate the competencies.",
-          bullet2:
-            "Provide initial thoughts and recommendations supported by your rationale where appropriate. You can then note other information you would need to reach a final decision.",
-          bullet3:
-            "Use only the information provided in the emails and the background information. Do not make any inferences based on the culture of your own organization. Avoid making assumptions that are not reasonably supported by either the background information or the emails.",
-          bullet4: "You can answer the emails in any order you want.",
-          bullet5: "You are responsible for managing your own time."
+          part1: {
+            description:
+              'The e-MIB presents you with situations that will give you the opportunity to demonstrate the Key Leadership Competencies, outlined in "Evaluation". Here are some tips that will help you provide assessors with the information they need to evaluate your performance on those competencies:',
+            bullet1:
+              "Answer all the questions asked in the emails you receive. This will ensure that you have used all the opportunities designed to allow you to demonstrate the competencies.",
+            bullet2:
+              "Provide initial thoughts and recommendations supported by your rationale where appropriate. You can then note other information you would need to reach a final decision.",
+            bullet3:
+              "Use only the information provided in the emails and the background information. Do not make any inferences based on the culture of your own organization. Avoid making assumptions that are not reasonably supported by either the background information or the emails.",
+            bullet4: "You can answer the emails in any order you want.",
+            bullet5: "You are responsible for managing your own time."
+          },
+          part2: {
+            title: "Other Important Notes",
+            bullet1:
+              "You will be scored on the responses contained in your emails, task list and Reasons for Action. Information left in your Notepad will not be evaluated.",
+            bullet2:
+              "Both the actions you take and the explanations you give will be considered when evaluating your performance on each of the Key Leadership Competencies (described below). You will be assessed on the extent to which your actions demonstrate the ",
+            bullet2Link: "Key Leadership Competencies",
+            bullet3:
+              "Your actions will be rated on effectiveness. Effectiveness is measured by whether your actions would have a positive or a negative impact in resolving the situations presented, and how widespread that impact would be.",
+            bullet4:
+              "Your responses will also be evaluated for how well they meet the organizational objectives presented in the background information.",
+            bullet5:
+              "You will not be scored on your writing. No points will be deducted for spelling, grammar, punctuation errors or for incomplete sentences. However, your writing will need to be clear enough to ensure that the assessors understand which situation you are responding to and your main points."
+          }
         },
         testInstructions: {
           title: "Test instructions",
@@ -216,17 +232,6 @@ let LOCALIZE = new LocalizedStrings({
         },
         evaluation: {
           title: "Evaluation",
-          bullet1:
-            "You will be scored on the responses contained in your emails, task list and Reasons for Action. Information left in your Notepad will not be evaluated.",
-          bullet2:
-            "Both the actions you take and the explanations you give will be considered when evaluating your performance on each of the Key Leadership Competencies (described below). You will be assessed on the extent to which your actions demonstrate the ",
-          bullet2Link: "Key Leadership Competencies",
-          bullet3:
-            "Your actions will be rated on effectiveness. Effectiveness is measured by whether your actions would have a positive or a negative impact in resolving the situations presented, and how widespread that impact would be.",
-          bullet4:
-            "Your responses will also be evaluated for how well they meet the organizational objectives presented in the background information.",
-          bullet5:
-            "You will not be scored on your writing. No points will be deducted for spelling, grammar, punctuation errors or for incomplete sentences. However, your writing will need to be clear enough to ensure that the assessors understand which situation you are responding to and your main points.",
           keyLeadershipCompetenciesSection: {
             title: "Key Leadership Competencies",
             para1Title: "Create Vision and Strategy: ",
@@ -655,16 +660,32 @@ let LOCALIZE = new LocalizedStrings({
         },
         tipsOnTest: {
           title: "Conseils pour répondre à la BRG-e",
-          description:
-            "La BRG-e vous présente des situations qui vous donneront l’occasion de démontrer les compétences clés en matière de leadership, décrit dans «Évaluation». Voici quelques conseils qui vous aideront à fournir aux évaluateurs l’information dont ils ont besoin pour évaluer votre rendement par rapport à ces compétences :",
-          bullet1:
-            "Répondez à toutes les questions posées dans les courriels que vous recevez. Vous profiterez ainsi de toutes les occasions de démontrer les compétences recherchées.",
-          bullet2:
-            "Présentez vos recommandations et réflexions préliminaires accompagnées d’une justification, s’il y a lieu. Vous pouvez ensuite noter les autres renseignements dont vous auriez besoin pour en arriver à une décision.",
-          bullet3:
-            "Utilisez uniquement l’information fournie dans les courriels et les informations contextuelles. Ne tirez aucune conclusion fondée sur la culture de votre propre organisation. Évitez de faire des suppositions qui ne sont pas raisonnablement corroborées par l’information contextuelle ou les courriels.",
-          bullet4: "Vous pouvez répondre aux courriels dans l’ordre que vous désirez.",
-          bullet5: "Vous êtes responsable de la gestion de votre temps."
+          part1: {
+            description:
+              "La BRG-e vous présente des situations qui vous donneront l’occasion de démontrer les compétences clés en matière de leadership, décrit dans «Évaluation». Voici quelques conseils qui vous aideront à fournir aux évaluateurs l’information dont ils ont besoin pour évaluer votre rendement par rapport à ces compétences :",
+            bullet1:
+              "Répondez à toutes les questions posées dans les courriels que vous recevez. Vous profiterez ainsi de toutes les occasions de démontrer les compétences recherchées.",
+            bullet2:
+              "Présentez vos recommandations et réflexions préliminaires accompagnées d’une justification, s’il y a lieu. Vous pouvez ensuite noter les autres renseignements dont vous auriez besoin pour en arriver à une décision.",
+            bullet3:
+              "Utilisez uniquement l’information fournie dans les courriels et les informations contextuelles. Ne tirez aucune conclusion fondée sur la culture de votre propre organisation. Évitez de faire des suppositions qui ne sont pas raisonnablement corroborées par l’information contextuelle ou les courriels.",
+            bullet4: "Vous pouvez répondre aux courriels dans l’ordre que vous désirez.",
+            bullet5: "Vous êtes responsable de la gestion de votre temps."
+          },
+          part2: {
+            title: "FR Other important notes",
+            bullet1:
+              "Vous serez évalués en fonction des réponses aux courriels, des tâches et des justifications des mesures prises. Le contenu du bloc-notes ne sera pas évalué.",
+            bullet2:
+              "Les mesures que vous prenez et les explications que vous donnez seront prises en compte dans l’évaluation de votre rendement pour chacune des compétences clés en leadership (décrites ci-dessous). Vous serez évalué sur la façon dont les mesures que vous avez prises démontrent les ",
+            bullet2Link: "compétences clés en leadership",
+            bullet3:
+              "Les mesures que vous avez prises seront évaluées quant à leur efficacité. Le niveau d’efficacité d’une mesure prise est déterminé par l’effet, positif ou négatif, que cette mesure aura sur la résolution des situations présentées dans les courriels de même que par l’étendue de cet effet.",
+            bullet4:
+              "Vos réponses seront également évaluées en fonction de leur contribution à l’atteinte des objectifs organisationnels, lesquels sont présentés dans l’information contextuelle.",
+            bullet5:
+              "Vous ne serez pas évalué sur votre rédaction. Aucun point ne sera enlevé pour les fautes d’orthographe, de grammaire, de ponctuation ou pour les phrases incomplètes. Votre rédaction devra toutefois être suffisamment claire pour que les évaluateurs comprennent la situation que vous traitez et vos principaux arguments."
+          }
         },
         testInstructions: {
           title: "Instructions du test",
@@ -743,17 +764,6 @@ let LOCALIZE = new LocalizedStrings({
         },
         evaluation: {
           title: "Évaluation",
-          bullet1:
-            "Vous serez évalués en fonction des réponses aux courriels, des tâches et des justifications des mesures prises. Le contenu du bloc-notes ne sera pas évalué.",
-          bullet2:
-            "Les mesures que vous prenez et les explications que vous donnez seront prises en compte dans l’évaluation de votre rendement pour chacune des compétences clés en leadership (décrites ci-dessous). Vous serez évalué sur la façon dont les mesures que vous avez prises démontrent les ",
-          bullet2Link: "compétences clés en leadership",
-          bullet3:
-            "Les mesures que vous avez prises seront évaluées quant à leur efficacité. Le niveau d’efficacité d’une mesure prise est déterminé par l’effet, positif ou négatif, que cette mesure aura sur la résolution des situations présentées dans les courriels de même que par l’étendue de cet effet.",
-          bullet4:
-            "Vos réponses seront également évaluées en fonction de leur contribution à l’atteinte des objectifs organisationnels, lesquels sont présentés dans l’information contextuelle.",
-          bullet5:
-            "Vous ne serez pas évalué sur votre rédaction. Aucun point ne sera enlevé pour les fautes d’orthographe, de grammaire, de ponctuation ou pour les phrases incomplètes. Votre rédaction devra toutefois être suffisamment claire pour que les évaluateurs comprennent la situation que vous traitez et vos principaux arguments.",
           keyLeadershipCompetenciesSection: {
             title: "Compétences clés en leadership",
             para1Title: "Créer une vision et une stratégie : ",

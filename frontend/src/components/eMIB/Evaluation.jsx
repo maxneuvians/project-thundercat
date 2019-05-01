@@ -10,18 +10,6 @@ class Evaluation extends Component {
       <div>
         <div>
           <h2>{LOCALIZE.emibTest.howToPage.evaluation.title}</h2>
-          <div>
-            <ul>
-              <li>{LOCALIZE.emibTest.howToPage.evaluation.bullet1}</li>
-              <li>
-                {LOCALIZE.emibTest.howToPage.evaluation.bullet2}
-                {LOCALIZE.emibTest.howToPage.evaluation.bullet2Link}.
-              </li>
-              <li>{LOCALIZE.emibTest.howToPage.evaluation.bullet3}</li>
-              <li>{LOCALIZE.emibTest.howToPage.evaluation.bullet4}</li>
-              <li>{LOCALIZE.emibTest.howToPage.evaluation.bullet5}</li>
-            </ul>
-          </div>
           <div id="keyLeadershipCompetencies">
             <h3 style={styleConstants.instuctions.h3}>
               {LOCALIZE.emibTest.howToPage.evaluation.keyLeadershipCompetenciesSection.title}
