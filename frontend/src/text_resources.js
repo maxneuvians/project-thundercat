@@ -144,7 +144,7 @@ let LOCALIZE = new LocalizedStrings({
         testInstructions: {
           title: "Test instructions",
           para1:
-            "First, read the background information which describes your position and the fictitious organization in which you work. Then proceed to the inbox where you can read the emails you received and take actions to respond to them as though you were a manager within the fictitious organization.",
+            "When you start the test, first, read the background information which describes your position and the fictitious organization in which you work. Then proceed to the inbox where you can read the emails you received and take actions to respond to them as though you were a manager within the fictitious organization.",
           step1Section: {
             title: "Step 1 - Responding to emails",
             description:
@@ -664,7 +664,7 @@ let LOCALIZE = new LocalizedStrings({
         testInstructions: {
           title: "Instructions du test",
           para1:
-            "Dans un premier temps, lisez l’information contextuelle, laquelle décrit votre poste et l’organisation fictive dans laquelle vous travaillez. Ensuite, passez à la boîte de réception pour lire les courriels que vous avez reçus et prendre des dispositions pour répondre à ces courriels comme si vous étiez un gestionnaire dans cette organisation fictive.",
+            "FR When you start the test, END FR dans un premier temps, lisez l’information contextuelle, laquelle décrit votre poste et l’organisation fictive dans laquelle vous travaillez. Ensuite, passez à la boîte de réception pour lire les courriels que vous avez reçus et prendre des dispositions pour répondre à ces courriels comme si vous étiez un gestionnaire dans cette organisation fictive.",
           step1Section: {
             title: "Étape 1 — Répondre aux courriels",
             description:
