@@ -53,7 +53,8 @@ class TestInstructions extends Component {
               {LOCALIZE.emibTest.howToPage.testInstructions.step1Section.description}
             </p>
             <h4 style={styleConstants.instuctions.h4}>
-              ===TODO: MOVE=== Example of an email you have recieved:
+              ===TODO MOVE=== Example of an email you have recieved: ===TODO MOVE=== FR Example of
+              an email you have received:
             </h4>
             <div style={styleConstants.instuctions.disabledExampleComponentNoPadding}>
               <Email email={exampleEmail} disabled={true} />
