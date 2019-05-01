@@ -232,6 +232,8 @@ let LOCALIZE = new LocalizedStrings({
         },
         evaluation: {
           title: "Evaluation",
+          description:
+            "Both the actions you take and the explanations you give will be considered when evaluating your performance on each of the Key Leadership Competencies (described below). You will be assessed on the extent to which your actions demonstrate the Key Leadership Competencies. Your actions will be rated on effectiveness. Effectiveness is measured by whether your actions would have a positive or a negative impact in resolving the situations presented, and how widespread that impact would be. Your responses will also be evaluated for how well they meet the organizational objectives presented in the background information.",
           keyLeadershipCompetenciesSection: {
             title: "Key Leadership Competencies",
             para1Title: "Create Vision and Strategy: ",
@@ -764,6 +766,8 @@ let LOCALIZE = new LocalizedStrings({
         },
         evaluation: {
           title: "Évaluation",
+          description:
+            "Les mesures que vous prenez et les explications que vous donnez seront prises en compte dans l’évaluation de votre rendement pour chacune des compétences clés en leadership (décrites ci-dessous). Vous serez évalué sur la façon dont les mesures que vous avez prises démontrent les compétences clés en leadership. Les mesures que vous avez prises seront évaluées quant à leur efficacité. Le niveau d’efficacité d’une mesure prise est déterminé par l’effet, positif ou négatif, que cette mesure aura sur la résolution des situations présentées dans les courriels de même que par l’étendue de cet effet. Vos réponses seront également évaluées en fonction de leur contribution à l’atteinte des objectifs organisationnels, lesquels sont présentés dans l’information contextuelle.",
           keyLeadershipCompetenciesSection: {
             title: "Compétences clés en leadership",
             para1Title: "Créer une vision et une stratégie : ",

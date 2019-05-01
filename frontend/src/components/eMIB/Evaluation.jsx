@@ -10,6 +10,9 @@ class Evaluation extends Component {
       <div>
         <div>
           <h2>{LOCALIZE.emibTest.howToPage.evaluation.title}</h2>
+          <p style={styleConstants.instuctions.p}>
+            {LOCALIZE.emibTest.howToPage.evaluation.description}
+          </p>
           <div id="keyLeadershipCompetencies">
             <h3 style={styleConstants.instuctions.h3}>
               {LOCALIZE.emibTest.howToPage.evaluation.keyLeadershipCompetenciesSection.title}
