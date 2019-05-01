@@ -61,7 +61,6 @@ class TestInstructions extends Component {
             <p style={styleConstants.instuctions.p}>
               {LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part1.para1}
             </p>
-            //EDITING
             <h4 style={styleConstants.instuctions.h4}>
               {LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part2.title}
             </h4>
