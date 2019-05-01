@@ -454,7 +454,8 @@ let LOCALIZE = new LocalizedStrings({
       tabs: {
         instructionsTabTitle: "Instructions",
         backgroundTabTitle: "Background",
-        inboxTabTitle: "Inbox"
+        inboxTabTitle: "Inbox",
+        disabled: "You can't access this until you start the test."
       },
 
       //Test Footer
@@ -1003,7 +1004,8 @@ let LOCALIZE = new LocalizedStrings({
       tabs: {
         instructionsTabTitle: "Instructions",
         backgroundTabTitle: "Contexte",
-        inboxTabTitle: "Boîte de réception"
+        inboxTabTitle: "Boîte de réception",
+        disabled: "FR You can't access this until you start the test."
       },
 
       //Test Footer

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import LOCALIZE from "../../text_resources";
 
 const styles = {
   li: { position: "relative", display: "block", float: "left", marginBottom: "-1px" },
@@ -69,7 +70,7 @@ class Tab extends Component {
           <li role="menuitem" style={styles.li}>
             <OverlayTrigger
               placement={"top"}
-              overlay={<Tooltip>You can't access this until you start the test.</Tooltip>}
+              overlay={<Tooltip>{LOCALIZE.emibTest.tabs.disabled}</Tooltip>}
             >
               <span className="d-inline-block">
                 <button
