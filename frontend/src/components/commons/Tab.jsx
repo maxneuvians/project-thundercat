@@ -70,7 +70,11 @@ class Tab extends Component {
           <li role="menuitem" style={styles.li}>
             <OverlayTrigger
               placement={"top"}
-              overlay={<Tooltip>{LOCALIZE.emibTest.tabs.disabled}</Tooltip>}
+              overlay={
+                <Tooltip id={`disabled-tooltip-${this.props.tabName}`}>
+                  {LOCALIZE.emibTest.tabs.disabled}
+                </Tooltip>
+              }
             >
               <span className="d-inline-block">
                 <button
