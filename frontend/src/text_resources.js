@@ -664,7 +664,7 @@ let LOCALIZE = new LocalizedStrings({
         testInstructions: {
           title: "Instructions du test",
           para1:
-            "FR When you start the test, END FR dans un premier temps, lisez l’information contextuelle, laquelle décrit votre poste et l’organisation fictive dans laquelle vous travaillez. Ensuite, passez à la boîte de réception pour lire les courriels que vous avez reçus et prendre des dispositions pour répondre à ces courriels comme si vous étiez un gestionnaire dans cette organisation fictive.",
+            "Dans un premier temps, lisez l’information contextuelle, laquelle décrit votre poste et l’organisation fictive dans laquelle vous travaillez. Ensuite, passez à la boîte de réception pour lire les courriels que vous avez reçus et prendre des dispositions pour répondre à ces courriels comme si vous étiez un gestionnaire dans cette organisation Fictive.",
           step1Section: {
             title: "Étape 1 — Répondre aux courriels",
             description:
