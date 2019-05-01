@@ -214,15 +214,6 @@ let LOCALIZE = new LocalizedStrings({
               "Training Mary in synthesizing information from multiple sources would be beneficial to our team which needs to consolidate information gathered from many sources. Asking Geneviève for her own expectations and challenges will help me better prepare Mary and ensure that the assignment is beneficial to both our teams."
           }
         },
-        testExamples: {
-          title: "//Test examples",
-          para1: "//Example of an email and ways of responding",
-          part1Title: "//Original email",
-          part1Description:
-            "//Two options are provided below to demonstrate different methods of responding to the email. As previously mentioned, you can choose one of the two options presented or a combination of the two. Note that the responses provided were not evaluated for how well they demonstrate the competency targeted in the email. They are presented here only to illustrate how to use each of the two ways of responding.",
-          part2Title: "//Option 1 – Sending an email with Reasons for Action",
-          part3Title: "Option 2 – Adding tasks to task list with Reasons for Action"
-        },
         evaluation: {
           title: "Evaluation",
           description:
@@ -738,17 +729,6 @@ let LOCALIZE = new LocalizedStrings({
             reasonsForAction:
               "Former Mary à la synthèse de l’information provenant de sources multiples serait bénéfique pour notre équipe, lequel a besoin de consolider l’information recueillie auprès de nombreuses sources. Demander à Geneviève ses propres attentes et défis m’aidera à mieux préparer Mary et à m’assurer que la mission est bénéfique pour nos deux équipes."
           }
-        },
-        testExamples: {
-          title: "//FR Test examples",
-          para1: "//Exemple de courriel et façons de répondre",
-          part1Title: "//Courriel original",
-          part1Description:
-            "//Vous trouverez ci-dessous deux façons différentes de répondre au courriel. Comme il est mentionné précédemment, vous pouvez choisir l’une ou l’autre des deux options présentées ou combiner les deux. Veuillez noter que les réponses fournies n’ont pas été évaluées pour déterminer la mesure dans laquelle elles démontrent la compétence ciblée dans le courriel. Elles sont présentées ici uniquement pour illustrer comment utiliser chacune des deux façons de répondre.",
-          part2Title:
-            "Option 1 – Envoyer un courriel renfermant une justification des mesures prises",
-          part3Title:
-            "Option 2 – Ajouter des tâches à la liste de tâches et l’accompagner d’une justification des mesures prises"
         },
         evaluation: {
           title: "Évaluation",
