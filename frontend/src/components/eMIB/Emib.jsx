@@ -9,7 +9,6 @@ import LOCALIZE from "../../text_resources";
 import ContentContainer from "../commons/ContentContainer";
 import TipsOnTest from "./TipsOnTest";
 import TestInstructions from "./TestInstructions";
-import TestExamples from "./TestExamples";
 import Evaluation from "./Evaluation";
 import PopupBox, { BUTTON_TYPE, BUTTON_STATE } from "../commons/PopupBox";
 import SystemMessage, { MESSAGE_TYPE } from "../commons/SystemMessage";
@@ -48,13 +47,8 @@ export const getInstructionContent = () => {
       text: LOCALIZE.emibTest.howToPage.testInstructions.title,
       body: <TestInstructions />
     },
-    {
-      id: 1,
-      text: LOCALIZE.emibTest.howToPage.testExamples.title,
-      body: <TestExamples />
-    },
-    { id: 2, text: LOCALIZE.emibTest.howToPage.tipsOnTest.title, body: <TipsOnTest /> },
-    { id: 3, text: LOCALIZE.emibTest.howToPage.evaluation.title, body: <Evaluation /> }
+    { id: 1, text: LOCALIZE.emibTest.howToPage.tipsOnTest.title, body: <TipsOnTest /> },
+    { id: 2, text: LOCALIZE.emibTest.howToPage.evaluation.title, body: <Evaluation /> }
   ];
 };
 
