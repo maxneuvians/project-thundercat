@@ -12,11 +12,11 @@ class TestInstructions extends Component {
   render() {
     const exampleEmail = {
       id: 0,
-      to: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.to,
-      from: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.from,
-      subject: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.subject,
-      date: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.date,
-      body: LOCALIZE.emibTest.howToPage.testExamples.exampleEmail.body
+      to: LOCALIZE.emibTest.howToPage.testInstructions.exampleEmail.to,
+      from: LOCALIZE.emibTest.howToPage.testInstructions.exampleEmail.from,
+      subject: LOCALIZE.emibTest.howToPage.testInstructions.exampleEmail.subject,
+      date: LOCALIZE.emibTest.howToPage.testInstructions.exampleEmail.date,
+      body: LOCALIZE.emibTest.howToPage.testInstructions.exampleEmail.body
     };
 
     const exampleEmailResponse = {
@@ -24,16 +24,16 @@ class TestInstructions extends Component {
       emailType: EMAIL_TYPE.reply,
       emailTo: [8], // Geneviève Bédard in the address book
       emailCc: [],
-      emailBody: LOCALIZE.emibTest.howToPage.testExamples.exampleEmailResponse.emailBody,
+      emailBody: LOCALIZE.emibTest.howToPage.testInstructions.exampleEmailResponse.emailBody,
       reasonsForAction:
-        LOCALIZE.emibTest.howToPage.testExamples.exampleEmailResponse.reasonsForAction
+        LOCALIZE.emibTest.howToPage.testInstructions.exampleEmailResponse.reasonsForAction
     };
 
     const exampleTaskResponse = {
       actionType: ACTION_TYPE.task,
-      task: LOCALIZE.emibTest.howToPage.testExamples.exampleTaskResponse.task,
+      task: LOCALIZE.emibTest.howToPage.testInstructions.exampleTaskResponse.task,
       reasonsForAction:
-        LOCALIZE.emibTest.howToPage.testExamples.exampleTaskResponse.reasonsForAction
+        LOCALIZE.emibTest.howToPage.testInstructions.exampleTaskResponse.reasonsForAction
     };
 
     return (
