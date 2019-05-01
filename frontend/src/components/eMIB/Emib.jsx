@@ -7,7 +7,6 @@ import EmibTabs from "./EmibTabs";
 import TestFooter from "../commons/TestFooter";
 import LOCALIZE from "../../text_resources";
 import ContentContainer from "../commons/ContentContainer";
-import Overview from "./Overview";
 import TipsOnTest from "./TipsOnTest";
 import TestInstructions from "./TestInstructions";
 import TestExamples from "./TestExamples";
@@ -44,19 +43,18 @@ const styles = {
 //Returns array where each item indicates specifications related to How To Page including the title and the body
 export const getInstructionContent = () => {
   return [
-    { id: 0, text: LOCALIZE.emibTest.howToPage.overview.title, body: <Overview /> },
     {
-      id: 1,
+      id: 0,
       text: LOCALIZE.emibTest.howToPage.testInstructions.title,
       body: <TestInstructions />
     },
     {
-      id: 2,
+      id: 1,
       text: LOCALIZE.emibTest.howToPage.testExamples.title,
       body: <TestExamples />
     },
-    { id: 3, text: LOCALIZE.emibTest.howToPage.tipsOnTest.title, body: <TipsOnTest /> },
-    { id: 4, text: LOCALIZE.emibTest.howToPage.evaluation.title, body: <Evaluation /> }
+    { id: 2, text: LOCALIZE.emibTest.howToPage.tipsOnTest.title, body: <TipsOnTest /> },
+    { id: 3, text: LOCALIZE.emibTest.howToPage.evaluation.title, body: <Evaluation /> }
   ];
 };
 

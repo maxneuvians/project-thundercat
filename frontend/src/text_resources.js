@@ -128,29 +128,6 @@ let LOCALIZE = new LocalizedStrings({
               'The next page will allow you to read detailed instructions on how to complete the test, and see examples of how you may answer questions within the simulation. This will be your chance to explore the test platform before the timed portion of the test begins. When advised to proceed, you may click the "Enter e-MIB Test" button.'
           }
         },
-        overview: {
-          title: "Overview",
-          description:
-            'The electronic managerial Inbox (e-MIB) simulates an email inbox in which you will respond to a series of emails depicting situations typically encountered by managers in the federal public service. These situations will provide you with the opportunity to demonstrate the Key Leadership Competencies, outlined in "Evaluation".',
-          noteSection: {
-            para1: "While completing the e-MIB, you will have access to:",
-            bullet1: "The test instructions (the current document).",
-            bullet2:
-              "The background information describing your job as the manager and the fictitious organization where you work.",
-            bullet3: "A Notepad to serve as scrap paper. The Notepad will not be evaluated."
-          },
-          aboutSection: {
-            title: "About the sample test",
-            para1:
-              "The sample test has been designed to provide you with the opportunity to familiarize yourself with:",
-            bullet1:
-              "the components of the test (e.g., instructions, background information, email inbox, notepad);",
-            bullet2: "the features of the test interface (e.g., menu bars, buttons); and",
-            bullet3: "examples of emails.",
-            para2:
-              "The background information, which includes a description of the organisation, your role, your employees, colleagues and management team, as well as the emails presented are examples. They are not intended to reflect the length nor the level of difficulty of the real test. The background information and the number of emails presented are more extensive in the real test."
-          }
-        },
         tipsOnTest: {
           title: "Tips on taking the e-MIB",
           description:
@@ -669,31 +646,6 @@ let LOCALIZE = new LocalizedStrings({
               "FR You are about to enter a simulated inbox environment. Please wait for the instructions of your test administrator before proceeding.",
             description2:
               'FR The next page will allow you to read detailed instructions on how to complete the test, and see examples of how you may answer questions within the simulation. This will be your chance to explore the test platform before the timed portion of the test begins. When advised to proceed, you may click the "Enter e-MIB Test" button.'
-          }
-        },
-        overview: {
-          title: "Aperçu général",
-          description:
-            "La boîte de réception pour la gestion électronique (BRG-e) simule d’une boîte de courriel dans laquelle vous allez répondre à des courriels décrivant des situations qui sont typiquement vécues par les gestionnaires de la fonction publique. Ces situations vous donneront l’occasion de démontrer les compétences clés en leadership, décrit dans «Évaluation».",
-          noteSection: {
-            para1: "En complétant la BRG-e, vous aurez accès :",
-            bullet1: "Aux directives du test (le présent document).",
-            bullet2:
-              "À de l’information contextuelle décrivant votre rôle en tant que gestionnaire et l’organisation fictive où vous travaillez.",
-            bullet3:
-              "À un bloc-notes pouvant servir de papier brouillon. Le contenu du bloc-notes ne sera pas évalué."
-          },
-          aboutSection: {
-            title: "À propos de l’échantillon de test",
-            para1:
-              "Cet échantillon de test a été conçu pour vous donner l’occasion de vous familiariser avec :",
-            bullet1:
-              "les volets du test (p. ex., instructions, information contextuelle, boîte de réception de courriel, bloc-notes) ;",
-            bullet2:
-              "les fonctionnalités de l’interface du test (p. ex., barres de menu, boutons) ; et",
-            bullet3: "des exemples de courriels.",
-            para2:
-              "L’information contextuelle, laquelle inclut une description de l’organisation, de votre rôle de vos employées, de vos collègues et de l’équipe de gestion ainsi que les courriels auxquels vous devez répondre sont présentés à titre d’exemples. Ils ne sont pas destinés à refléter la longueur ou le niveau de difficulté du test réel. L’information contextuelle et le nombre de courriels présentés sont plus vastes dans le test réel."
           }
         },
         tipsOnTest: {
