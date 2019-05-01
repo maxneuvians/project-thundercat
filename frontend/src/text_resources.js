@@ -147,17 +147,22 @@ let LOCALIZE = new LocalizedStrings({
             "When you start the test, first, read the background information which describes your position and the fictitious organization in which you work. Then proceed to the inbox where you can read the emails you received and take actions to respond to them as though you were a manager within the fictitious organization.",
           step1Section: {
             title: "Step 1 - Responding to emails",
-            descriptionPart1:
+            description:
               "You can respond to the emails you receive in two ways: by sending an email or by adding tasks to your task list. A description of both methods of responding is presented below, followed by examples.",
+            part1: {
+              title: "Example of an email you have received:",
+              para1:
+                "Two options are provided below to demonstrate different methods of responding to the email. As previously mentioned, you can choose one of the two options presented or a combination of the two. Note that the responses provided were not evaluated for how well they demonstrate the competency targeted in the email. They are presented here only to illustrate how to use each of the two ways of responding."
+            },
             part2: {
-              title: "Sending an email",
+              title: "1 Responding with an email response",
               para1:
                 "You can send an email in response to one you received in your inbox. The written responses should reflect how you would respond as a manager.",
               para2:
                 "You can send an email using the following options: reply, reply all, forward, or write a new email. If you choose to write a new email, you will have access to a directory with all of your contacts. You can write as many emails as you like in response to an email you received."
             },
             part3: {
-              title: "Adding a task to the task list",
+              title: "2. Adding a task to the task list",
               para1:
                 "In addition to, or instead of, responding to an email you can add a task to the task list. A task is an action that you intend to take to address a situation presented in the emails. Example tasks could include planning a meeting or asking a colleague for information. You should provide enough information in your task description to ensure it is clear which situation you are addressing. You should also specify what actions you plan to take, and with whom. You can add, delete, or edit tasks on the task list."
             },
@@ -185,8 +190,8 @@ let LOCALIZE = new LocalizedStrings({
           para1: "//Example of an email and ways of responding",
           part1Title: "//Original email",
           part1Description:
-            "Two options are provided below to demonstrate different methods of responding to the email. As previously mentioned, you can choose one of the two options presented or a combination of the two. Note that the responses provided were not evaluated for how well they demonstrate the competency targeted in the email. They are presented here only to illustrate how to use each of the two ways of responding.",
-          part2Title: "Option 1 – Sending an email with Reasons for Action",
+            "//Two options are provided below to demonstrate different methods of responding to the email. As previously mentioned, you can choose one of the two options presented or a combination of the two. Note that the responses provided were not evaluated for how well they demonstrate the competency targeted in the email. They are presented here only to illustrate how to use each of the two ways of responding.",
+          part2Title: "//Option 1 – Sending an email with Reasons for Action",
           part3Title: "Option 2 – Adding tasks to task list with Reasons for Action",
           exampleEmail: {
             to: "Claude Huard (Manager, Quality Assurance Team)",
@@ -669,15 +674,20 @@ let LOCALIZE = new LocalizedStrings({
             title: "Étape 1 — Répondre aux courriels",
             description:
               "Vous pouvez répondre aux courriels que vous avez reçus de deux façons : en envoyant un courriel ou en ajoutant une tâche à votre liste de tâches. Les deux méthodes de réponse sont décrites ci-dessous, suivies d’exemples.",
+            part1: {
+              title: "FR Example of an email you have received:",
+              para1:
+                "Vous trouverez ci-dessous deux façons différentes de répondre au courriel. Comme il est mentionné précédemment, vous pouvez choisir l’une ou l’autre des deux options présentées ou combiner les deux. Veuillez noter que les réponses fournies n’ont pas été évaluées pour déterminer la mesure dans laquelle elles démontrent la compétence ciblée dans le courriel. Elles sont présentées ici uniquement pour illustrer comment utiliser chacune des deux façons de répondre."
+            },
             part2: {
-              title: "Envoyer un courriel",
+              title: "1. Envoyer un courriel",
               para1:
                 "Vous pouvez envoyer un courriel pour répondre à celui que vous avez reçu dans votre boîte de réception. Vos réponses écrites devraient représenter ce que vous feriez en tant que gestionnaire.",
               para2:
                 "Vous pouvez envoyer un courriel en utilisant les fonctions suivantes : répondre, répondre à tous, transférer ou rédiger un nouveau courriel. Si vous choisissez de rédiger un nouveau courriel, vous aurez accès à un répertoire de noms et d’adresses de courriel. Vous pouvez écrire autant de courriels que vous le souhaitez pour répondre à un courriel que vous avez reçu."
             },
             part3: {
-              title: "Ajouter une tâche à la liste de tâches",
+              title: "2. Ajouter une tâche à la liste de tâches",
               para1:
                 "En plus de répondre à un courriel, ou au lieu d’y répondre, vous pouvez ajouter des tâches à la liste de tâches. Une tâche représente une mesure que vous comptez prendre pour gérer une situation présentée dans les courriels. Voici des exemples de tâches : planifier une rencontre ou communiquer avec un collègue afin d’obtenir de l’information. Assurez-vous de fournir suffisamment d’information dans votre description de la tâche pour que nous sachions à quelle situation vous répondez. Vous devez également préciser quelles mesures vous envisagez prendre et qui devra participer à cette tâche. Vous pouvez ajouter, supprimer ou modifier vos tâches dans la liste des tâches."
             },
@@ -701,11 +711,11 @@ let LOCALIZE = new LocalizedStrings({
           }
         },
         testExamples: {
-          title: "FR Test examples",
-          para1: "Exemple de courriel et façons de répondre",
-          part1Title: "Courriel original",
+          title: "//FR Test examples",
+          para1: "//Exemple de courriel et façons de répondre",
+          part1Title: "//Courriel original",
           part1Description:
-            "Vous trouverez ci-dessous deux façons différentes de répondre au courriel. Comme il est mentionné précédemment, vous pouvez choisir l’une ou l’autre des deux options présentées ou combiner les deux. Veuillez noter que les réponses fournies n’ont pas été évaluées pour déterminer la mesure dans laquelle elles démontrent la compétence ciblée dans le courriel. Elles sont présentées ici uniquement pour illustrer comment utiliser chacune des deux façons de répondre.",
+            "//Vous trouverez ci-dessous deux façons différentes de répondre au courriel. Comme il est mentionné précédemment, vous pouvez choisir l’une ou l’autre des deux options présentées ou combiner les deux. Veuillez noter que les réponses fournies n’ont pas été évaluées pour déterminer la mesure dans laquelle elles démontrent la compétence ciblée dans le courriel. Elles sont présentées ici uniquement pour illustrer comment utiliser chacune des deux façons de répondre.",
           part2Title:
             "Option 1 – Envoyer un courriel renfermant une justification des mesures prises",
           part3Title:

@@ -53,12 +53,15 @@ class TestInstructions extends Component {
               {LOCALIZE.emibTest.howToPage.testInstructions.step1Section.description}
             </p>
             <h4 style={styleConstants.instuctions.h4}>
-              ===TODO MOVE=== Example of an email you have recieved: ===TODO MOVE=== FR Example of
-              an email you have received:
+              {LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part1.title}
             </h4>
             <div style={styleConstants.instuctions.disabledExampleComponentNoPadding}>
               <Email email={exampleEmail} disabled={true} />
             </div>
+            <p style={styleConstants.instuctions.p}>
+              {LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part1.para1}
+            </p>
+            //EDITING
             <h4 style={styleConstants.instuctions.h4}>
               {LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part2.title}
             </h4>
@@ -68,12 +71,28 @@ class TestInstructions extends Component {
             <p style={styleConstants.instuctions.p}>
               {LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part2.para2}
             </p>
+            <div style={styleConstants.instuctions.disabledExampleComponent}>
+              <ActionViewEmail
+                action={exampleEmailResponse}
+                actionId={1}
+                email={exampleEmail}
+                disabled={true}
+              />
+            </div>
             <h4 style={styleConstants.instuctions.h4}>
               {LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part3.title}
             </h4>
             <p style={styleConstants.instuctions.p}>
               {LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part3.para1}
             </p>
+            <div style={styleConstants.instuctions.disabledExampleComponent}>
+              <ActionViewTask
+                action={exampleTaskResponse}
+                actionId={1}
+                email={exampleEmail}
+                disabled={true}
+              />
+            </div>
             <h4 style={styleConstants.instuctions.h4}>
               {LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part4.title}
             </h4>
