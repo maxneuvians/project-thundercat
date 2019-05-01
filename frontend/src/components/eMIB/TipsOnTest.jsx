@@ -17,8 +17,6 @@ class TipsOnTest extends Component {
             <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part1.bullet1}</li>
             <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part1.bullet2}</li>
             <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part1.bullet3}</li>
-            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part1.bullet4}</li>
-            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part1.bullet5}</li>
           </ul>
         </div>
         <h4 style={styleConstants.instuctions.h4}>
@@ -27,13 +25,9 @@ class TipsOnTest extends Component {
         <div>
           <ul>
             <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part2.bullet1}</li>
-            <li>
-              {LOCALIZE.emibTest.howToPage.tipsOnTest.part2.bullet2}
-              {LOCALIZE.emibTest.howToPage.tipsOnTest.part2.bullet2Link}.
-            </li>
+            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part2.bullet2}</li>
             <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part2.bullet3}</li>
             <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part2.bullet4}</li>
-            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part2.bullet5}</li>
           </ul>
         </div>
       </div>
