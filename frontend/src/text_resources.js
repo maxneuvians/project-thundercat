@@ -128,63 +128,54 @@ let LOCALIZE = new LocalizedStrings({
               'The next page will allow you to read detailed instructions on how to complete the test, and see examples of how you may answer questions within the simulation. This will be your chance to explore the test platform before the timed portion of the test begins. When advised to proceed, you may click the "Enter e-MIB Test" button.'
           }
         },
-        overview: {
-          title: "Overview",
-          description:
-            'The electronic managerial Inbox (e-MIB) simulates an email inbox in which you will respond to a series of emails depicting situations typically encountered by managers in the federal public service. These situations will provide you with the opportunity to demonstrate the Key Leadership Competencies, outlined in "Evaluation".',
-          noteSection: {
-            para1: "While completing the e-MIB, you will have access to:",
-            bullet1: "The test instructions (the current document).",
-            bullet2:
-              "The background information describing your job as the manager and the fictitious organization where you work.",
-            bullet3: "A Notepad to serve as scrap paper. The Notepad will not be evaluated."
-          },
-          aboutSection: {
-            title: "About the sample test",
-            para1:
-              "The sample test has been designed to provide you with the opportunity to familiarize yourself with:",
-            bullet1:
-              "the components of the test (e.g., instructions, background information, email inbox, notepad);",
-            bullet2: "the features of the test interface (e.g., menu bars, buttons); and",
-            bullet3: "examples of emails.",
-            para2:
-              "The background information, which includes a description of the organisation, your role, your employees, colleagues and management team, as well as the emails presented are examples. They are not intended to reflect the length nor the level of difficulty of the real test. The background information and the number of emails presented are more extensive in the real test."
-          }
-        },
         tipsOnTest: {
           title: "Tips on taking the e-MIB",
-          description:
-            'The e-MIB presents you with situations that will give you the opportunity to demonstrate the Key Leadership Competencies, outlined in "Evaluation". Here are some tips that will help you provide assessors with the information they need to evaluate your performance on those competencies:',
-          bullet1:
-            "Answer all the questions asked in the emails you receive. This will ensure that you have used all the opportunities designed to allow you to demonstrate the competencies.",
-          bullet2:
-            "Provide initial thoughts and recommendations supported by your rationale where appropriate. You can then note other information you would need to reach a final decision.",
-          bullet3:
-            "Use only the information provided in the emails and the background information. Do not make any inferences based on the culture of your own organization. Avoid making assumptions that are not reasonably supported by either the background information or the emails.",
-          bullet4: "You can answer the emails in any order you want.",
-          bullet5: "You are responsible for managing your own time."
+          part1: {
+            description:
+              "The e-MIB presents you with situations that will give you the opportunity to demonstrate the Key Leadership Competencies. Here are some tips that will help you provide assessors with the information they need to evaluate your performance on those competencies:",
+            bullet1:
+              "Answer all the questions asked in the emails you receive. This will ensure that you have used all the opportunities designed to allow you to demonstrate the competencies.",
+            bullet2:
+              "Provide initial thoughts and recommendations supported by your rationale where appropriate. You can then note other information you would need to reach a final decision.",
+            bullet3:
+              "Use only the information provided in the emails and the background information. Do not make any inferences based on the culture of your own organization. Avoid making assumptions that are not reasonably supported by either the background information or the emails."
+          },
+          part2: {
+            title: "Other Important Notes",
+            bullet1:
+              "You will be scored on the responses contained in your emails, task list and Reasons for Action. Information left in your Notepad will not be evaluated.",
+            bullet2:
+              "You will not be scored on your writing. No points will be deducted for spelling, grammar, punctuation errors or for incomplete sentences. However, your writing will need to be clear enough to ensure that the assessors understand which situation you are responding to and your main points.",
+            bullet3: "You can answer the emails in any order you want.",
+            bullet4: "You are responsible for managing your own time."
+          }
         },
         testInstructions: {
           title: "Test instructions",
           para1:
-            "First, read the background information which describes your position and the fictitious organization in which you work. Then proceed to the inbox where you can read the emails you received and take actions to respond to them as though you were a manager within the fictitious organization.",
+            "When you start the test, first, read the background information which describes your position and the fictitious organization in which you work. Then proceed to the inbox where you can read the emails you received and take actions to respond to them as though you were a manager within the fictitious organization.",
           step1Section: {
             title: "Step 1 - Responding to emails",
             description:
               "You can respond to the emails you receive in two ways: by sending an email or by adding tasks to your task list. A description of both methods of responding is presented below, followed by examples.",
             part1: {
-              title: "Sending an email",
+              title: "Example of an email you have received:",
+              para1:
+                "Two options are provided below to demonstrate different methods of responding to the email. As previously mentioned, you can choose one of the two options presented or a combination of the two. Note that the responses provided were not evaluated for how well they demonstrate the competency targeted in the email. They are presented here only to illustrate how to use each of the two methods of responding."
+            },
+            part2: {
+              title: "Responding with an email response",
               para1:
                 "You can send an email in response to one you received in your inbox. The written responses should reflect how you would respond as a manager.",
               para2:
                 "You can send an email using the following options: reply, reply all, forward, or write a new email. If you choose to write a new email, you will have access to a directory with all of your contacts. You can write as many emails as you like in response to an email you received."
             },
-            part2: {
+            part3: {
               title: "Adding a task to the task list",
               para1:
-                "In addition to, or instead of, responding to an email you can add a task to the task list. A task is an action that you intend to take to address a situation presented in the emails. Example tasks could include planning a meeting or asking a colleague for information. You should provide enough information in your task description to ensure it is clear which situation you are addressing. You should also specify what actions you plan to take, and with whom. You can add, delete, or edit tasks on the task list."
+                "In addition to, or instead of, responding to an email you can add a task to the task list. A task is an action that you intend to take to address a situation presented in the emails. Example tasks could include planning a meeting or asking a colleague for information. You should provide enough information in your task description to ensure it is clear which situation(s) you are addressing. You should also specify what action(s) you plan to take, and with whom. You can add, delete, or edit tasks on the task list."
             },
-            part3: {
+            part4: {
               title: "How to choose a method of responding",
               para1:
                 "There are no right or wrong ways to respond. When responding to an email, you can:",
@@ -201,16 +192,7 @@ let LOCALIZE = new LocalizedStrings({
             title: "Step 2 - Adding Reasons for Action (optional)",
             description:
               "After sending an email or adding a task, you will be able to provide a justification in the “Reasons for Action” section. Here, you can explain why you took a specific action in response to a situation if you feel the need to provide additional information. Filling out the Reasons for Action section is optional. Note that you may decide to add Reasons for Action when responding to some emails and not others. This also applies for tasks in the task list. In addition, if you add Reasons for Action, you may choose to clarify only certain actions while others may not require additional explanations."
-          }
-        },
-        testExamples: {
-          title: "Test examples",
-          para1: "Example of an email and ways of responding",
-          part1Title: "Original email",
-          part1Description:
-            "Two options are provided below to demonstrate different methods of responding to the email. As previously mentioned, you can choose one of the two options presented or a combination of the two. Note that the responses provided were not evaluated for how well they demonstrate the competency targeted in the email. They are presented here only to illustrate how to use each of the two ways of responding.",
-          part2Title: "Option 1 – Sending an email with Reasons for Action",
-          part3Title: "Option 2 – Adding tasks to task list with Reasons for Action",
+          },
           exampleEmail: {
             to: "Claude Huard (Manager, Quality Assurance Team)",
             from: "Geneviève Bédard (Director, Research and Innovations Unit)",
@@ -227,24 +209,15 @@ let LOCALIZE = new LocalizedStrings({
           },
           exampleTaskResponse: {
             task:
-              "Reply to Geneviève’s email:\nSuggest training Mary in synthesizing information from multiple sources so that she can broaden her skill set\nAsk what her expectations and challenges are on her team’s side so I can consider all factors in determining how her team could benefit from Mary’s experience in providing training.\nInform that I’m gathering more information from Mary and will respond with suggestions by the end of the week\nSchedule a meeting with Mary to discuss her assignment objectives and ensure she feels engaged and knows what is expected of her.\nRefer to Mary’s past and current performance agreements to ensure that what I propose is in line with her learning plan.",
+              "-Reply to Geneviève’s email:\n-Suggest training Mary in synthesizing information from multiple sources so that she can broaden her skill set\n-Ask what her expectations + challenges are so I can consider all factors in determining how her team could benefit from Mary's experience in providing training\n-Inform that I’m gathering more info from Mary and will respond with suggestions by the end of the week\n-Schedule a meeting with Mary to discuss her assignment objectives + ensure she feels engaged and knows what is expected of her.\n-Refer to Mary’s past and current performance agreements to ensure that what I propose is in line with her learning plan.",
             reasonsForAction:
               "Training Mary in synthesizing information from multiple sources would be beneficial to our team which needs to consolidate information gathered from many sources. Asking Geneviève for her own expectations and challenges will help me better prepare Mary and ensure that the assignment is beneficial to both our teams."
           }
         },
         evaluation: {
           title: "Evaluation",
-          bullet1:
-            "You will be scored on the responses contained in your emails, task list and Reasons for Action. Information left in your Notepad will not be evaluated.",
-          bullet2:
-            "Both the actions you take and the explanations you give will be considered when evaluating your performance on each of the Key Leadership Competencies (described below). You will be assessed on the extent to which your actions demonstrate the ",
-          bullet2Link: "Key Leadership Competencies",
-          bullet3:
-            "Your actions will be rated on effectiveness. Effectiveness is measured by whether your actions would have a positive or a negative impact in resolving the situations presented, and how widespread that impact would be.",
-          bullet4:
-            "Your responses will also be evaluated for how well they meet the organizational objectives presented in the background information.",
-          bullet5:
-            "You will not be scored on your writing. No points will be deducted for spelling, grammar, punctuation errors or for incomplete sentences. However, your writing will need to be clear enough to ensure that the assessors understand which situation you are responding to and your main points.",
+          description:
+            "Both the actions you take and the explanations you give will be considered when evaluating your performance on each of the Key Leadership Competencies (described below). You will be assessed on the extent to which your actions demonstrate the Key Leadership Competencies. Your actions will be rated on effectiveness. Effectiveness is measured by whether your actions would have a positive or a negative impact in resolving the situations presented, and how widespread that impact would be. Your responses will also be evaluated for how well they meet the organizational objectives presented in the background information.",
           keyLeadershipCompetenciesSection: {
             title: "Key Leadership Competencies",
             para1Title: "Create Vision and Strategy: ",
@@ -671,65 +644,54 @@ let LOCALIZE = new LocalizedStrings({
               'FR The next page will allow you to read detailed instructions on how to complete the test, and see examples of how you may answer questions within the simulation. This will be your chance to explore the test platform before the timed portion of the test begins. When advised to proceed, you may click the "Enter e-MIB Test" button.'
           }
         },
-        overview: {
-          title: "Aperçu général",
-          description:
-            "La boîte de réception pour la gestion électronique (BRG-e) simule d’une boîte de courriel dans laquelle vous allez répondre à des courriels décrivant des situations qui sont typiquement vécues par les gestionnaires de la fonction publique. Ces situations vous donneront l’occasion de démontrer les compétences clés en leadership, décrit dans «Évaluation».",
-          noteSection: {
-            para1: "En complétant la BRG-e, vous aurez accès :",
-            bullet1: "Aux directives du test (le présent document).",
-            bullet2:
-              "À de l’information contextuelle décrivant votre rôle en tant que gestionnaire et l’organisation fictive où vous travaillez.",
-            bullet3:
-              "À un bloc-notes pouvant servir de papier brouillon. Le contenu du bloc-notes ne sera pas évalué."
-          },
-          aboutSection: {
-            title: "À propos de l’échantillon de test",
-            para1:
-              "Cet échantillon de test a été conçu pour vous donner l’occasion de vous familiariser avec :",
-            bullet1:
-              "les volets du test (p. ex., instructions, information contextuelle, boîte de réception de courriel, bloc-notes) ;",
-            bullet2:
-              "les fonctionnalités de l’interface du test (p. ex., barres de menu, boutons) ; et",
-            bullet3: "des exemples de courriels.",
-            para2:
-              "L’information contextuelle, laquelle inclut une description de l’organisation, de votre rôle de vos employées, de vos collègues et de l’équipe de gestion ainsi que les courriels auxquels vous devez répondre sont présentés à titre d’exemples. Ils ne sont pas destinés à refléter la longueur ou le niveau de difficulté du test réel. L’information contextuelle et le nombre de courriels présentés sont plus vastes dans le test réel."
-          }
-        },
         tipsOnTest: {
           title: "Conseils pour répondre à la BRG-e",
-          description:
-            "La BRG-e vous présente des situations qui vous donneront l’occasion de démontrer les compétences clés en matière de leadership, décrit dans «Évaluation». Voici quelques conseils qui vous aideront à fournir aux évaluateurs l’information dont ils ont besoin pour évaluer votre rendement par rapport à ces compétences :",
-          bullet1:
-            "Répondez à toutes les questions posées dans les courriels que vous recevez. Vous profiterez ainsi de toutes les occasions de démontrer les compétences recherchées.",
-          bullet2:
-            "Présentez vos recommandations et réflexions préliminaires accompagnées d’une justification, s’il y a lieu. Vous pouvez ensuite noter les autres renseignements dont vous auriez besoin pour en arriver à une décision.",
-          bullet3:
-            "Utilisez uniquement l’information fournie dans les courriels et les informations contextuelles. Ne tirez aucune conclusion fondée sur la culture de votre propre organisation. Évitez de faire des suppositions qui ne sont pas raisonnablement corroborées par l’information contextuelle ou les courriels.",
-          bullet4: "Vous pouvez répondre aux courriels dans l’ordre que vous désirez.",
-          bullet5: "Vous êtes responsable de la gestion de votre temps."
+          part1: {
+            description:
+              "La BRG-e vous présente des situations qui vous donneront l’occasion de démontrer les compétences clés en matière de leadership. Voici quelques conseils qui vous aideront à fournir aux évaluateurs l’information dont ils ont besoin pour évaluer votre rendement par rapport à ces compétences :",
+            bullet1:
+              "Répondez à toutes les questions posées dans les courriels que vous recevez. Vous profiterez ainsi de toutes les occasions de démontrer les compétences recherchées.",
+            bullet2:
+              "Présentez vos recommandations et réflexions préliminaires accompagnées d’une justification, s’il y a lieu. Vous pouvez ensuite noter les autres renseignements dont vous auriez besoin pour en arriver à une décision.",
+            bullet3:
+              "Utilisez uniquement l’information fournie dans les courriels et les informations contextuelles. Ne tirez aucune conclusion fondée sur la culture de votre propre organisation. Évitez de faire des suppositions qui ne sont pas raisonnablement corroborées par l’information contextuelle ou les courriels."
+          },
+          part2: {
+            title: "FR Other important notes",
+            bullet1:
+              "Vous serez évalués en fonction des réponses aux courriels, des tâches et des justifications des mesures prises. Le contenu du bloc-notes ne sera pas évalué.",
+            bullet2:
+              "Vous ne serez pas évalué sur votre rédaction. Aucun point ne sera enlevé pour les fautes d’orthographe, de grammaire, de ponctuation ou pour les phrases incomplètes. Votre rédaction devra toutefois être suffisamment claire pour que les évaluateurs comprennent la situation que vous traitez et vos principaux arguments.",
+            bullet3: "Vous pouvez répondre aux courriels dans l’ordre que vous désirez.",
+            bullet4: "Vous êtes responsable de la gestion de votre temps."
+          }
         },
         testInstructions: {
           title: "Instructions du test",
           para1:
-            "Dans un premier temps, lisez l’information contextuelle, laquelle décrit votre poste et l’organisation fictive dans laquelle vous travaillez. Ensuite, passez à la boîte de réception pour lire les courriels que vous avez reçus et prendre des dispositions pour répondre à ces courriels comme si vous étiez un gestionnaire dans cette organisation fictive.",
+            "Dans un premier temps, lisez l’information contextuelle, laquelle décrit votre poste et l’organisation fictive dans laquelle vous travaillez. Ensuite, passez à la boîte de réception pour lire les courriels que vous avez reçus et prendre des dispositions pour répondre à ces courriels comme si vous étiez un gestionnaire dans cette organisation Fictive.",
           step1Section: {
             title: "Étape 1 — Répondre aux courriels",
             description:
               "Vous pouvez répondre aux courriels que vous avez reçus de deux façons : en envoyant un courriel ou en ajoutant une tâche à votre liste de tâches. Les deux méthodes de réponse sont décrites ci-dessous, suivies d’exemples.",
             part1: {
+              title: "FR Example of an email you have received:",
+              para1:
+                "Vous trouverez ci-dessous deux façons différentes de répondre au courriel. Comme il est mentionné précédemment, vous pouvez choisir l’une ou l’autre des deux options présentées ou combiner les deux. Veuillez noter que les réponses fournies n’ont pas été évaluées pour déterminer la mesure dans laquelle elles démontrent la compétence ciblée dans le courriel. Elles sont présentées ici uniquement pour illustrer comment utiliser chacune des deux façons de répondre."
+            },
+            part2: {
               title: "Envoyer un courriel",
               para1:
                 "Vous pouvez envoyer un courriel pour répondre à celui que vous avez reçu dans votre boîte de réception. Vos réponses écrites devraient représenter ce que vous feriez en tant que gestionnaire.",
               para2:
                 "Vous pouvez envoyer un courriel en utilisant les fonctions suivantes : répondre, répondre à tous, transférer ou rédiger un nouveau courriel. Si vous choisissez de rédiger un nouveau courriel, vous aurez accès à un répertoire de noms et d’adresses de courriel. Vous pouvez écrire autant de courriels que vous le souhaitez pour répondre à un courriel que vous avez reçu."
             },
-            part2: {
+            part3: {
               title: "Ajouter une tâche à la liste de tâches",
               para1:
                 "En plus de répondre à un courriel, ou au lieu d’y répondre, vous pouvez ajouter des tâches à la liste de tâches. Une tâche représente une mesure que vous comptez prendre pour gérer une situation présentée dans les courriels. Voici des exemples de tâches : planifier une rencontre ou communiquer avec un collègue afin d’obtenir de l’information. Assurez-vous de fournir suffisamment d’information dans votre description de la tâche pour que nous sachions à quelle situation vous répondez. Vous devez également préciser quelles mesures vous envisagez prendre et qui devra participer à cette tâche. Vous pouvez ajouter, supprimer ou modifier vos tâches dans la liste des tâches."
             },
-            part3: {
+            part4: {
               title: "Comment choisir une méthode de réponse",
               para1:
                 "Il n’y a pas de bonne ou de mauvaise façon de répondre. En répondant à un courriel, vous pouvez :",
@@ -746,18 +708,7 @@ let LOCALIZE = new LocalizedStrings({
             title: "Étape 2 — Ajouter une justification des mesures prises (facultatif)",
             description:
               "Après avoir envoyé un courriel ou ajouté une tâche, vous avez la possibilité d’expliquer votre raisonnement dans la section « Justification des mesures prises ». Vous pouvez expliquer dans cette section pourquoi vous avez pris une ou des mesures pour gérer la situation présentée dans le courriel en question. Remplir la section « Justification des mesures prises » est facultatif. Notez que vous pouvez décider d’ajouter une « Justification des mesures prises » lorsque vous répondez à certains courriels, mais pas pour d’autres. Ceci est également vrai pour les tâches dans la liste de tâches. De plus, si vous ajoutez une « Justification des mesures prises », vous pouvez choisir de justifier certaines des mesures prises tandis que d’autres ne nécessitent pas d’explications supplémentaires."
-          }
-        },
-        testExamples: {
-          title: "FR Test examples",
-          para1: "Exemple de courriel et façons de répondre",
-          part1Title: "Courriel original",
-          part1Description:
-            "Vous trouverez ci-dessous deux façons différentes de répondre au courriel. Comme il est mentionné précédemment, vous pouvez choisir l’une ou l’autre des deux options présentées ou combiner les deux. Veuillez noter que les réponses fournies n’ont pas été évaluées pour déterminer la mesure dans laquelle elles démontrent la compétence ciblée dans le courriel. Elles sont présentées ici uniquement pour illustrer comment utiliser chacune des deux façons de répondre.",
-          part2Title:
-            "Option 1 – Envoyer un courriel renfermant une justification des mesures prises",
-          part3Title:
-            "Option 2 – Ajouter des tâches à la liste de tâches et l’accompagner d’une justification des mesures prises",
+          },
           exampleEmail: {
             to: "Claude Huard (gestionnaire, Équipe de l’assurance de la qualité)",
             from: "Geneviève Bédard (directrice, Unité de recherche et innovations)",
@@ -774,24 +725,15 @@ let LOCALIZE = new LocalizedStrings({
           },
           exampleTaskResponse: {
             task:
-              "Répondre au courriel de Geneviève :\nproposer de former Mary à la synthèse de l’information provenant de sources multiples afin qu’elle puisse élargir ses compétences ;\ndemander quels sont ses attentes et ses défis du côté de son équipe afin que je puisse tenir compte de tous les facteurs pour déterminer comment son équipe pourrait bénéficier de l’expérience de Mary dans la prestation de formation ;\nl’informer que je travaille à recueillir plus d’information auprès de Mary, et que je lui ferai part de mes suggestions d’ici la fin de la semaine.\nPlanifier une rencontre avec Mary pour discuter de ses objectifs d’affectation et s’assurer qu’elle se sent engagée et qu’elle sait ce qu’on attend d’elle.\nConsulter les ententes de rendement passées et actuelles de Mary pour vérifier que ce que je propose est conforme à son plan d’apprentissage.",
+              "- Répondre au courriel de Geneviève :\n- proposer de former Mary à la synthèse de l’information provenant de sources multiples afin qu’elle puisse élargir ses compétences ;\n- demander quels sont ses attentes et ses défis du côté de son équipe afin que je puisse tenir compte de tous les facteurs pour déterminer comment son équipe pourrait bénéficier de l’expérience de Mary dans la prestation de formation ;\n- l’informer que je travaille à recueillir plus d’information auprès de Mary, et que je lui ferai part de mes suggestions d’ici la fin de la semaine.\n- Planifier une rencontre avec Mary pour discuter de ses objectifs d’affectation et s’assurer qu’elle se sent engagée et qu’elle sait ce qu’on attend d’elle.\n- Consulter les ententes de rendement passées et actuelles de Mary pour vérifier que ce que je propose est conforme à son pland’apprentissage.",
             reasonsForAction:
               "Former Mary à la synthèse de l’information provenant de sources multiples serait bénéfique pour notre équipe, lequel a besoin de consolider l’information recueillie auprès de nombreuses sources. Demander à Geneviève ses propres attentes et défis m’aidera à mieux préparer Mary et à m’assurer que la mission est bénéfique pour nos deux équipes."
           }
         },
         evaluation: {
           title: "Évaluation",
-          bullet1:
-            "Vous serez évalués en fonction des réponses aux courriels, des tâches et des justifications des mesures prises. Le contenu du bloc-notes ne sera pas évalué.",
-          bullet2:
-            "Les mesures que vous prenez et les explications que vous donnez seront prises en compte dans l’évaluation de votre rendement pour chacune des compétences clés en leadership (décrites ci-dessous). Vous serez évalué sur la façon dont les mesures que vous avez prises démontrent les ",
-          bullet2Link: "compétences clés en leadership",
-          bullet3:
-            "Les mesures que vous avez prises seront évaluées quant à leur efficacité. Le niveau d’efficacité d’une mesure prise est déterminé par l’effet, positif ou négatif, que cette mesure aura sur la résolution des situations présentées dans les courriels de même que par l’étendue de cet effet.",
-          bullet4:
-            "Vos réponses seront également évaluées en fonction de leur contribution à l’atteinte des objectifs organisationnels, lesquels sont présentés dans l’information contextuelle.",
-          bullet5:
-            "Vous ne serez pas évalué sur votre rédaction. Aucun point ne sera enlevé pour les fautes d’orthographe, de grammaire, de ponctuation ou pour les phrases incomplètes. Votre rédaction devra toutefois être suffisamment claire pour que les évaluateurs comprennent la situation que vous traitez et vos principaux arguments.",
+          description:
+            "Les mesures que vous prenez et les explications que vous donnez seront prises en compte dans l’évaluation de votre rendement pour chacune des compétences clés en leadership (décrites ci-dessous). Vous serez évalué sur la façon dont les mesures que vous avez prises démontrent les compétences clés en leadership. Les mesures que vous avez prises seront évaluées quant à leur efficacité. Le niveau d’efficacité d’une mesure prise est déterminé par l’effet, positif ou négatif, que cette mesure aura sur la résolution des situations présentées dans les courriels de même que par l’étendue de cet effet. Vos réponses seront également évaluées en fonction de leur contribution à l’atteinte des objectifs organisationnels, lesquels sont présentés dans l’information contextuelle.",
           keyLeadershipCompetenciesSection: {
             title: "Compétences clés en leadership",
             para1Title: "Créer une vision et une stratégie : ",
