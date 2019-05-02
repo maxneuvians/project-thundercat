@@ -14,27 +14,22 @@ const styles = {
 class LoginButton extends Component {
   static propTypes = {
     // Props from Redux
-    setLoginState: PropTypes.func
-  };
-
-  state = {
-    loggedIn: false
+    setLoginState: PropTypes.func,
+    loggedIn: PropTypes.bool
   };
 
   handleLogin = () => {
-    this.setState({ loggedIn: true });
     this.props.setLoginState(true);
   };
 
   handleLogout = () => {
-    this.setState({ loggedIn: false });
     this.props.setLoginState(false);
   };
 
   render() {
     return (
       <div>
-        {!this.state.loggedIn && (
+        {!this.props.loggedIn && (
           <button
             type="button"
             className="btn btn-primary"
@@ -44,7 +39,7 @@ class LoginButton extends Component {
             {LOCALIZE.commons.login}
           </button>
         )}
-        {this.state.loggedIn && (
+        {this.props.loggedIn && (
           <button
             type="button"
             className="btn btn-primary"
@@ -59,6 +54,12 @@ class LoginButton extends Component {
   }
 }
 
+const mapStateToProps = (state, ownProps) => {
+  return {
+    loggedIn: state.login.loggedIn
+  };
+};
+
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
@@ -68,6 +69,6 @@ const mapDispatchToProps = dispatch =>
   );
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(LoginButton);
