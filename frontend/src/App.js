@@ -8,7 +8,6 @@ import { Helmet } from "react-helmet";
 import Status from "./Status";
 import Home from "./Home";
 import Dashboard from "./Dashboard";
-import Prototype from "./Prototype";
 import Emib from "./components/eMIB/Emib";
 import LoginButton from "./components/commons/LoginButton";
 import Translation from "./components/commons/Translation";
@@ -19,7 +18,6 @@ import { Navbar, Nav } from "react-bootstrap";
 const PATH = {
   home: "/",
   dashboard: "/dashboard",
-  prototype: "/prototype",
   status: "/status",
   emibSampleTest: "/emib-sample"
 };
@@ -44,34 +42,32 @@ class App extends Component {
           <div>
             {!isTestActive && (
               <Navbar bg="light" variant="light">
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/">
                   <img alt="" src={canada_logo} width="30" className="d-inline-block align-top" />
                   {"Public Service Commission"}
                 </Navbar.Brand>
                 <Nav className="mr-auto">
                   <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/prototype">Prototype</Nav.Link>
+                  <Nav.Link href="/emib-sample">Sample Test</Nav.Link>
                   <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                   <Nav.Link href="/status">Status</Nav.Link>
                 </Nav>
                 <LoginButton />
-                <Translation />
+                <Translation variant="secondary" />
               </Navbar>
             )}
             {isTestActive && (
               <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">
+                <Navbar.Brand>
                   <img alt="" src={canada_logo} width="30" className="d-inline-block align-top" />
                   {"Public Service Commission"}
                 </Navbar.Brand>
-                <Nav className="mr-auto">
-                  <Translation />
-                </Nav>
+                <Nav className="mr-auto" />
+                <Translation variant="outline-light" />
               </Navbar>
             )}
             <Route exact path={PATH.home} component={Home} />
             <Route path={PATH.dashboard} component={Dashboard} />
-            <Route path={PATH.prototype} component={Prototype} />
             <Route path={PATH.status} component={Status} />
             <Route path={PATH.emibSampleTest} component={Emib} />
           </div>
