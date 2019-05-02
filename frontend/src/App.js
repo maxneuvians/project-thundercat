@@ -47,10 +47,10 @@ class App extends Component {
                   {"Public Service Commission"}
                 </Navbar.Brand>
                 <Nav className="mr-auto">
-                  <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/emib-sample">Sample Test</Nav.Link>
-                  <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-                  <Nav.Link href="/status">Status</Nav.Link>
+                  <Nav.Link href="/">{LOCALIZE.mainTabs.homeTabTitle}</Nav.Link>
+                  <Nav.Link href="/emib-sample">{LOCALIZE.mainTabs.sampleTest}</Nav.Link>
+                  <Nav.Link href="/dashboard">{LOCALIZE.mainTabs.dashboardTabTitle}</Nav.Link>
+                  <Nav.Link href="/status">{LOCALIZE.mainTabs.statusTabTitle}</Nav.Link>
                 </Nav>
                 <LoginButton />
                 <Translation variant="secondary" />

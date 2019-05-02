@@ -6,7 +6,7 @@ let LOCALIZE = new LocalizedStrings({
     mainTabs: {
       homeTabTitle: "Home",
       dashboardTabTitle: "Dashboard",
-      prototypeTabTitle: "Prototype",
+      sampleTest: "Sample eMIB",
       statusTabTitle: "Status"
     },
 
