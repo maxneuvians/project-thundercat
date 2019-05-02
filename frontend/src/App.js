@@ -9,6 +9,7 @@ import Status from "./Status";
 import Home from "./Home";
 import Prototype from "./Prototype";
 import Emib from "./components/eMIB/Emib";
+import LoginButton from "./components/commons/LoginButton";
 import Translation from "./components/commons/Translation";
 import LOCALIZE from "./text_resources";
 import psc_header from "./images/psc_header.png";
@@ -34,6 +35,12 @@ const styles = {
     position: "fixed",
     top: 20,
     left: 20
+  },
+  loginButton: {
+    position: "fixed",
+    right: 115,
+    top: 15,
+    left: "auto"
   },
   languageButton: {
     position: "fixed",
@@ -133,6 +140,9 @@ class App extends Component {
                     </ul>
                   </div>
                 )}
+                <div aria-label="login-button" className="fixed-top" style={styles.loginButton}>
+                  <LoginButton />
+                </div>
                 <div
                   aria-label={LOCALIZE.ariaLabel.languageToggleBtn}
                   className="fixed-top"

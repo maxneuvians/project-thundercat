@@ -512,7 +512,9 @@ let LOCALIZE = new LocalizedStrings({
       },
       cancel: "Cancel",
       cancelResponse: "Cancel response",
-      close: "Close"
+      close: "Close",
+      login: "Login",
+      logout: "Logout"
     }
   },
 
@@ -1032,7 +1034,9 @@ let LOCALIZE = new LocalizedStrings({
       },
       cancel: "Annuler",
       cancelResponse: "Annuler la réponse",
-      close: "Fermer"
+      close: "Fermer",
+      login: "Se connecter",
+      logout: "Se déconnecter"
     }
   }
 });
