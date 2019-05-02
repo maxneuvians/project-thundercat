@@ -1,5 +1,9 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import LOCALIZE from "../../text_resources";
+import { setLoginState } from "../../modules/LoginRedux";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
 const styles = {
   button: {
@@ -8,22 +12,24 @@ const styles = {
 };
 
 class LoginButton extends Component {
-  state = {
-    loggedIn: false
+  static propTypes = {
+    // Props from Redux
+    setLoginState: PropTypes.func,
+    loggedIn: PropTypes.bool
   };
 
   handleLogin = () => {
-    this.setState({ loggedIn: true });
+    this.props.setLoginState(true);
   };
 
   handleLogout = () => {
-    this.setState({ loggedIn: false });
+    this.props.setLoginState(false);
   };
 
   render() {
     return (
       <div>
-        {!this.state.loggedIn && (
+        {!this.props.loggedIn && (
           <button
             type="button"
             className="btn btn-primary"
@@ -33,7 +39,7 @@ class LoginButton extends Component {
             {LOCALIZE.commons.login}
           </button>
         )}
-        {this.state.loggedIn && (
+        {this.props.loggedIn && (
           <button
             type="button"
             className="btn btn-primary"
@@ -48,4 +54,21 @@ class LoginButton extends Component {
   }
 }
 
-export default LoginButton;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    loggedIn: state.login.loggedIn
+  };
+};
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      setLoginState
+    },
+    dispatch
+  );
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginButton);

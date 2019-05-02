@@ -76,6 +76,7 @@ const isStatusActive = (match, location) => {
 class App extends Component {
   static propTypes = {
     // Props from Redux
+    loggedIn: PropTypes.bool,
     currentLanguage: PropTypes.string,
     isTestActive: PropTypes.bool.isRequired
   };
@@ -166,6 +167,7 @@ export { PATH };
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    loggedIn: state.login.loggedIn,
     currentLanguage: state.localize.language,
     isTestActive: state.testStatus.isTestActive
   };
