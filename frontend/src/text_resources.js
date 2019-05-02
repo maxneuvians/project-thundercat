@@ -533,7 +533,7 @@ let LOCALIZE = new LocalizedStrings({
     mainTabs: {
       homeTabTitle: "Accueil",
       dashboardTabTitle: "Tableau de bord",
-      sampleTest: "eMIB Sample",
+      sampleTest: "FR eMIB Sample",
       statusTabTitle: "Statut",
       psc: "Commission de la fonction publique du Canada"
     },
