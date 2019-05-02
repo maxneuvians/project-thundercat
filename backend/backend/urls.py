@@ -19,11 +19,11 @@ from rest_framework import routers
 from backend.views import views, database_check_view, user_view
 
 router = routers.DefaultRouter()
-router.register(r'database_check', database_check_view.DatabaseViewSet)
-router.register(r'view_users', user_view.UserViewSet)
+router.register(r"database_check", database_check_view.DatabaseViewSet)
+router.register(r"view_users", user_view.UserViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path(r'api/', views.index, name='index'),
-    path('', include(router.urls)),
+    path("admin/", admin.site.urls),
+    path(r"api/", views.index, name="index"),
+    path("", include(router.urls)),
 ]
