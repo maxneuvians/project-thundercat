@@ -44,12 +44,12 @@ class App extends Component {
               <Navbar bg="light" variant="light">
                 <Navbar.Brand href="/">
                   <img alt="" src={canada_logo} width="30" className="d-inline-block align-top" />
-                  {"Public Service Commission"}
+                  {LOCALIZE.mainTabs.psc}
                 </Navbar.Brand>
                 <Nav className="mr-auto">
                   <Nav.Link href="/">{LOCALIZE.mainTabs.homeTabTitle}</Nav.Link>
-                  <Nav.Link href="/emib-sample">{LOCALIZE.mainTabs.sampleTest}</Nav.Link>
                   <Nav.Link href="/dashboard">{LOCALIZE.mainTabs.dashboardTabTitle}</Nav.Link>
+                  <Nav.Link href="/emib-sample">{LOCALIZE.mainTabs.sampleTest}</Nav.Link>
                   <Nav.Link href="/status">{LOCALIZE.mainTabs.statusTabTitle}</Nav.Link>
                 </Nav>
                 <LoginButton />
