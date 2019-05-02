@@ -13,7 +13,8 @@ import Emib from "./components/eMIB/Emib";
 import LoginButton from "./components/commons/LoginButton";
 import Translation from "./components/commons/Translation";
 import LOCALIZE from "./text_resources";
-import psc_header from "./images/psc_header.png";
+import canada_logo from "./images/canada_logo.png";
+import { Navbar, Nav } from "react-bootstrap";
 
 const PATH = {
   home: "/",
@@ -92,6 +93,7 @@ class App extends Component {
 
   render() {
     const hideNavBar = this.props.isTestActive;
+    const { isTestActive } = this.props;
     return (
       <div>
         <Helmet>
@@ -100,78 +102,33 @@ class App extends Component {
         </Helmet>
         <Router>
           <div>
-            <header role="heading" aria-level="1">
-              <nav
-                aria-label={LOCALIZE.ariaLabel.mainMenu}
-                style={hideNavBar ? styles.navBarHidden : styles.navBarFull}
-                className="fixed-top bg-white navbar navbar-expand"
-                role="dialog"
-              >
-                <div style={styles.pscImage} id="psc-image">
-                  <img style={{ width: 390 }} src={psc_header} alt={LOCALIZE.commons.psc} />
-                </div>
-                {!hideNavBar && (
-                  <div style={styles.tabs} className="fixed-top nav nav-tabs">
-                    <ul
-                      id="navigation-tabs"
-                      className="mx-auto nav-site nav nav-tabs nav-item"
-                      role="menubar"
-                    >
-                      <li className="bg-white" role="menuitem">
-                        <NavLink
-                          aria-current="page"
-                          isActive={isHomeActive}
-                          className="nav-link"
-                          to={PATH.home}
-                        >
-                          {LOCALIZE.mainTabs.homeTabTitle}
-                        </NavLink>
-                      </li>
-                      <li className="bg-white" role="menuitem">
-                        <NavLink
-                          aria-current="page"
-                          isActive={isDashboardActive}
-                          className="nav-link"
-                          to={PATH.dashboard}
-                        >
-                          {LOCALIZE.mainTabs.dashboardTabTitle}
-                        </NavLink>
-                      </li>
-                      <li className="bg-white" role="menuitem">
-                        <NavLink
-                          aria-current="page"
-                          isActive={isPrototypeActive}
-                          className="nav-link"
-                          to={PATH.prototype}
-                        >
-                          {LOCALIZE.mainTabs.prototypeTabTitle}
-                        </NavLink>
-                      </li>
-                      <li className="bg-white" role="menuitem">
-                        <NavLink
-                          aria-current="page"
-                          isActive={isStatusActive}
-                          className="nav-link"
-                          to={PATH.status}
-                        >
-                          {LOCALIZE.mainTabs.statusTabTitle}
-                        </NavLink>
-                      </li>
-                    </ul>
-                  </div>
-                )}
-                <div aria-label="login-button" className="fixed-top" style={styles.loginButton}>
-                  <LoginButton />
-                </div>
-                <div
-                  aria-label={LOCALIZE.ariaLabel.languageToggleBtn}
-                  className="fixed-top"
-                  style={styles.languageButton}
-                >
+            {!isTestActive && (
+              <Navbar bg="light" variant="light">
+                <Navbar.Brand href="#home">
+                  <img alt="" src={canada_logo} width="30" className="d-inline-block align-top" />
+                  {"Public Service Commission"}
+                </Navbar.Brand>
+                <Nav className="mr-auto">
+                  <Nav.Link href="/">Home</Nav.Link>
+                  <Nav.Link href="/prototype">Prototype</Nav.Link>
+                  <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+                  <Nav.Link href="/status">Status</Nav.Link>
+                </Nav>
+                <LoginButton />
+                <Translation />
+              </Navbar>
+            )}
+            {isTestActive && (
+              <Navbar bg="dark" variant="dark">
+                <Navbar.Brand href="#home">
+                  <img alt="" src={canada_logo} width="30" className="d-inline-block align-top" />
+                  {"Public Service Commission"}
+                </Navbar.Brand>
+                <Nav className="mr-auto">
                   <Translation />
-                </div>
-              </nav>
-            </header>
+                </Nav>
+              </Navbar>
+            )}
             <Route exact path={PATH.home} component={Home} />
             <Route path={PATH.dashboard} component={Dashboard} />
             <Route path={PATH.prototype} component={Prototype} />
