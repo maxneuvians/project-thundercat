@@ -4,6 +4,7 @@ import { UnconnectedEmib as Emib, PAGES } from "../../../components/eMIB/Emib";
 import EmibTabs from "../../../components/eMIB/EmibTabs";
 import Confirmation from "../../../components/eMIB/Confirmation";
 import LOCALIZE from "../../../text_resources";
+import Background from "../../../components/eMIB/Background";
 
 it("renders pre-test page", () => {
   const wrapper = mount(<Emib activateTest={() => {}} deactivateTest={() => {}} />);
@@ -22,8 +23,7 @@ it("renders pre-test page when state changed", () => {
 it("renders tabs", () => {
   const wrapper = shallow(<Emib activateTest={() => {}} deactivateTest={() => {}} />);
   wrapper.setState({ curPage: PAGES.emibTabs });
-  const backgroundComponent = <EmibTabs />;
-  expect(wrapper.contains(backgroundComponent)).toEqual(true);
+  expect(wrapper.find(EmibTabs).length).toEqual(1);
 });
 
 it("renders confirm page", () => {

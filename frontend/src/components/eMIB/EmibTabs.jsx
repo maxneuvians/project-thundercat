@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Background from "./Background";
 import Inbox from "./Inbox";
 import LOCALIZE from "../../text_resources";
@@ -32,6 +33,14 @@ const styles = {
 };
 
 class EmibTabs extends Component {
+  static propTypes = {
+    initialTab: PropTypes.number.isRequired,
+    /* used to disable specific tabs
+    disabledTabsArray={[1, 2]} will disable the second and third tabs
+    disabledTabsArray={[]} will keep all the tabs enabled */
+    disabledTabsArray: PropTypes.array
+  };
+
   render() {
     const TABS = [
       {
@@ -57,9 +66,10 @@ class EmibTabs extends Component {
         </Helmet>
         <TabNavigation
           tabSpecs={TABS}
-          currentTab={0}
+          initialTab={this.props.initialTab}
           menuName={LOCALIZE.ariaLabel.tabMenu}
           style={styles.tabNavigation}
+          disabledTabsArray={this.props.disabledTabsArray}
         />
         <Notepad />
       </div>

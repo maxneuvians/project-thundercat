@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import LOCALIZE from "../../text_resources";
 
 const styles = {
   li: { position: "relative", display: "block", float: "left", marginBottom: "-1px" },
@@ -33,48 +35,58 @@ class Tab extends Component {
     tabName: PropTypes.string.isRequired,
     selected: PropTypes.bool.isRequired,
     // use this prop to disable the tab
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired
   };
 
   render() {
     return (
       <span>
-        {!this.props.disabled && (
-          <span>
-            {!this.props.selected && (
-              <li role="menuitem" style={styles.li}>
-                <button
-                  id="unit-test-unselected-tab-button"
-                  style={styles.button}
-                  className="side-navigation-button"
-                >
-                  {this.props.tabName}
-                </button>
-              </li>
-            )}
-            {this.props.selected && (
-              <li role="menuitem" style={styles.li} aria-current="page">
-                <button
-                  id="unit-test-selected-tab-button"
-                  style={{ ...styles.button, ...styles.active }}
-                  className="side-navigation-button"
-                >
-                  {this.props.tabName}
-                </button>
-              </li>
-            )}
-          </span>
-        )}
-        {this.props.disabled && (
+        {!this.props.disabled && !this.props.selected && (
           <li role="menuitem" style={styles.li}>
             <button
-              id="unit-test-disabled-tab-button"
-              disabled={true}
-              style={{ ...styles.button, ...styles.disabledButton }}
+              id="unit-test-unselected-tab-button"
+              style={styles.button}
               className="side-navigation-button"
+              onClick={this.props.onClick}
             >
               {this.props.tabName}
             </button>
+          </li>
+        )}
+        {!this.props.disabled && this.props.selected && (
+          <li role="menuitem" style={styles.li} aria-current="page">
+            <button
+              id="unit-test-selected-tab-button"
+              style={{ ...styles.button, ...styles.active }}
+              className="side-navigation-button"
+              onClick={this.props.onClick}
+            >
+              {this.props.tabName}
+            </button>
+          </li>
+        )}
+        {this.props.disabled && (
+          <li role="menuitem" style={styles.li}>
+            <OverlayTrigger
+              placement={"top"}
+              overlay={
+                <Tooltip id={`disabled-tooltip-${this.props.tabName}`}>
+                  {LOCALIZE.emibTest.tabs.disabled}
+                </Tooltip>
+              }
+            >
+              <span className="d-inline-block">
+                <button
+                  id="unit-test-disabled-tab-button"
+                  disabled={true}
+                  style={{ ...styles.button, ...styles.disabledButton, pointerEvents: "none" }}
+                  className="side-navigation-button"
+                >
+                  {this.props.tabName}
+                </button>
+              </span>
+            </OverlayTrigger>
           </li>
         )}
       </span>

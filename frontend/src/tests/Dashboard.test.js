@@ -6,7 +6,7 @@ import LOCALIZE from "../text_resources";
 describe("renders title and description if logged out", () => {
   it("renders title", () => {
     const wrapper = shallow(<UnconnectedDashboard />);
-    const title = <h2>{LOCALIZE.dashboard.title}</h2>;
+    const title = <h1>{LOCALIZE.dashboard.title}</h1>;
     expect(wrapper.containsMatchingElement(title)).toEqual(true);
   });
 

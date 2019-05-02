@@ -5,12 +5,6 @@ import LOCALIZE from "./text_resources";
 import ContentContainer from "./components/commons/ContentContainer";
 import { Helmet } from "react-helmet";
 
-const styles = {
-  title: {
-    color: "black"
-  }
-};
-
 class Dashboard extends Component {
   static propTypes = {
     // Props from Redux
@@ -23,9 +17,7 @@ class Dashboard extends Component {
         <Helmet>
           <title>{LOCALIZE.titles.dashboard}</title>
         </Helmet>
-        <h2 className="green-divider" style={styles.title}>
-          {LOCALIZE.dashboard.title}
-        </h2>
+        <h1 className="green-divider">{LOCALIZE.dashboard.title}</h1>
         {!this.props.loggedIn && <p>{LOCALIZE.dashboard.descriptionIfLoggedOut}</p>}
         {this.props.loggedIn && <p>{LOCALIZE.dashboard.descriptionIfLoggedIn}</p>}
       </ContentContainer>

@@ -7,15 +7,14 @@ import EmibTabs from "./EmibTabs";
 import TestFooter from "../commons/TestFooter";
 import LOCALIZE from "../../text_resources";
 import ContentContainer from "../commons/ContentContainer";
-import Overview from "./Overview";
 import TipsOnTest from "./TipsOnTest";
 import TestInstructions from "./TestInstructions";
-import TestExamples from "./TestExamples";
 import Evaluation from "./Evaluation";
 import PopupBox, { BUTTON_TYPE, BUTTON_STATE } from "../commons/PopupBox";
 import SystemMessage, { MESSAGE_TYPE } from "../commons/SystemMessage";
 import { activateTest, deactivateTest } from "../../modules/TestStatusRedux";
 import ConfirmEnterEmib from "./ConfirmEnterEmib";
+import ConfirmStartTest from "../commons/ConfirmStartTest";
 import EmibIntroductionPage from "./EmibIntroductionPage";
 import { Helmet } from "react-helmet";
 
@@ -43,19 +42,13 @@ const styles = {
 //Returns array where each item indicates specifications related to How To Page including the title and the body
 export const getInstructionContent = () => {
   return [
-    { id: 0, text: LOCALIZE.emibTest.howToPage.overview.title, body: <Overview /> },
     {
-      id: 1,
+      id: 0,
       text: LOCALIZE.emibTest.howToPage.testInstructions.title,
       body: <TestInstructions />
     },
-    {
-      id: 2,
-      text: LOCALIZE.emibTest.howToPage.testExamples.title,
-      body: <TestExamples />
-    },
-    { id: 3, text: LOCALIZE.emibTest.howToPage.tipsOnTest.title, body: <TipsOnTest /> },
-    { id: 4, text: LOCALIZE.emibTest.howToPage.evaluation.title, body: <Evaluation /> }
+    { id: 1, text: LOCALIZE.emibTest.howToPage.tipsOnTest.title, body: <TipsOnTest /> },
+    { id: 2, text: LOCALIZE.emibTest.howToPage.evaluation.title, body: <Evaluation /> }
   ];
 };
 
@@ -76,9 +69,13 @@ class Emib extends Component {
 
   state = {
     curPage: PAGES.preTest,
+    initialTab: 0,
+    disabledTabs: [1, 2],
+    showEnterEmibPopup: false,
+    testIsStarted: false,
+    showStartTestPopup: false,
     showSubmitPopup: false,
     showQuitPopup: false,
-    showEnterEmibPopup: false,
     quitConditions: quitConditions()
   };
 
@@ -101,12 +98,24 @@ class Emib extends Component {
     }
   };
 
-  showEnterEmibPopup = () => {
+  openEnterEmibPopup = () => {
     this.setState({ showEnterEmibPopup: true });
   };
 
   closeEnterEmibPopup = () => {
     this.setState({ showEnterEmibPopup: false });
+  };
+
+  handleStartTest = () => {
+    this.setState({ testIsStarted: true, disabledTabs: [], initialTab: 1 });
+  };
+
+  openStartTestPopup = () => {
+    this.setState({ showStartTestPopup: true });
+  };
+
+  closeStartTestPopup = () => {
+    this.setState({ showStartTestPopup: false });
   };
 
   openSubmitPopup = () => {
@@ -147,11 +156,18 @@ class Emib extends Component {
         <Helmet>
           <title>{LOCALIZE.titles.eMIB}</title>
         </Helmet>
-        <div>{this.state.curPage === PAGES.emibTabs && <EmibTabs />}</div>
+        <div>
+          {this.state.curPage === PAGES.emibTabs && (
+            <EmibTabs
+              initialTab={this.state.initialTab}
+              disabledTabsArray={this.state.disabledTabs}
+            />
+          )}
+        </div>
         {this.state.curPage !== PAGES.emibTabs && (
           <ContentContainer hideBanner={this.state.curPage === PAGES.emibTabs}>
             {this.state.curPage === PAGES.preTest && (
-              <EmibIntroductionPage showEnterEmibPopup={this.showEnterEmibPopup} />
+              <EmibIntroductionPage showEnterEmibPopup={this.openEnterEmibPopup} />
             )}
 
             {this.state.curPage === PAGES.confirm && <Confirmation />}
@@ -159,16 +175,23 @@ class Emib extends Component {
         )}
         {this.state.curPage === PAGES.emibTabs && (
           <TestFooter
+            startTest={this.openStartTestPopup}
             submitTest={this.openSubmitPopup}
             quitTest={this.openQuitPopup}
-            testIsStarted={true}
+            testIsStarted={this.state.testIsStarted}
           />
         )}
 
         <ConfirmEnterEmib
           showDialog={this.state.showEnterEmibPopup}
           handleClose={this.closeEnterEmibPopup}
-          startTest={this.changePage}
+          enterEmib={this.changePage}
+        />
+
+        <ConfirmStartTest
+          showDialog={this.state.showStartTestPopup}
+          handleClose={this.closeStartTestPopup}
+          startTest={this.handleStartTest}
         />
 
         <PopupBox

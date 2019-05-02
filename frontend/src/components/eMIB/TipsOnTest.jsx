@@ -11,14 +11,23 @@ class TipsOnTest extends Component {
         <div>
           <h2>{LOCALIZE.emibTest.howToPage.tipsOnTest.title}</h2>
           <p style={styleConstants.instuctions.p}>
-            {LOCALIZE.emibTest.howToPage.tipsOnTest.description}
+            {LOCALIZE.emibTest.howToPage.tipsOnTest.part1.description}
           </p>
           <ul>
-            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.bullet1}</li>
-            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.bullet2}</li>
-            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.bullet3}</li>
-            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.bullet4}</li>
-            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.bullet5}</li>
+            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part1.bullet1}</li>
+            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part1.bullet2}</li>
+            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part1.bullet3}</li>
+          </ul>
+        </div>
+        <h4 style={styleConstants.instuctions.h4}>
+          {LOCALIZE.emibTest.howToPage.tipsOnTest.part2.title}
+        </h4>
+        <div>
+          <ul>
+            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part2.bullet1}</li>
+            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part2.bullet2}</li>
+            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part2.bullet3}</li>
+            <li>{LOCALIZE.emibTest.howToPage.tipsOnTest.part2.bullet4}</li>
           </ul>
         </div>
       </div>

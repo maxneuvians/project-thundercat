@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import LOCALIZE from "../../text_resources";
 import PopupBox, { BUTTON_TYPE } from "../commons/PopupBox";
 
-// TODO (fnormamd): Display this popup box on the new Start Test action (future PR)
 class ConfirmStartTest extends Component {
   static propTypes = {
     showDialog: PropTypes.bool.isRequired,
