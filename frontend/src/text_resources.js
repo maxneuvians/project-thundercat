@@ -6,8 +6,9 @@ let LOCALIZE = new LocalizedStrings({
     mainTabs: {
       homeTabTitle: "Home",
       dashboardTabTitle: "Dashboard",
-      prototypeTabTitle: "Prototype",
-      statusTabTitle: "Status"
+      sampleTest: "Sample eMIB",
+      statusTabTitle: "Status",
+      psc: "Public Service Commission"
     },
 
     //HTML Page Titles
@@ -532,8 +533,9 @@ let LOCALIZE = new LocalizedStrings({
     mainTabs: {
       homeTabTitle: "Accueil",
       dashboardTabTitle: "Tableau de bord",
-      prototypeTabTitle: "Prototype",
-      statusTabTitle: "Statut"
+      sampleTest: "FR eMIB Sample",
+      statusTabTitle: "Statut",
+      psc: "Commission de la fonction publique du Canada"
     },
 
     //HTML Page Titles
