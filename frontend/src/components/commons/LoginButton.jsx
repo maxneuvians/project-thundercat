@@ -7,7 +7,8 @@ import { connect } from "react-redux";
 
 const styles = {
   button: {
-    width: 136
+    width: 136,
+    marginRight: 15
   }
 };
 
