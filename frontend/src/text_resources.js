@@ -5,6 +5,7 @@ let LOCALIZE = new LocalizedStrings({
     //Main Tabs
     mainTabs: {
       homeTabTitle: "Home",
+      dashboardTabTitle: "Dashboard",
       prototypeTabTitle: "Prototype",
       statusTabTitle: "Status"
     },
@@ -15,6 +16,7 @@ let LOCALIZE = new LocalizedStrings({
       eMIB: "eMIB Assessment",
       simulation: "eMIB Assessment Simulation",
       status: "CAT System Status",
+      dashboard: "CAT Dashboard",
       prototypes: "CAT Prototypes",
       home: "CAT Home"
     },
@@ -74,6 +76,13 @@ let LOCALIZE = new LocalizedStrings({
       welcomeMsg: "Welcome to the Compotency Assessment Tool.",
       description:
         "Code for Canada and PSC are working on this tool to help assess managerial canadiates for the federal public service. It is in the alpha phase which means it is currently going through product testing and is subject to change."
+    },
+
+    //Dashboard Page
+    dashboard: {
+      title: "Welcome to your dashboard",
+      descriptionIfLoggedOut: "You can access this after logging in.",
+      descriptionIfLoggedIn: "You can now view your dashboard."
     },
 
     //Prototype Page
@@ -522,6 +531,7 @@ let LOCALIZE = new LocalizedStrings({
     //Main Tabs
     mainTabs: {
       homeTabTitle: "Accueil",
+      dashboardTabTitle: "Tableau de bord",
       prototypeTabTitle: "Prototype",
       statusTabTitle: "Statut"
     },
@@ -532,6 +542,7 @@ let LOCALIZE = new LocalizedStrings({
       eMIB: "FR eMIB Assessment",
       simulation: "FR eMIB Assessment Simulation",
       status: "FR CAT System Status",
+      dashboard: "FR CAT Dashboard",
       prototypes: "FR CAT Prototypes",
       home: "FR CAT Home"
     },
@@ -592,6 +603,13 @@ let LOCALIZE = new LocalizedStrings({
       welcomeMsg: "Bienvenue dans l'outil d'évaluation des compétences.",
       description:
         "FR Code for Canada and PSC are working on this tool to help assess managerial canadiates for the federal public service. It is in the alpha phase which means it is currently going through product testing and is subject to change."
+    },
+
+    //Dashboard Page
+    dashboard: {
+      title: "FR Welcome to your dashboard",
+      descriptionIfLoggedOut: "FR You can access this after logging in.",
+      descriptionIfLoggedIn: "FR You can now view your dashboard."
     },
 
     //Prototype Page
