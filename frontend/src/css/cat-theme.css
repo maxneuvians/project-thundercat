@@ -124,16 +124,23 @@ p {
   border: 1px solid #cdcdcd;
 }
 
+.nav-tabs .nav-link {
+  text-decoration: underline;
+}
+
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
   border-color: transparent transparent #00565e;
   border-bottom-width: 4px;
+  text-decoration: none;
 }
 .nav-tabs .nav-link.disabled {
   color: #00565e;
+  text-decoration: none;
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
+  text-decoration: none;
   border-bottom-width: 4px;
   color: #00565e;
   border-color: transparent transparent #00565e;
