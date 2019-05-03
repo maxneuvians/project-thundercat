@@ -13,7 +13,8 @@ const styles = {
     paddingRight: 20,
     paddingTop: 10,
     paddingBottom: 10,
-    height: BODY_HEIGHT
+    height: BODY_HEIGHT,
+    textAlign: "left"
   },
   nav: {
     marginTop: 10,

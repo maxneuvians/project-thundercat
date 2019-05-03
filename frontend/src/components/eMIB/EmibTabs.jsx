@@ -9,6 +9,7 @@ import Notepad from "../commons/Notepad";
 import "../../css/emib-tabs.css";
 import { HEADER_HEIGHT, FOOTER_HEIGHT } from "./constants";
 import { Helmet } from "react-helmet";
+import { Tabs, Tab } from "react-bootstrap";
 
 const TAB_HEIGHT = `calc(100vh - ${HEADER_HEIGHT + FOOTER_HEIGHT}px)`;
 
@@ -16,19 +17,10 @@ const styles = {
   container: {
     maxWidth: 1400,
     minWidth: 900,
-    margin: "0px auto",
     paddingTop: 20,
-    display: "flex",
     paddingRight: 20,
-    paddingLeft: 20
-  },
-  tabNavigation: {
-    height: TAB_HEIGHT,
-    backgroundColor: "white",
-    borderWidth: "0 1px",
-    borderStyle: "solid",
-    borderColor: "#00565e",
-    borderTopColor: "white"
+    paddingLeft: 20,
+    margin: "0px auto"
   }
 };
 
@@ -64,13 +56,17 @@ class EmibTabs extends Component {
         <Helmet>
           <title>{LOCALIZE.titles.simulation}</title>
         </Helmet>
-        <TabNavigation
-          tabSpecs={TABS}
-          initialTab={this.props.initialTab}
-          menuName={LOCALIZE.ariaLabel.tabMenu}
-          style={styles.tabNavigation}
-          disabledTabsArray={this.props.disabledTabsArray}
-        />
+        <Tabs defaultActiveKey="instructions" id="emib-tabs">
+          <Tab eventKey="instructions" title="Instructions">
+            <InTestInstructions />
+          </Tab>
+          <Tab eventKey="background" title="Background">
+            <Background />
+          </Tab>
+          <Tab eventKey="inbox" title="Inbox">
+            <Inbox />
+          </Tab>
+        </Tabs>
         <Notepad />
       </div>
     );
