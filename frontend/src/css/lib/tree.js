@@ -24,8 +24,6 @@ window.addEventListener("load", function() {
         label = treeitem.innerHTML;
       }
 
-      document.getElementById("last_action").value = label.trim();
-
       event.stopPropagation();
       event.preventDefault();
     });
