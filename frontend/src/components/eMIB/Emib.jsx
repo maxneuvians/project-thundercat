@@ -7,9 +7,6 @@ import EmibTabs from "./EmibTabs";
 import TestFooter from "../commons/TestFooter";
 import LOCALIZE from "../../text_resources";
 import ContentContainer from "../commons/ContentContainer";
-import TipsOnTest from "./TipsOnTest";
-import TestInstructions from "./TestInstructions";
-import Evaluation from "./Evaluation";
 import PopupBox, { BUTTON_TYPE, BUTTON_STATE } from "../commons/PopupBox";
 import SystemMessage, { MESSAGE_TYPE } from "../commons/SystemMessage";
 import { activateTest, deactivateTest } from "../../modules/TestStatusRedux";
@@ -37,19 +34,6 @@ const styles = {
     textAlign: "center",
     marginTop: 32
   }
-};
-
-//Returns array where each item indicates specifications related to How To Page including the title and the body
-export const getInstructionContent = () => {
-  return [
-    {
-      id: 0,
-      text: LOCALIZE.emibTest.howToPage.testInstructions.title,
-      body: <TestInstructions />
-    },
-    { id: 1, text: LOCALIZE.emibTest.howToPage.tipsOnTest.title, body: <TipsOnTest /> },
-    { id: 2, text: LOCALIZE.emibTest.howToPage.evaluation.title, body: <Evaluation /> }
-  ];
 };
 
 const quitConditions = () => {
