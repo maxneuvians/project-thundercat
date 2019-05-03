@@ -53,7 +53,7 @@ class Emib extends Component {
 
   state = {
     curPage: PAGES.preTest,
-    initialTab: 0,
+    currentTab: "instructions",
     disabledTabs: [1, 2],
     showEnterEmibPopup: false,
     testIsStarted: false,
@@ -82,6 +82,7 @@ class Emib extends Component {
     }
   };
 
+  // Pre-test functions
   openEnterEmibPopup = () => {
     this.setState({ showEnterEmibPopup: true });
   };
@@ -90,8 +91,13 @@ class Emib extends Component {
     this.setState({ showEnterEmibPopup: false });
   };
 
+  // Within eMIB Tabs functions
   handleStartTest = () => {
-    this.setState({ testIsStarted: true, disabledTabs: [], initialTab: 1 });
+    this.setState({ testIsStarted: true, disabledTabs: [], currentTab: "background" });
+  };
+
+  switchTab = tabId => {
+    this.setState({ currentTab: tabId });
   };
 
   openStartTestPopup = () => {
@@ -102,6 +108,7 @@ class Emib extends Component {
     this.setState({ showStartTestPopup: false });
   };
 
+  // Leaving the eMIB functions
   openSubmitPopup = () => {
     this.setState({ showSubmitPopup: true });
   };
@@ -140,16 +147,15 @@ class Emib extends Component {
         <Helmet>
           <title>{LOCALIZE.titles.eMIB}</title>
         </Helmet>
-        <div>
-          {this.state.curPage === PAGES.emibTabs && (
-            <EmibTabs
-              initialTab={this.state.initialTab}
-              disabledTabsArray={this.state.disabledTabs}
-            />
-          )}
-        </div>
+        {this.state.curPage === PAGES.emibTabs && (
+          <EmibTabs
+            currentTab={this.state.currentTab}
+            switchTab={this.switchTab}
+            disabledTabsArray={this.state.disabledTabs}
+          />
+        )}
         {this.state.curPage !== PAGES.emibTabs && (
-          <ContentContainer hideBanner={this.state.curPage === PAGES.emibTabs}>
+          <ContentContainer hideBanner={false}>
             {this.state.curPage === PAGES.preTest && (
               <EmibIntroductionPage showEnterEmibPopup={this.openEnterEmibPopup} />
             )}
