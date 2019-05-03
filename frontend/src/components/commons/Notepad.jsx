@@ -9,8 +9,8 @@ const SECTION_HEIGHT = `calc(100vh - ${HEADER_HEIGHT + FOOTER_HEIGHT + 53}px)`;
 
 const styles = {
   windowPadding: {
-    paddingTop: 43,
-    order: 2
+    paddingTop: 38,
+    maxWidth: 300
   },
   h4: {
     textAlign: "left",
@@ -40,7 +40,6 @@ const styles = {
     borderWidth: "1px 1px 0 3px",
     borderStyle: "solid",
     borderColor: "#00565e",
-    borderRadius: "0 5px 0 0",
     width: "100%",
     height: NOTEPAD_HEIGHT
   },
@@ -67,8 +66,7 @@ const styles = {
     border: "none",
     backgroundColor: "#00565e",
     height: NOTEPAD_HEIGHT,
-    cursor: "pointer",
-    borderRadius: "0 5px 0 0"
+    cursor: "pointer"
   },
   openNotepadBtnIcon: {
     position: "absolute",

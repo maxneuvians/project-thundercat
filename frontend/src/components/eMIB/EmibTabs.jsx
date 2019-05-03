@@ -9,9 +9,7 @@ import Notepad from "../commons/Notepad";
 import "../../css/emib-tabs.css";
 import { HEADER_HEIGHT, FOOTER_HEIGHT } from "./constants";
 import { Helmet } from "react-helmet";
-import { Tabs, Tab } from "react-bootstrap";
-
-const TAB_HEIGHT = `calc(100vh - ${HEADER_HEIGHT + FOOTER_HEIGHT}px)`;
+import { Tabs, Tab, Container, Row, Col } from "react-bootstrap";
 
 const styles = {
   container: {
@@ -56,18 +54,26 @@ class EmibTabs extends Component {
         <Helmet>
           <title>{LOCALIZE.titles.simulation}</title>
         </Helmet>
-        <Tabs defaultActiveKey="instructions" id="emib-tabs">
-          <Tab eventKey="instructions" title="Instructions">
-            <InTestInstructions />
-          </Tab>
-          <Tab eventKey="background" title="Background">
-            <Background />
-          </Tab>
-          <Tab eventKey="inbox" title="Inbox">
-            <Inbox />
-          </Tab>
-        </Tabs>
-        <Notepad />
+        <Container>
+          <Row>
+            <Col>
+              <Tabs defaultActiveKey="instructions" id="emib-tabs">
+                <Tab eventKey="instructions" title="Instructions">
+                  <InTestInstructions />
+                </Tab>
+                <Tab eventKey="background" title="Background">
+                  <Background />
+                </Tab>
+                <Tab eventKey="inbox" title="Inbox">
+                  <Inbox />
+                </Tab>
+              </Tabs>
+            </Col>
+            <Col md="auto">
+              <Notepad />
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
