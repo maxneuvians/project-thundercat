@@ -3,11 +3,8 @@ import PropTypes from "prop-types";
 import Background from "./Background";
 import Inbox from "./Inbox";
 import LOCALIZE from "../../text_resources";
-import TabNavigation from "../commons/TabNavigation";
 import InTestInstructions from "./InTestInstructions";
 import Notepad from "../commons/Notepad";
-import "../../css/emib-tabs.css";
-import { HEADER_HEIGHT, FOOTER_HEIGHT } from "./constants";
 import { Helmet } from "react-helmet";
 import { Tabs, Tab, Container, Row, Col } from "react-bootstrap";
 
@@ -24,7 +21,8 @@ const styles = {
 
 class EmibTabs extends Component {
   static propTypes = {
-    initialTab: PropTypes.number.isRequired,
+    currentTab: PropTypes.string.isRequired,
+    switchTab: PropTypes.func.isRequired,
     /* used to disable specific tabs
     disabledTabsArray={[1, 2]} will disable the second and third tabs
     disabledTabsArray={[]} will keep all the tabs enabled */
@@ -34,17 +32,17 @@ class EmibTabs extends Component {
   render() {
     const TABS = [
       {
-        id: 0,
+        key: "instructions",
         tabName: LOCALIZE.emibTest.tabs.instructionsTabTitle,
         body: <InTestInstructions />
       },
       {
-        id: 1,
+        key: "background",
         tabName: LOCALIZE.emibTest.tabs.backgroundTabTitle,
         body: <Background />
       },
       {
-        id: 2,
+        key: "inbox",
         tabName: LOCALIZE.emibTest.tabs.inboxTabTitle,
         body: <Inbox />
       }
@@ -57,16 +55,20 @@ class EmibTabs extends Component {
         <Container>
           <Row>
             <Col>
-              <Tabs defaultActiveKey="instructions" id="emib-tabs">
-                <Tab eventKey="instructions" title="Instructions">
-                  <InTestInstructions />
-                </Tab>
-                <Tab eventKey="background" title="Background">
-                  <Background />
-                </Tab>
-                <Tab eventKey="inbox" title="Inbox">
-                  <Inbox />
-                </Tab>
+              <Tabs
+                defaultActiveKey="instructions"
+                id="emib-tabs"
+                activeKey={this.props.currentTab}
+                onSelect={key => this.props.switchTab(key)}
+              >
+                {TABS.map((tab, index) => {
+                  const isDisabled = this.props.disabledTabsArray.indexOf(index) > -1;
+                  return (
+                    <Tab key={index} eventKey={tab.key} title={tab.tabName} disabled={isDisabled}>
+                      {tab.body}
+                    </Tab>
+                  );
+                })}
               </Tabs>
             </Col>
             <Col md="auto">
