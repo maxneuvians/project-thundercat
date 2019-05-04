@@ -518,7 +518,7 @@ let LOCALIZE = new LocalizedStrings({
         title: "notepad",
         placeholder: "Put your notes here...",
         hideButton: "hide",
-        openButton: "open notes"
+        openButton: "Open Notes"
       },
       cancel: "Cancel",
       cancelResponse: "Cancel response",
