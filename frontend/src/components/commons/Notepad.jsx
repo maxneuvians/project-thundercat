@@ -95,7 +95,7 @@ class Notepad extends Component {
                 </label>
               </div>
               <button onClick={this.handleHide} style={styles.hideNotepadBtn}>
-                <span style={styles.hideNotepadBtnIcon} className="fas fa-minus-circle" />
+                <i style={styles.hideNotepadBtnIcon} className="fas fa-minus-circle" />
                 {LOCALIZE.commons.notepad.hideButton}
               </button>
             </div>
@@ -120,7 +120,7 @@ class Notepad extends Component {
             onClick={this.handleOpen}
             style={styles.openNotepadBtn}
           >
-            <span className="fas fa-external-link-alt" />
+            <i className="fas fa-external-link-alt" />
             {LOCALIZE.commons.notepad.openButton}
           </button>
         )}
