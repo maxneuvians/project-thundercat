@@ -5,7 +5,7 @@ import ActionViewEmail from "./ActionViewEmail";
 import ActionViewTask from "./ActionViewTask";
 import { ACTION_TYPE, EMAIL_TYPE } from "./constants";
 
-const styleConstants = {
+const styles = {
   disabledExampleComponent: {
     border: "1px solid #00565e",
     borderRadius: 4,
@@ -55,22 +55,20 @@ class TestInstructions extends Component {
         <div>
           <h2>{LOCALIZE.emibTest.howToPage.testInstructions.title}</h2>
           <div>
-            <p style={styleConstants.instuctions.p}>
-              {LOCALIZE.emibTest.howToPage.testInstructions.para1}
-            </p>
+            <p>{LOCALIZE.emibTest.howToPage.testInstructions.para1}</p>
           </div>
           <div>
             <h3>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.title}</h3>
             <p>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.description}</p>
             <h4>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part1.title}</h4>
-            <div style={styleConstants.disabledExampleComponentNoPadding}>
+            <div style={styles.disabledExampleComponentNoPadding}>
               <Email email={exampleEmail} disabled={true} />
             </div>
             <p>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part1.para1}</p>
             <h4>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part2.title}</h4>
             <p>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part2.para1}</p>
             <p>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part2.para2}</p>
-            <div style={styleConstants.disabledExampleComponent}>
+            <div style={styles.disabledExampleComponent}>
               <ActionViewEmail
                 action={exampleEmailResponse}
                 actionId={1}
@@ -80,7 +78,7 @@ class TestInstructions extends Component {
             </div>
             <h4>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part3.title}</h4>
             <p>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part3.para1}</p>
-            <div style={styleConstants.disabledExampleComponent}>
+            <div style={styles.disabledExampleComponent}>
               <ActionViewTask
                 action={exampleTaskResponse}
                 actionId={1}
