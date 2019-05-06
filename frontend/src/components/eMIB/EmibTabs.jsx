@@ -30,7 +30,7 @@ class EmibTabs extends Component {
   };
 
   render() {
-    const TABS = [
+    let TABS = [
       {
         key: "instructions",
         tabName: LOCALIZE.emibTest.tabs.instructionsTabTitle,
@@ -47,6 +47,11 @@ class EmibTabs extends Component {
         body: <Inbox />
       }
     ];
+
+    // Hide disabled tabs.
+    TABS = TABS.filter((tab, index) => {
+      return !(this.props.disabledTabsArray.indexOf(index) > -1);
+    });
     return (
       <div style={styles.container}>
         <Helmet>
@@ -62,9 +67,8 @@ class EmibTabs extends Component {
                 onSelect={key => this.props.switchTab(key)}
               >
                 {TABS.map((tab, index) => {
-                  const isDisabled = this.props.disabledTabsArray.indexOf(index) > -1;
                   return (
-                    <Tab key={index} eventKey={tab.key} title={tab.tabName} disabled={isDisabled}>
+                    <Tab key={index} eventKey={tab.key} title={tab.tabName}>
                       {tab.body}
                     </Tab>
                   );

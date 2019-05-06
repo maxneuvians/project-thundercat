@@ -12,7 +12,10 @@ import Emib from "./components/eMIB/Emib";
 import LoginButton from "./components/commons/LoginButton";
 import Translation from "./components/commons/Translation";
 import LOCALIZE from "./text_resources";
-import canada_logo from "./images/canada_logo.png";
+import psc_logo_en from "./images/psc_logo_en.png";
+import psc_logo_fr from "./images/psc_logo_fr.png";
+import psc_logo_en_light from "./images/psc_logo_en_light.png";
+import psc_logo_fr_light from "./images/psc_logo_fr_light.png";
 import { Navbar, Nav } from "react-bootstrap";
 
 const PATH = {
@@ -31,7 +34,7 @@ class App extends Component {
   };
 
   render() {
-    const { isTestActive } = this.props;
+    const { isTestActive, currentLanguage } = this.props;
     return (
       <div>
         <Helmet>
@@ -43,8 +46,12 @@ class App extends Component {
             {!isTestActive && (
               <Navbar bg="light" variant="light">
                 <Navbar.Brand href="/">
-                  <img alt="" src={canada_logo} width="30" className="d-inline-block align-top" />
-                  {LOCALIZE.mainTabs.psc}
+                  <img
+                    alt=""
+                    src={currentLanguage === "fr" ? psc_logo_fr : psc_logo_en}
+                    width="220"
+                    className="d-inline-block align-top"
+                  />
                 </Navbar.Brand>
                 <Nav className="mr-auto">
                   <Nav.Link href="/">{LOCALIZE.mainTabs.homeTabTitle}</Nav.Link>
@@ -59,8 +66,12 @@ class App extends Component {
             {isTestActive && (
               <Navbar bg="dark" variant="dark">
                 <Navbar.Brand>
-                  <img alt="" src={canada_logo} width="30" className="d-inline-block align-top" />
-                  {"Public Service Commission"}
+                  <img
+                    alt=""
+                    src={currentLanguage === "fr" ? psc_logo_fr_light : psc_logo_en_light}
+                    width="220"
+                    className="d-inline-block align-top"
+                  />
                 </Navbar.Brand>
                 <Nav className="mr-auto" />
                 <Translation variant="outline-light" />
