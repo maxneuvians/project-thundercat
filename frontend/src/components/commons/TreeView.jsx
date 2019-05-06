@@ -3,196 +3,104 @@ import TreeNode from "./TreeNode";
 
 const TREE = [
   {
-    text: "Parent 1",
-    nodes: [
+    text: "Projects",
+    children: [
+      { text: "project-1.docx" },
+      { text: "project-2.docx" },
       {
-        text: "Child 1",
-        nodes: [
-          {
-            text: "Grandchild 1"
-          },
-          {
-            text: "Grandchild 2"
-          }
+        text: "Project 3",
+        children: [
+          { text: "project-3A.docx" },
+          { text: "project-3B.docx" },
+          { text: "project-3C.docx" }
         ]
       },
+      { text: "project-4.docx" },
       {
-        text: "Child 2"
+        text: "Project 5",
+        children: [
+          { text: "project-5A.docx" },
+          { text: "project-5B.docx" },
+          { text: "project-5C.docx" },
+          { text: "project-5D.docx" },
+          { text: "project-5E.docx" },
+          { text: "project-5F.docx" }
+        ]
       }
     ]
   },
   {
-    text: "Parent 2"
+    text: "Reports",
+    children: [
+      {
+        text: "report-1",
+        children: [
+          { text: "report-1A.docx" },
+          { text: "report-1B.docx" },
+          { text: "report-1C.docx" }
+        ]
+      },
+      {
+        text: "report-2",
+        children: [
+          { text: "report-2A.docx" },
+          { text: "report-2B.docx" },
+          { text: "report-2C.docx" },
+          {
+            text: "report-2D.docx"
+          }
+        ]
+      },
+      {
+        text: "report-3",
+        children: [
+          { text: "report-3A.docx" },
+          { text: "report-3B.docx" },
+          { text: "report-3C.docx" },
+          {
+            text: "report-3D.docx"
+          }
+        ]
+      }
+    ]
   },
   {
-    text: "Parent 3"
-  },
-  {
-    text: "Parent 4"
-  },
-  {
-    text: "Parent 5"
+    text: "Letters",
+    children: [
+      {
+        text: "letter-1",
+        children: [
+          { text: "letter-1A.docx" },
+          { text: "letter-1B.docx" },
+          { text: "letter-1C.docx" }
+        ]
+      },
+
+      {
+        text: "letter-2",
+        children: [
+          { text: "letter-2A.docx" },
+          { text: "letter-2B.docx" },
+          { text: "letter-2C.docx" },
+          { text: "letter-2D.docx" }
+        ]
+      },
+      {
+        text: "letter-3",
+        children: [
+          { text: "letter-3A.docx" },
+          { text: "letter-3B.docx" },
+          { text: "letter-3C.docx" },
+          { text: "letter-3D.docx" }
+        ]
+      }
+    ]
   }
 ];
 
 class TreeView extends Component {
   render() {
-    return (
-      <ul role="tree" aria-labelledby="tree_label">
-        <li role="treeitem" aria-expanded="false">
-          <span>Projects</span>
-          <ul role="group">
-            <li role="treeitem" className="doc">
-              project-1.docx
-            </li>
-            <li role="treeitem" className="doc">
-              project-2.docx
-            </li>
-            <li role="treeitem" aria-expanded="false">
-              <span>Project 3</span>
-              <ul role="group">
-                <li role="treeitem" className="doc">
-                  project-3A.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  project-3B.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  project-3C.docx
-                </li>
-              </ul>
-            </li>
-            <li role="treeitem" className="doc">
-              project-4.docx
-            </li>
-            <li role="treeitem" aria-expanded="false">
-              <span>Project 5</span>
-              <ul role="group">
-                <li role="treeitem" className="doc">
-                  project-5A.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  project-5B.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  project-5C.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  project-5D.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  project-5E.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  project-5F.docx
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li role="treeitem" aria-expanded="false">
-          <span>Reports</span>
-          <ul role="group">
-            <li role="treeitem" aria-expanded="false">
-              <span>report-1</span>
-              <ul role="group">
-                <li role="treeitem" className="doc">
-                  report-1A.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  report-1B.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  report-1C.docx
-                </li>
-              </ul>
-            </li>
-            <li role="treeitem" aria-expanded="false">
-              <span>report-2</span>
-              <ul role="group">
-                <li role="treeitem" className="doc">
-                  report-2A.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  report-2B.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  report-2C.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  report-2D.docx
-                </li>
-              </ul>
-            </li>
-            <li role="treeitem" aria-expanded="false">
-              <span>report-3</span>
-
-              <TreeNode
-                tree={[
-                  { text: "report-3A.docx" },
-                  { text: "report-3B.docx" },
-                  { text: "report-3C.docx" },
-                  { text: "report-3D.docx" }
-                ]}
-              />
-            </li>
-          </ul>
-        </li>
-        <li role="treeitem" aria-expanded="false">
-          <span>Letters</span>
-          <ul role="group">
-            <li role="treeitem" aria-expanded="false">
-              <span>letter-1</span>
-              <ul>
-                <li role="treeitem" className="doc">
-                  letter-1A.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  letter-1B.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  letter-1C.docx
-                </li>
-              </ul>
-            </li>
-            <li role="treeitem" aria-expanded="false">
-              <span>letter-2</span>
-              <ul role="group">
-                <li role="treeitem" className="doc">
-                  letter-2A.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  letter-2B.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  letter-2C.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  letter-2D.docx
-                </li>
-              </ul>
-            </li>
-            <li role="treeitem" aria-expanded="false">
-              <span>letter-3</span>
-              <ul role="group">
-                <li role="treeitem" className="doc">
-                  letter-3A.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  letter-3B.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  letter-3C.docx
-                </li>
-                <li role="treeitem" className="doc">
-                  letter-3D.docx
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    );
+    return <TreeNode children={TREE} root={true} />;
   }
 }
 

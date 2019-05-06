@@ -1,21 +1,29 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+//Recursive tree building component. for each
 class TreeNode extends Component {
   static propTypes = {
-    tree: PropTypes.array.isRequired // TODO array of x
+    children: PropTypes.array.isRequired, // TODO array of x
+    root: PropTypes.bool
   };
   render() {
+    // if it is the root, then the list is tree; otherwise it is group
     return (
-      <ul role="group">
-        {this.props.tree.map((node, key) => (
+      <ul role={!this.props.root ? "group" : "tree"}>
+        {this.props.children.map((node, key) => (
           <>
             {!node.children && (
               <li role="treeitem" className="doc" key={key}>
                 {node.text}
               </li>
             )}
-            {node.children && <div key={key}>Functionality not implemented yet</div>}
+            {node.children && (
+              <li role="treeitem" aria-expanded="false" key={key}>
+                <span>{node.text}</span>
+                <TreeNode children={node.children} />
+              </li>
+            )}
           </>
         ))}
       </ul>
@@ -23,28 +31,4 @@ class TreeNode extends Component {
   }
 }
 
-/*
-<li role="treeitem" aria-expanded="false">
-                <span>{node.text} 5</span>
-                <TreeNode tree={node.children} />
-              </li>
-              */
-
 export default TreeNode;
-
-/*
-<ul role="group">
-      {this.props.tree.map((node, key) => (
-        <li role="treeitem" class="doc">
-          {node.text}
-        </li>
-      )}
-        <li role="treeitem" class="doc">
-          letter-3B.docx
-        </li>
-        <li role="treeitem" class="doc">
-          letter-3C.docx
-        </li>
-        <li role="treeitem" class="doc">
-          letter-3D.docx
-        </li>*/
