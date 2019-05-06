@@ -5,16 +5,17 @@ import PropTypes from "prop-types";
 class TreeNode extends Component {
   static propTypes = {
     children: PropTypes.array.isRequired, // TODO array of x
-    root: PropTypes.bool
+    root: PropTypes.bool // optional prop. If it is present, then this is the root node
   };
   render() {
     // if it is the root, then the list is tree; otherwise it is group
+
     return (
       <ul role={!this.props.root ? "group" : "tree"}>
         {this.props.children.map((node, key) => (
           <>
             {!node.children && (
-              <li role="treeitem" className="doc" key={key}>
+              <li role="treeitem" className="leaf" key={key}>
                 {node.text}
               </li>
             )}

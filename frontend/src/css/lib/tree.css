@@ -5,7 +5,7 @@ ul[role="tree"] {
   font-size: 120%;
 }
 
-[role="treeitem"].doc::before {
+[role="treeitem"].leaf::before {
   font-family: "Font Awesome 5 Free";
   content: "";
   font-weight: 900;
