@@ -1,4 +1,9 @@
 /*
+ *   Based on example at https://www.w3.org/TR/wai-aria-practices/examples/treeview/treeview-1/treeview-1a.html
+ *   Copied from
+ *      https://www.w3.org/TR/wai-aria-practices/examples/treeview/treeview-1/js/tree.js
+ *      https://www.w3.org/TR/wai-aria-practices/examples/treeview/treeview-1/js/treeitem.js
+ *      https://www.w3.org/TR/wai-aria-practices/examples/treeview/treeview-1/js/treeitemClick.js
  *   This content is licensed according to the W3C Software License at
  *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
  *
