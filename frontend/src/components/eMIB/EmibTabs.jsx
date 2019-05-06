@@ -16,6 +16,9 @@ const styles = {
     paddingRight: 20,
     paddingLeft: 20,
     margin: "0px auto"
+  },
+  notepad: {
+    paddingLeft: 0
   }
 };
 
@@ -75,7 +78,7 @@ class EmibTabs extends Component {
                 })}
               </Tabs>
             </Col>
-            <Col md="auto">
+            <Col md="auto" style={styles.notepad}>
               <Notepad />
             </Col>
           </Row>

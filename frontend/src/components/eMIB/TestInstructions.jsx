@@ -6,19 +6,19 @@ import ActionViewTask from "./ActionViewTask";
 import { ACTION_TYPE, EMAIL_TYPE } from "./constants";
 
 const styleConstants = {
-  instuctions: {
-    disabledExampleComponent: {
-      border: "1px solid #00565e",
-      marginTop: 4,
-      marginBottom: 4,
-      padding: 16
-    },
-    disabledExampleComponentNoPadding: {
-      border: "1px solid #00565e",
-      marginTop: 4,
-      marginBottom: 4,
-      margin: 0
-    }
+  disabledExampleComponent: {
+    border: "1px solid #00565e",
+    borderRadius: 4,
+    marginTop: 4,
+    marginBottom: 4,
+    padding: 16
+  },
+  disabledExampleComponentNoPadding: {
+    border: "1px solid #00565e",
+    borderRadius: 4,
+    marginTop: 4,
+    marginBottom: 4,
+    margin: 0
   }
 };
 
@@ -63,14 +63,14 @@ class TestInstructions extends Component {
             <h3>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.title}</h3>
             <p>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.description}</p>
             <h4>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part1.title}</h4>
-            <div style={styleConstants.instuctions.disabledExampleComponentNoPadding}>
+            <div style={styleConstants.disabledExampleComponentNoPadding}>
               <Email email={exampleEmail} disabled={true} />
             </div>
             <p>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part1.para1}</p>
             <h4>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part2.title}</h4>
             <p>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part2.para1}</p>
             <p>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part2.para2}</p>
-            <div style={styleConstants.instuctions.disabledExampleComponent}>
+            <div style={styleConstants.disabledExampleComponent}>
               <ActionViewEmail
                 action={exampleEmailResponse}
                 actionId={1}
@@ -80,7 +80,7 @@ class TestInstructions extends Component {
             </div>
             <h4>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part3.title}</h4>
             <p>{LOCALIZE.emibTest.howToPage.testInstructions.step1Section.part3.para1}</p>
-            <div style={styleConstants.instuctions.disabledExampleComponent}>
+            <div style={styleConstants.disabledExampleComponent}>
               <ActionViewTask
                 action={exampleTaskResponse}
                 actionId={1}
