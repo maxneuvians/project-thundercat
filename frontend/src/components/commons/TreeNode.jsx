@@ -12,21 +12,22 @@ class TreeNode extends Component {
 
     return (
       <ul role={!this.props.root ? "group" : "tree"}>
-        {this.props.children.map((node, key) => (
-          <>
-            {!node.children && (
+        {this.props.children.map((node, key) => {
+          if (!node.children) {
+            return (
               <li role="treeitem" className="leaf" key={key}>
                 {node.text}
               </li>
-            )}
-            {node.children && (
+            );
+          } else {
+            return (
               <li role="treeitem" aria-expanded="false" key={key}>
                 <span>{node.text}</span>
                 <TreeNode children={node.children} />
               </li>
-            )}
-          </>
-        ))}
+            );
+          }
+        })}
       </ul>
     );
   }
