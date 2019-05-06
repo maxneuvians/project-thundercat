@@ -5,7 +5,7 @@ import { Navbar, Nav } from "react-bootstrap";
 
 const styles = {
   footer: {
-    borderTop: "2px solid #96a8b2"
+    borderTop: "1px solid #96a8b2"
   }
 };
 

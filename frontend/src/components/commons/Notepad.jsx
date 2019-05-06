@@ -37,7 +37,7 @@ const styles = {
   },
   content: {
     backgroundColor: "white",
-    borderWidth: "1px 1px 0 3px",
+    borderWidth: "1px 1px 0 1px",
     borderStyle: "solid",
     borderColor: "#00565e",
     width: "100%",
@@ -66,7 +66,9 @@ const styles = {
     border: "none",
     backgroundColor: "#00565e",
     height: NOTEPAD_HEIGHT,
-    cursor: "pointer"
+    cursor: "pointer",
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 0
   },
   openNotepadBtnIcon: {
     position: "absolute",
