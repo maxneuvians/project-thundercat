@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./css/lib/aurora.min.css";
-import "./css/lib/tree";
-import "./css/lib/tree.css";
 import "./css/cat-theme.css";
 import { Helmet } from "react-helmet";
 import Status from "./Status";

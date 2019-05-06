@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import "../../css/lib/tree";
+import "../../css/lib/tree.css";
+import { treeNodeShape } from "../eMIB/constants";
 
 //Recursive tree building component. for each
 class TreeNode extends Component {
   static propTypes = {
-    children: PropTypes.array.isRequired, // TODO array of x
+    children: PropTypes.arrayOf(treeNodeShape).isRequired,
     root: PropTypes.bool // optional prop. If it is present, then this is the root node
   };
   render() {
     // if it is the root, then the list is tree; otherwise it is group
-
     return (
       <ul role={!this.props.root ? "group" : "tree"}>
         {this.props.children.map((node, key) => {
