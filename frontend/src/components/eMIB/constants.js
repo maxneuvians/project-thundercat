@@ -55,10 +55,3 @@ export const contactShape = PropTypes.shape({
   name: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired
 });
-
-// The structure of a node in a treeview
-export const treeNodeShape = PropTypes.shape({
-  text: PropTypes.string.isRequired
-});
-
-treeNodeShape.children = PropTypes.arrayOf(treeNodeShape);
