@@ -8,7 +8,7 @@ from views import views, database_check_view, user_view
 
 from rest_framework_swagger.views import get_swagger_view
 
-schema_view = get_swagger_view(title="Pastebin API")
+schema_view = get_swagger_view(title="ThunderCAT APIs")
 
 router = routers.DefaultRouter()
 router.register(r"database_check", database_check_view.DatabaseViewSet)
