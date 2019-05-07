@@ -23,10 +23,6 @@ const styles = {
   boxContent: {
     padding: 12
   },
-  modalHeader: {
-    display: "table",
-    width: "100%"
-  },
   modelTitle: {
     fontSize: "28px",
     margin: 0
