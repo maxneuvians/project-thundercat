@@ -48,7 +48,7 @@ class OrganizationalStructure extends Component {
         children: [
           {
             text: LOCALIZE.emibTest.background.organizationalStructure.dialog.corpDirector,
-            chldren: [
+            children: [
               { text: LOCALIZE.emibTest.background.organizationalStructure.dialog.hr },
               { text: LOCALIZE.emibTest.background.organizationalStructure.dialog.finance },
               { text: LOCALIZE.emibTest.background.organizationalStructure.dialog.it }
