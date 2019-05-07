@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "../../css/lib/tree";
+import "../../helpers/lib/tree";
 import "../../css/lib/tree.css";
 
 // The structure of a node in a treeview
