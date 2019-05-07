@@ -1,17 +1,26 @@
 from django.conf import settings
 from django.conf.urls import include, url
+from django.urls import path, include
+from rest_framework import routers
 from django.conf.urls.static import static
 from django.contrib import admin
+from views import views, database_check_view, user_view
 
 from rest_framework_swagger.views import get_swagger_view
 
 schema_view = get_swagger_view(title="Pastebin API")
+
+router = routers.DefaultRouter()
+router.register(r"database_check", database_check_view.DatabaseViewSet)
+router.register(r"view_users", user_view.UserViewSet)
 
 urlpatterns = [
     url(r"^$", schema_view),
     url(r"^admin/", admin.site.urls),
     url(r"^auth/", include("djoser.urls")),
     url(r"^auth/", include("djoser.urls.jwt")),
+    path(r"api/", views.index, name="index"),
+    path("", include(router.urls)),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
