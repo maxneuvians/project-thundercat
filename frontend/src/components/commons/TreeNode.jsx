@@ -2,7 +2,13 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "../../css/lib/tree";
 import "../../css/lib/tree.css";
-import { treeNodeShape } from "../eMIB/constants";
+
+// The structure of a node in a treeview
+export const treeNodeShape = PropTypes.shape({
+  text: PropTypes.string.isRequired
+});
+
+treeNodeShape.children = PropTypes.arrayOf(treeNodeShape);
 
 //Recursive tree building component. for each
 class TreeNode extends Component {
