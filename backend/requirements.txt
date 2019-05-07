@@ -22,3 +22,6 @@ sqlparse==0.2.4
 uritemplate==3.0.0
 urllib3==1.24.3
 psycopg2-binary==2.7.6
+
+# from requirements/local.txt
+django-debug-toolbar==1.9.1
