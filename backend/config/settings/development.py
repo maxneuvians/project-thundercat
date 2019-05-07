@@ -6,6 +6,7 @@ DEBUG = True
 # Used for Debug Toolbar to show
 INTERNAL_IPS = ["127.0.0.1"]
 
+# TODO: Setup the real dev DB here
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
