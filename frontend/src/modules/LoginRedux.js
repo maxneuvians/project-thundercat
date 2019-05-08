@@ -69,7 +69,6 @@ function logoutAction() {
 
 // Initial State
 const initialState = {
-  loggedIn: false,
   authenticated: false,
   registration_message: ""
 };
