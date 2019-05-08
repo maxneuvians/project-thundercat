@@ -3,8 +3,16 @@ import login, { setLoginState, initialState } from "../../modules/LoginRedux";
 describe("setLoginState action", () => {
   it("should update loggedIn state", () => {
     const action1 = setLoginState(true);
-    expect(login(initialState, action1)).toEqual({ loggedIn: true });
+    expect(login(initialState, action1)).toEqual({
+      loggedIn: true,
+      authenticated: false,
+      registration_message: ""
+    });
     const action2 = setLoginState(false);
-    expect(login(initialState, action2)).toEqual({ loggedIn: false });
+    expect(login(initialState, action2)).toEqual({
+      loggedIn: false,
+      authenticated: false,
+      registration_message: ""
+    });
   });
 });
