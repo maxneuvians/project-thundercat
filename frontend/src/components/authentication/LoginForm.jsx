@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import LOCALIZE from "../../text_resources";
+import { loginAction, authenticateAction } from "../../modules/LoginRedux";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
 const styles = {
   loginContent: {
@@ -21,6 +24,9 @@ const styles = {
     display: "block",
     margin: "24px auto"
   },
+  loginError: {
+    color: "red"
+  },
   validationError: {
     color: "red",
     paddingTop: 8
@@ -31,18 +37,41 @@ class LoginForm extends Component {
   //TODO(fnormand): Remove this part when implementing login functionality in the backend
   //===========================================
   static propTypes = {
-    authentification: PropTypes.func
+    authentification: PropTypes.func,
+    // Props from Redux
+    loginAction: PropTypes.func,
+    loggedIn: PropTypes.bool
   };
 
   state = {
-    isAuthenticated: false
+    username: "",
+    password: "",
+    isAuthenticated: false,
+    wrongCredentials: false
   };
 
-  handleSubmit = () => {
-    this.setState({ isAuthenticated: true });
-    this.props.authentification();
+  handleSubmit = event => {
+    this.props
+      .loginAction({ username: this.state.username, password: this.state.password })
+      .then(response => {
+        if (response.non_field_errors || typeof response.token === "undefined") {
+          this.setState({ wrongCredentials: true });
+        } else {
+          this.setState({ isAuthenticated: true, wrongCredentials: false });
+          this.props.authentification();
+        }
+      });
+    event.preventDefault();
   };
   //===========================================
+
+  handleUsernameChange = event => {
+    this.setState({ username: event.target.value });
+  };
+
+  handlePasswordChange = event => {
+    this.setState({ password: event.target.value });
+  };
 
   render() {
     return (
@@ -63,6 +92,8 @@ class LoginForm extends Component {
                     placeholder={LOCALIZE.authentication.login.content.inputs.emailPlaceholder}
                     id="username"
                     style={styles.inputs}
+                    onChange={this.handleUsernameChange}
+                    value={this.state.username}
                   />
                 </div>
                 <div>
@@ -75,7 +106,16 @@ class LoginForm extends Component {
                     placeholder={LOCALIZE.authentication.login.content.inputs.passwordPlaceholder}
                     id="password"
                     style={styles.inputs}
+                    onChange={this.handlePasswordChange}
+                    value={this.state.password}
                   />
+                </div>
+                <div>
+                  {this.state.wrongCredentials && (
+                    <p style={styles.loginError}>
+                      {LOCALIZE.authentication.login.invalidCredentials}
+                    </p>
+                  )}
                 </div>
                 <input
                   style={styles.loginBtn}
@@ -92,4 +132,22 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    loggedIn: state.login.loggedIn
+  };
+};
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      loginAction,
+      authenticateAction
+    },
+    dispatch
+  );
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginForm);

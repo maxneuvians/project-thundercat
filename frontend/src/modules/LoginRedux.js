@@ -1,7 +1,7 @@
 // Action Types
 export const SET_LOGIN_STATE = "localize/SET_LOGIN_STATE";
 // URL
-export const BACKENDURL = "localhost:8000";
+export const BACKENDURL = "http://localhost:8000";
 // AUTH ACTIONS
 export const AUTHENTICATED = "AUTHENTICATED";
 export const UNAUTHENTICATED = "UNAUTHENTICATED";

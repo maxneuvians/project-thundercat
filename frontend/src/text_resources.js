@@ -36,7 +36,8 @@ let LOCALIZE = new LocalizedStrings({
             passwordPlaceholder: "Password"
           }
         },
-        button: "Login"
+        button: "Login",
+        invalidCredentials: "Invalid credentials!"
       },
       createAccount: {
         title: "CREATE AN ACCOUNT",
@@ -562,7 +563,8 @@ let LOCALIZE = new LocalizedStrings({
             passwordPlaceholder: "Mot de passe"
           }
         },
-        button: "Connexion"
+        button: "Connexion",
+        invalidCredentials: "FR Invalid credentials!"
       },
       createAccount: {
         title: "CRÉER UN COMPTE",
