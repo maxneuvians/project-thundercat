@@ -4,6 +4,7 @@ import TabNavigation from "../commons/TabNavigation";
 import LoginForm from "./LoginForm";
 import CreateAccountForm from "./CreateAccountForm";
 import LOCALIZE from "../../text_resources";
+import { connect } from "react-redux";
 
 const styles = {
   container: {
@@ -25,28 +26,17 @@ const styles = {
 };
 
 class AuthenticationTabs extends Component {
-  //TODO(fnormand): Remove this part when implementing login functionality in the backend
-  //===========================================
   static propTypes = {
-    authentification: PropTypes.func
+    // Props from Redux
+    authenticated: PropTypes.bool
   };
-
-  state = {
-    isAuthenticated: false
-  };
-
-  authentification = () => {
-    this.setState({ isAuthenticated: true });
-    this.props.authentification();
-  };
-  //===========================================
 
   render() {
     const TABS = [
       {
         id: 0,
         tabName: LOCALIZE.authentication.login.title,
-        body: <LoginForm authentification={this.authentification} />
+        body: <LoginForm />
       },
       {
         id: 1,
@@ -56,7 +46,7 @@ class AuthenticationTabs extends Component {
     ];
     return (
       <div>
-        {!this.state.isAuthenticated && (
+        {!this.props.authenticated && (
           <div style={styles.container}>
             <TabNavigation
               tabSpecs={TABS}
@@ -72,4 +62,13 @@ class AuthenticationTabs extends Component {
   }
 }
 
-export default AuthenticationTabs;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    authenticated: state.login.authenticated
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(AuthenticationTabs);

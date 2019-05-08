@@ -17,18 +17,21 @@ const setLoginState = loggedIn => ({ type: SET_LOGIN_STATE, loggedIn });
 
 let url = process.env.REACT_APP_DEV_URL || BACKENDURL;
 
-function authenticateAction(userData, dispatch, location, push) {
-  return async function() {
-    if (navigator.cookieEnabled) {
-      localStorage.setItem("ecom_token", userData.token);
-    }
+// function authenticateAction(userData, dispatch, location, push) {
+//   return async function() {
+//     if (navigator.cookieEnabled) {
+//       localStorage.setItem("ecom_token", userData.token);
+//     }
 
-    if (location === "/login") {
-      push("/");
-    }
-    return dispatch({ type: AUTHENTICATED });
-  };
-}
+//     if (location === "/login") {
+//       push("/");
+//     }
+//     return dispatch({ type: AUTHENTICATED });
+//   };
+// }
+
+const authenticateAction = authenticated => ({ type: AUTHENTICATED, authenticated });
+
 function registrationSuccessMessage() {
   return { type: REGISTRATION_SUCCESS_MESSAGE };
 }
@@ -85,7 +88,11 @@ const login = (state = initialState, action) => {
         loggedIn: action.loggedIn
       };
     case AUTHENTICATED:
-      return { authenticated: true, registration_message: "" };
+      //return { authenticated: true, registration_message: "" };
+      return {
+        ...state,
+        authenticated: action.authenticated
+      };
     case UNAUTHENTICATED:
       return { authenticated: false, registration_message: "" };
     case REGISTRATION_SUCCESS_MESSAGE:

@@ -1,20 +1,16 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import LOCALIZE from "./text_resources";
 import ContentContainer from "./components/commons/ContentContainer";
 import LoginTabs from "./components/authentication/AuthenticationTabs";
 import { Helmet } from "react-helmet";
+import { connect } from "react-redux";
 
 class Home extends Component {
-  //TODO(fnormand): Remove this part when implementing login functionality in the backend
-  //===========================================
-  state = {
-    isAuthenticated: false
+  static propTypes = {
+    // Props from Redux
+    authenticated: PropTypes.bool
   };
-
-  authentification = () => {
-    this.setState({ isAuthenticated: true });
-  };
-  //===========================================
 
   render() {
     return (
@@ -28,7 +24,7 @@ class Home extends Component {
           <div>
             <LoginTabs authentification={this.authentification} />
           </div>
-          {this.state.isAuthenticated && (
+          {this.props.authenticated && (
             <div>
               <h3>Welcome!</h3>
               <p>You've just logged in.</p>
@@ -40,4 +36,13 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    authenticated: state.login.authenticated
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(Home);

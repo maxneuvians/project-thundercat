@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import LOCALIZE from "../../text_resources";
-import { loginAction, authenticateAction } from "../../modules/LoginRedux";
+import { setLoginState, loginAction, authenticateAction } from "../../modules/LoginRedux";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
@@ -34,13 +34,13 @@ const styles = {
 };
 
 class LoginForm extends Component {
-  //TODO(fnormand): Remove this part when implementing login functionality in the backend
-  //===========================================
   static propTypes = {
-    authentification: PropTypes.func,
     // Props from Redux
     loginAction: PropTypes.func,
-    loggedIn: PropTypes.bool
+    authenticateAction: PropTypes.func,
+    setLoginState: PropTypes.func,
+    loggedIn: PropTypes.bool,
+    authenticated: PropTypes.bool
   };
 
   state = {
@@ -58,12 +58,11 @@ class LoginForm extends Component {
           this.setState({ wrongCredentials: true });
         } else {
           this.setState({ isAuthenticated: true, wrongCredentials: false });
-          this.props.authentification();
+          this.props.authenticateAction(true);
         }
       });
     event.preventDefault();
   };
-  //===========================================
 
   handleUsernameChange = event => {
     this.setState({ username: event.target.value });
@@ -76,7 +75,7 @@ class LoginForm extends Component {
   render() {
     return (
       <div>
-        {!this.state.isAuthenticated && (
+        {!this.props.authenticated && (
           <div>
             <div style={styles.loginContent}>
               <h3>{LOCALIZE.authentication.login.content.title}</h3>
@@ -134,13 +133,15 @@ class LoginForm extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    loggedIn: state.login.loggedIn
+    loggedIn: state.login.loggedIn,
+    authenticated: state.login.authenticated
   };
 };
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
+      setLoginState,
       loginAction,
       authenticateAction
     },
