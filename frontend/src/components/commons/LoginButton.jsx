@@ -4,10 +4,15 @@ import LOCALIZE from "../../text_resources";
 import { logoutAction } from "../../modules/LoginRedux";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { PATH } from "../../App";
 
 const styles = {
   button: {
     width: 136
+  },
+  navlink: {
+    all: "unset"
   }
 };
 
@@ -18,8 +23,6 @@ class LoginButton extends Component {
     logoutAction: PropTypes.func
   };
 
-  handleLogin = () => {};
-
   handleLogout = () => {
     this.props.logoutAction();
   };
@@ -28,14 +31,11 @@ class LoginButton extends Component {
     return (
       <div>
         {!this.props.authenticated && (
-          <button
-            type="button"
-            className="btn btn-primary"
-            style={styles.button}
-            onClick={this.handleLogin}
-          >
-            {LOCALIZE.commons.login}
-          </button>
+          <NavLink tabIndex="-1" style={styles.navlink} to={PATH.home}>
+            <button className="btn btn-primary" style={styles.button}>
+              {LOCALIZE.commons.login}
+            </button>
+          </NavLink>
         )}
         {this.props.authenticated && (
           <button
