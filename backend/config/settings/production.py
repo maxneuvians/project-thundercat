@@ -3,6 +3,7 @@ from .base import *
 
 DEBUG = False
 
+# TODO: Setup the real prod DB here
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
