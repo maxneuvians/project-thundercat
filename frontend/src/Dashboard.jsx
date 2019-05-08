@@ -8,18 +8,19 @@ import { Helmet } from "react-helmet";
 class Dashboard extends Component {
   static propTypes = {
     // Props from Redux
-    loggedIn: PropTypes.bool
+    authenticated: PropTypes.bool
   };
 
   render() {
+    console.log(this.props.authenticated);
     return (
       <ContentContainer>
         <Helmet>
           <title>{LOCALIZE.titles.dashboard}</title>
         </Helmet>
         <h1 className="green-divider">{LOCALIZE.dashboard.title}</h1>
-        {!this.props.loggedIn && <p>{LOCALIZE.dashboard.descriptionIfLoggedOut}</p>}
-        {this.props.loggedIn && <p>{LOCALIZE.dashboard.descriptionIfLoggedIn}</p>}
+        {!this.props.authenticated && <p>{LOCALIZE.dashboard.descriptionIfLoggedOut}</p>}
+        {this.props.authenticated && <p>{LOCALIZE.dashboard.descriptionIfLoggedIn}</p>}
       </ContentContainer>
     );
   }
@@ -28,7 +29,7 @@ class Dashboard extends Component {
 export { Dashboard as UnconnectedDashboard };
 const mapStateToProps = (state, ownProps) => {
   return {
-    loggedIn: state.login.loggedIn
+    authenticated: state.login.authenticated
   };
 };
 
