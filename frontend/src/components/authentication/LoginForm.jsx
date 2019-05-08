@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import LOCALIZE from "../../text_resources";
-import { setLoginState, loginAction, authenticateAction } from "../../modules/LoginRedux";
+import { loginAction, authenticateAction } from "../../modules/LoginRedux";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
@@ -141,7 +141,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      setLoginState,
       loginAction,
       authenticateAction
     },
