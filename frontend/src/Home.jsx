@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import LOCALIZE from "./text_resources";
 import ContentContainer from "./components/commons/ContentContainer";
-import LoginTabs from "./components/authentication/AuthenticationTabs";
+import AuthenticationTabs from "./components/authentication/AuthenticationTabs";
 import Dashboard from "./Dashboard";
 import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
@@ -22,11 +22,10 @@ class Home extends Component {
         <ContentContainer>
           {!this.props.authenticated && (
             <div>
-              {" "}
               <h1>{LOCALIZE.homePage.title}</h1>
               <p>{LOCALIZE.homePage.description}</p>
               <div>
-                <LoginTabs authentification={this.authentification} />
+                <AuthenticationTabs />
               </div>
             </div>
           )}
