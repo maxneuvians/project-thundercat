@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import TabNavigation from "../commons/TabNavigation";
 import LoginForm from "./LoginForm";
 import CreateAccountForm from "./CreateAccountForm";
 import LOCALIZE from "../../text_resources";
-import { connect } from "react-redux";
 
 const styles = {
   container: {
@@ -26,11 +24,6 @@ const styles = {
 };
 
 class AuthenticationTabs extends Component {
-  static propTypes = {
-    // Props from Redux
-    authenticated: PropTypes.bool
-  };
-
   render() {
     const TABS = [
       {
@@ -46,29 +39,18 @@ class AuthenticationTabs extends Component {
     ];
     return (
       <div>
-        {!this.props.authenticated && (
-          <div style={styles.container}>
-            <TabNavigation
-              tabSpecs={TABS}
-              initialTab={0}
-              menuName={LOCALIZE.ariaLabel.authenticationMenu}
-              style={styles.tabNavigationStyle}
-              disabledTabsArray={[]}
-            />
-          </div>
-        )}
+        <div style={styles.container}>
+          <TabNavigation
+            tabSpecs={TABS}
+            initialTab={0}
+            menuName={LOCALIZE.ariaLabel.authenticationMenu}
+            style={styles.tabNavigationStyle}
+            disabledTabsArray={[]}
+          />
+        </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    authenticated: state.login.authenticated
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  null
-)(AuthenticationTabs);
+export default AuthenticationTabs;
