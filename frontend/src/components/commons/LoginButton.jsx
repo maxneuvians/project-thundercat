@@ -38,14 +38,16 @@ class LoginButton extends Component {
           </NavLink>
         )}
         {this.props.authenticated && (
-          <button
-            type="button"
-            className="btn btn-primary"
-            style={styles.button}
-            onClick={this.handleLogout}
-          >
-            {LOCALIZE.commons.logout}
-          </button>
+          <NavLink tabIndex="-1" style={styles.navlink} to={PATH.home}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              style={styles.button}
+              onClick={this.handleLogout}
+            >
+              {LOCALIZE.commons.logout}
+            </button>
+          </NavLink>
         )}
       </div>
     );
