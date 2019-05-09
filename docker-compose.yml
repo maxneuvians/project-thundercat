@@ -1,10 +1,14 @@
-#This script is for developement use only. Please do not deploy it in production in its current stage. 
+#This script is for developement use only. Please do not deploy it in production in its current stage.
 
 version: "3"
 
 services:
   db:
+    restart: always
     image: postgres:10.1-alpine
+    container_name: "postgres"
+    ports:
+      - 5432:5432
     volumes:
       - postgres_data:/var/lib/postgresql/data/
   backend:
@@ -16,12 +20,11 @@ services:
     depends_on:
       - db
   frontend:
-    volumes :
-      - ./frontend:/home/node  
+    volumes:
+      - ./frontend:/home/node
     build: ./frontend
     command: sh entrypoint.sh
     working_dir: /home/node
-
 
   nginx:
     build: ./nginx
