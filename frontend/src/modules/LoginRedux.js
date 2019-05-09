@@ -1,6 +1,7 @@
 // Action Types
-// URL
-export const BACKENDURL = "http://localhost:8000";
+// URL (Default Docker IP Address)
+// TODO(fnormand): Find a way to put the right URL here for deployments
+export const BACKENDURL = "http://10.0.75.1:8000";
 // AUTH ACTIONS
 export const AUTHENTICATED = "AUTHENTICATED";
 export const UNAUTHENTICATED = "UNAUTHENTICATED";
