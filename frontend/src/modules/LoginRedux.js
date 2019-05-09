@@ -14,6 +14,7 @@ export const CHANGE_PASSWORD_FAILURE = "CHANGE_PASSWORD_FAILURE";
 // Action Creators
 let url = process.env.REACT_APP_DEV_URL || BACKENDURL;
 
+// TODO (fnormand): Make this function works with the login process
 // function authenticateAction(userData, dispatch, location, push) {
 //   return async function() {
 //     if (navigator.cookieEnabled) {
@@ -27,6 +28,7 @@ let url = process.env.REACT_APP_DEV_URL || BACKENDURL;
 //   };
 // }
 
+// Simplified version of the authentication action (temporary)
 const authenticateAction = authenticated => ({ type: AUTHENTICATED, authenticated });
 
 function registrationSuccessMessage() {
