@@ -6,7 +6,7 @@ services:
   db:
     restart: always
     image: postgres:10.1-alpine
-    container_name: "postgres"
+    container_name: "project-thundercat_postgres"
     ports:
       - 5432:5432
     volumes:
@@ -19,13 +19,14 @@ services:
     command: sh entrypoint.sh
     depends_on:
       - db
+    ports:
+      - 8000:8000
   frontend:
     volumes:
       - ./frontend:/home/node
     build: ./frontend
     command: sh entrypoint.sh
     working_dir: /home/node
-
   nginx:
     build: ./nginx
     ports:
