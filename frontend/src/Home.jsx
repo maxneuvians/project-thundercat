@@ -36,6 +36,7 @@ class Home extends Component {
   }
 }
 
+export { Home as UnconnectedHome };
 const mapStateToProps = (state, ownProps) => {
   return {
     authenticated: state.login.authenticated
