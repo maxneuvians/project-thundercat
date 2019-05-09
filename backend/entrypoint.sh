@@ -5,5 +5,5 @@
 python manage.py makemigrations custom_models
 # all initial and new migrations will be migrated
 python manage.py migrate
-# running web server on port 8000
+# starting web server
 python manage.py runserver 0.0.0.0:8000
