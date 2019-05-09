@@ -16,3 +16,5 @@ describe("authenticate action", () => {
     });
   });
 });
+
+// TODO(fnormand): Add tests for all other actions if possible
