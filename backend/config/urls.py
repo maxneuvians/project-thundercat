@@ -4,7 +4,7 @@ from django.urls import path, include
 from rest_framework import routers
 from django.conf.urls.static import static
 from django.contrib import admin
-from views import views, database_check_view, user_view
+from views import views, database_check_view
 
 from rest_framework_swagger.views import get_swagger_view
 
@@ -12,7 +12,6 @@ schema_view = get_swagger_view(title="ThunderCAT APIs")
 
 router = routers.DefaultRouter()
 router.register(r"database_check", database_check_view.DatabaseViewSet)
-router.register(r"view_users", user_view.UserViewSet)
 
 urlpatterns = [
     url(r"^$", schema_view),
