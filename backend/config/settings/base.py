@@ -19,7 +19,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 INSTALLED_APPS = [
     # Personal,
-    "models",
+    "custom_models",
     # BASE
     "django.contrib.admin",
     "django.contrib.auth",
@@ -103,7 +103,7 @@ CORS_ALLOW_HEADERS = [
 ]
 
 # Allow the user to log in by email or username
-AUTH_USER_MODEL = "models.User"
+AUTH_USER_MODEL = "custom_models.User"
 
 # JWT settings for authentication
 JWT_AUTH = {
